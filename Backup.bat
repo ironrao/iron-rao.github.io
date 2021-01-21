@@ -1,0 +1,1 @@
+start C:\"Program Files"\Git\git-bash.exe -c "hexo clean && hexo g && hexo b"

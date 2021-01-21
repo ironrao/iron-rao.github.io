@@ -1,8 +1,10 @@
 ---
-title: 第一次的测试
+title: Hexo建站测试-从树莓派到Windows
 date: 2021-01-21 17:34:02
-tags: web
+tags: web,树莓派
 ---
+## 树莓派上环境搭建
+
 这边来记录一下从零开始的搭建过程
 主要的还是基于github的github.io
 对于会的人来说应该很快就好了，说起来确实也就几分钟的时间在敲代码上，但是花了蛮久时间研究问题的。
@@ -20,11 +22,9 @@ orz 看了一下这个确实好厉害，这个整个的主题就和这种原来�
 
 ---
 
-
 然后在晚上看了看这个界面，emmm，大红大紫的感觉不好看orz。
-去github上找了，archer&ayer&catus。试了试这三个。感觉都不是自己想要的。但是我还觉得catus的风格还挺好的，就是不知道为什么在编译的时候报错了，也不知道报错怎么解决。（还截了个屏，之后放上去）。在baidu bug的时候正好遇到了这个(网站)https://www.jianshu.com/p/9f0e90cc32c2
-里面啥都有，教我怎么配置Next。还有这个
-https://io-oi.me/tech/hexo-next-optimization/
+去github上找了，archer&ayer&catus。试了试这三个。感觉都不是自己想要的。但是我还觉得catus的风格还挺好的，就是不知道为什么在编译的时候报错了，也不知道报错怎么解决。（还截了个屏，之后放上去）。在baidu bug的时候正好遇到了这个[网站](https://www.jianshu.com/p/9f0e90cc32c2)。
+里面啥都有，教我怎么配置Next。还有[这个](https://io-oi.me/tech/hexo-next-optimization/)。
 于是乎换回了Next的theme之后再瞅瞅。
 
 有件很有意思的bug是啊，就是在_config.yml里第一段Site中的laguage写了en&cn, 然后网页在远端的格式就崩了，在本地还是好好的orz。调回en就好了。
@@ -32,6 +32,8 @@ https://io-oi.me/tech/hexo-next-optimization/
 而且在root/scaffolds的post.md文件里可以定义每次的模版，下次就不用一直写了。hexo new post name是新发布一个，就和发布说说一样。hexo new draft name就是新建个草稿，不会发出去的。
 
 ---
+## Windows上Hexo搭建
+
 2021.01.21
 来更新一下，昨天是在树莓派上搭建环境的，跟着[这个](https://zhuanlan.zhihu.com/p/108550672)教程。然后今天想着在windows上也搭个环境，以为挺快的。好家伙，花了我三个小时。
 
@@ -81,3 +83,58 @@ start C:\"Program Files"\Git\git-bash.exe -c "hexo clean && hexo g && cp CNAME p
 
 还想尝试一下坚果云能不能同步，发现不太行。因为坚果云的文件夹是中文的，它找不到这个文件夹。而且换成英文的话，它是xxx xxx的形式，中间的空格会被识别错误orz。（之前在ROS的时候也遇到过）。
 所以还是换Github或者Gitee同步一下叭。
+
+---
+
+## 源文件备份
+
+之后用了[hexo-git-backup](https://github.com/coneycode/hexo-git-backup) 的插件git备份了源码，方便在笔记本上也可以调试。
+
+然后设置了下面的备份设置
+
+```yml
+backup:
+  type: git
+  theme: next
+  message: Back up 
+  repository:
+    github: git@github.com:iron-rao/iron-rao.github.io.git,backup
+    gitee: git@gitee.com:iron-rao/hexo.git,master
+```
+发现了以下的报错
+```log
+fatal: 'gitee' does not appear to be a git repository
+fatal: Could not read from remote repository.
+```
+很迷惑，查了半天好像是`git remote`的问题，吃了不熟练git的亏。
+调试了半天发现以下的仓库链接是对的。
+
+```log
+$ git remote -v
+backup  git@github.com:iron-rao/iron-rao.github.io.git (fetch)
+backup  git@github.com:iron-rao/iron-rao.github.io.git (push)
+gitee   git@gitee.com:iron-rao/hexo.git (fetch)
+gitee   git@gitee.com:iron-rao/hexo.git (push)
+github  git@github.com:iron-rao/iron-rao.github.io.git (fetch)
+github  git@github.com:iron-rao/iron-rao.github.io.git (push)
+master  git@gitee.com:iron-rao/hexo.git (fetch)
+master  git@gitee.com:iron-rao/hexo.git (push)
+origin  git@github.com:ironrao/iron-rao.github.io.git (fetch)
+origin  git@github.com:ironrao/iron-rao.github.io.git (push)
+```
+
+只要
+
+```
+git remote add repository_第x行冒号前的 第x行冒号后的
+git remote add 第x行的分支名 第x行冒号后的
+```
+对我来说就是
+```
+git remote add github git@github.com:iron-rao/iron-rao.github.io.git
+git remote add backup git@github.com:iron-rao/iron-rao.github.io.git
+git remote add gitee git@gitee.com:iron-rao/hexo.git
+git remote add master git@gitee.com:iron-rao/hexo.git
+```
+这样就行。原来还有个origin那个是用来给`hexo d`推送部署的。之前也踩过坑了。
+然后就可以愉快的用Typora写markdown了。
