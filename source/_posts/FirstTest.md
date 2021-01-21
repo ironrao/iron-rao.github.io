@@ -1,7 +1,7 @@
 ---
 title: Hexo建站测试-从树莓派到Windows
 date: 2021-01-21 17:34:02
-tags: web,树莓派
+tags: web 树莓派
 ---
 ## 树莓派上环境搭建
 
