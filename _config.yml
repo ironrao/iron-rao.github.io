@@ -113,5 +113,5 @@ backup:
   message: Back up 
   repository:
     github: git@github.com:iron-rao/iron-rao.github.io.git,backup
-    gitee: git@gitee.com:iron-rao/hexo.git,master
+    # gitee: git@gitee.com:iron-rao/hexo.git,master
     # coding: git@git.dev.tencent.com:TRHX/TRHX.git,backup
