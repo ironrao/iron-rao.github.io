@@ -1,0 +1,153 @@
+<html lang="en">
+<head>
+  <title>iGem test</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, noindex, nofollow">
+    <!-- Bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:300,400,500,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="//code.jquery.com/jquery-3.2.0.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <nav id="navbar" class="navbar navbar-expand-md bg-white navbar-light fixed-top">
+    <!-- Brand/logo -->
+    <a class="navbar-brand" style="padding:0px" href="#">
+      <img src="./asserts/logo.png" alt="logo" style="height:82px; padding-top:3px">
+    </a>
+    
+    <div id="content-mobile">
+      <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+          <a href="#">TEAM</a>
+          <a href="#">DBTL</a>
+          <a href="#">COLLABORATIONS</a>
+          <a href="#">SPONSORS</a>
+          <a href="#">DESCRIPTION</a>
+          <a href="#">DESIGN</a>
+          <a href="#">MEASUREMENT</a>
+          <a href="#">EXPERIMENTS</a>
+          <a href="#">RESULTS</a>
+          <a href="#">DEMONSTRATE</a>
+          <a href="#">ATTRIBUTIONS</a>
+          <a href="#">MODEL</a>
+          <a href="#">HARDWARE</a>
+          <a href="#">SOFTWARE</a>
+          <a href="#">PARTS</a>
+          <a href="#">SAFETY</a>
+          <a href="#">INTEGRATED HUMAN PRACTICES</a>
+          <a href="#">EDUCATION & ENGAGEMENT</a>
+          <a href="#">ENTREPRENEURSHIP</a>
+          <a href="#">AWARDS</a>
+        </div>
+      </div>
+      <span style="cursor:pointer" class="navbar-toggler-icon" onclick="openNav()"></span>   
+    </div>    
+
+    <!-- Links -->
+
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <span id="dot1" class="dot"></span>
+      <span id="dot2" class="dot"></span>
+      <span id="dot3" class="dot"></span>
+      <span id="dot4" class="dot"></span>
+      <span id="dot5" class="dot"></span>
+      <span id="dot6" class="dot"></span>
+      <span id="dot7" class="dot"></span>
+
+      <div class="navbar-nav ml-auto" data-hover="dropdown" >
+        <div id="nav-item1" class="nav-item dropdown" style="cursor:pointer">
+          <div onclick="myFunction()" class="dropbtn" data-toggle="dropdown"><a>TEAM</a></div>     
+          <div id="dropdown-menu1" class="dropdown-menu">
+            <a class="dropdown-item" href="#">TEAM</a>
+            <a class="dropdown-item" href="#">COLLABORATIONS</a>
+            <a class="dropdown-item" href="#">SPONSORS</a>
+          </div>
+        </div>
+
+        <div id="nav-item2" class="nav-item" style="cursor:pointer">
+          <div><a href="#" style="padding:0">DBTL</a></div>                         
+        </div>
+
+        <div id="nav-item3" class="nav-item dropdown" style="cursor:pointer">
+          <div onclick="myFunction()" class="dropbtn" data-toggle="dropdown"><a>PROJECT</a></div>                           
+          <div id="dropdown-menu2" class="dropdown-menu">
+            <a class="dropdown-item" href="#">DESCRIPTION</a>
+            <a class="dropdown-item" href="#">DESIGN</a>
+            <a class="dropdown-item" href="#">MEASUREMENT</a>
+            <a class="dropdown-item" href="#">EXPERIMENTS</a>
+            <a class="dropdown-item" href="#">RESULTS</a>
+            <a class="dropdown-item" href="#">DEMONSTRATE</a>
+            <a class="dropdown-item" href="#">ATTRIBUTIONS</a>
+            <a class="dropdown-item" href="#">MODEL</a>
+            <a class="dropdown-item" href="#">HARDWARE</a>
+            <a class="dropdown-item" href="#">SOFTWARE</a>
+          </div>
+        </div>
+
+        <div id="nav-item4" class="nav-item" style="cursor:pointer">
+          <div><a href="#" style="padding:0">PARTS</a></div>                         
+        </div>
+
+        <div id="nav-item5" class="nav-item" style="cursor:pointer">
+          <div><a href="#" style="padding:0">SAFETY</a></div>                         
+        </div>
+
+        <div id="nav-item6" class="nav-item dropdown" style="cursor:pointer">
+          <div onclick="myFunction()" class="dropbtn" data-toggle="dropdown"><a>HUMAN</a></div>           
+          <div id="dropdown-menu5" class="dropdown-menu">
+            <a class="dropdown-item" href="#">INTEGRATED HUMAN PRACTICES</a>
+            <a class="dropdown-item" href="#">EDUCATION & ENGAGEMENT</a>
+          </div>
+        </div>
+
+        <div id="nav-item7" class="nav-item" style="cursor:pointer">
+          <div><a href="#" style="padding:0">ENTREPRENEURSHIP</a></div>        
+        </div> 
+
+        <div id="nav-item8" class="nav-item" style="cursor:pointer">
+          <div><a href="#" style="padding:0">AWARDS</a></div>        
+        </div>        
+      </div>
+    </div>  
+  </nav>
+
+
+  <!--Team member  -->
+        <!-- <div class = "shade"></div> use as the shade, can add some picture later -->
+        <div class = "maincont"> <!--serve as a container of the whole web page below-->
+            <div class = "people">
+                <h1> Team Members</h1>
+                <img class = "profile" src="asserts/temp.jpg">
+		<div class = "down"></div><!-- use to let the opacity of the image down -->
+                <img class = "border2" src="asserts/border2.png">
+                <img class = "border1" src="asserts/border1.png">
+            </div>
+        </div>
+
+
+</body>
+
+<script>
+function openNav() {
+  document.getElementById("myNav").style.display = "block";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.display = "none";
+}
+</script>
+
+</html>
