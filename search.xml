@@ -48,6 +48,70 @@
       </tags>
   </entry>
   <entry>
+    <title>555timer</title>
+    <url>/2021/06/03/555timer/</url>
+    <content><![CDATA[<p>关于华二数字集成电路课的一些课件—–555定时器简介和相关实验</p>
+<a id="more"></a>
+
+<h1 id="555"><a href="#555" class="headerlink" title="555"></a>555</h1><h2 id="实验原理"><a href="#实验原理" class="headerlink" title="实验原理"></a>实验原理</h2><p>555时基电路是一种将模拟功能与逻辑功能巧妙结合在同一硅片上的组合集成电路。555定时器构成的多谐振荡器能自行产生矩形脉冲的输出，是脉冲产生（形成）电路，它是一种无稳电路。</p>
+<p>多谐振荡器电路组成</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/QQ%E6%88%AA%E5%9B%BE20210603223614.png" alt="QQ截图20210603223604"></p>
+<p>在电路接通电源的瞬间，由于电容C来不及充电，电容电压$Vc=0V$，所以555定时器的输出状态为1，输出Vo为高电平。同时，集电极输出端对地断开，电源Vcc对电容C充电，电路进入暂稳态I。</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/QQ%E6%88%AA%E5%9B%BE20210603223604.png" alt="QQ截图20210603223614"></p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/QQ%E6%88%AA%E5%9B%BE20210603223619.png" alt="QQ截图20210603223619"></p>
+<p>当电容电压Vc充到2/3Vcc时，输出Vo为低电平，同时集电极输出对地短路，电容电压随之通过集电极输出端放电，电路进入暂稳态II。<br>此后，电路周而复始地产生周期性的输出脉冲。</p>
+<p>电容充电时间T1。电容充电时，时间常数τ1=(R1+R2)C，起始值$Vc(0+)=1/3Vcc$，最终值$Vc(∞)= Vcc$，转换值$Vc(T1)=2/3Vcc$，带入过渡过程计算公式进行计算，计算公式为：</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527181954.png" alt="1591097452381"></p>
+<p>电容放电时间T2。电容放电时，时间常数$τ2=R2C$，起始值$Vc(0+)=2/3Vcc$，终值$Vc(∞)= 0$，转换值$Vc(T2)=1/3Vcc$，代入RC过渡过程计算公式进行计算，计算公式为：<br>$T2=0.7R2C$<br>电路振荡周期T，计算公式为：<br>$T=T1+T2=0.7(R1+2R2)C$<br>电路振荡频率f，计算公式为：</p>
+<p>输出波形占空比q=T1/T，即脉冲宽度与脉冲周期之比，称为占空比。计算公式为：<br>$q= T1/T=0.7(R1+R2)C/(0.7(R1+2R2)C)=( R1+R2)/( R1+2R2)$<br>用555定时器构成多谐振荡器的原理图如图1所示。</p>
+<img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527183057.png" alt="QQ截图20210527182938" style="zoom: 33%;" />
+
+<h2 id="实验任务："><a href="#实验任务：" class="headerlink" title="实验任务："></a>实验任务：</h2><p>根据以上的实验电路图和原理，设计相应的电阻数据，来完成</p>
+<p>1.占空比75%，频率2Hz</p>
+<p>2.占空比50%，频率1Hz</p>
+<p>*附加：将电阻改成可变电阻，实时调整波形。</p>
+<p>注：大家应该记得我在第一节课上调的频率么？我通过一个可调电阻器，调整R1和R2的比值，可以实时的改变频率。</p>
+<h1 id="计数器"><a href="#计数器" class="headerlink" title="计数器"></a>计数器</h1><h2 id="实验原理-1"><a href="#实验原理-1" class="headerlink" title="实验原理"></a>实验原理</h2><p>74LS90逻辑电路图由四个主从JK触发器和一些附加门电路组成，可以实现二－五－十进制的计数器。</p>
+<img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527184241.png" alt="QQ截图20210527184232" style="zoom:25%;" />
+
+<p>这是在multi中的74LS90仿真。</p>
+<p>对应的工作模式与相关的真值表如下</p>
+<p>H=高电平 L=低电平 x=不定</p>
+<p><img src="http://www.elecfans.com/uploads/allimg/171222/2755783-1G222113441620.png" alt="74ls90工作原理_逻辑功能表_电性参数及应用电路"></p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527184348.png" alt="2755783-1G22211345Y37"></p>
+<p>运用计数器实现分频的关键在于明白计数后产生的上升沿触发信号，触发下一个芯片。R01，R02 为复位端，由计数端控制。R91，R92 始终接地。在送复位信号时要注意信号同时到达两个复位端，复位信号传输中与、非等门电路都会延迟信号到达，所以在这个过程中门电路最好一样。当计数很大时，可以用多个741S90 分别计各个位的数。</p>
+<h2 id="实验任务：-1"><a href="#实验任务：-1" class="headerlink" title="实验任务："></a>实验任务：</h2><p>1.在Multi中用一个10Hz的方波信号发生器，运用二进制计数方式，记录原信号和计数器的信号，展示在示波器上。</p>
+<p>5.在Multi中用你的555定时器产生1Hz的方波信号发生器，运用二进制计数方式，记录原信号和计数器的信号，展示在示波器上。</p>
+<p>如图</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527185236.png" alt="QQ截图20210527185225"></p>
+<h1 id="位移寄存器："><a href="#位移寄存器：" class="headerlink" title="位移寄存器："></a>位移寄存器：</h1><h2 id="实验原理-2"><a href="#实验原理-2" class="headerlink" title="实验原理"></a>实验原理</h2><p>74 LS194逻辑符号及引脚排列</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527185632.jpg" alt="2755780-1G2220ZK31R"></p>
+<p>其中：D0～D1为并行输入端；Q0～Q3为并行输出端；SR–右移串引输入端；SL–左移串引输入端；S1、S0-操作模式控制端； -为直接无条件清零端；CP-为时钟脉冲输入端。</p>
+<p>工作模式的真值表如下：</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527185653.jpg" alt="2755780-1G222092923c7"></p>
+<p>H－高电平 </p>
+<p>L－低电平 </p>
+<p>X－任意电平 </p>
+<p>↑－低到高电平跳变</p>
+<p>　　a-d－A-D 端的稳态输入电平</p>
+<p>　　QA0-QD0－规定的稳态条件建立前QA－AD的电平</p>
+<p>　　QAn-QDn－时钟最近的↑前QA－AD的电平</p>
+<p>注：X表示任意值</p>
+<h2 id="example"><a href="#example" class="headerlink" title="example:"></a>example:</h2><p>把移位寄存器的输出反馈到它的串行输入端，就可以进行循环移位，如图3所示。设初态为$Q3Q2Q1Q0=1000$，则在CP作用下，模式设为右移，输出状态依次为：</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527190023.jpg" alt="2755780-1G222091220E2"></p>
+<h2 id="实验任务：-2"><a href="#实验任务：-2" class="headerlink" title="实验任务："></a>实验任务：</h2><p>在你的555定时器下，设置频率为2Hz，已知该芯片只有四位，设计电路将两个芯片组成八位位移寄存器，并组成环形位移。在输出加个小灯，可以让他产生流水灯的效果。</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527190439.png" alt="QQ截图20210527190434"></p>
+<p>这里是multisim的软件，回家下载自己可以玩一下</p>
+<p>链接：<a href="https://pan.baidu.com/s/1Cc2xjS9uAsRHACj91v-ljg">https://pan.baidu.com/s/1Cc2xjS9uAsRHACj91v-ljg</a><br>提取码：j9p5<br>复制这段内容后打开百度网盘手机App，操作更方便哦–来自百度网盘超级会员V4的分享</p>
+]]></content>
+      <categories>
+        <category>lesson</category>
+      </categories>
+      <tags>
+        <tag>lesson</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Pelican</title>
     <url>/2021/01/24/Pelican/</url>
     <content><![CDATA[<p>用Python Pelican 建站的一些尝试。</p>
@@ -207,6 +271,20 @@
       </tags>
   </entry>
   <entry>
+    <title>UbuntuAutoInstall</title>
+    <url>/2021/02/13/UbuntuAutoInstall/</url>
+    <content><![CDATA[<p>有时候一直在装虚拟机测试Ubuntu的环境，就写了shell脚本自动安装一些软件，不然一直找不到。</p>
+<p>包括Ubuntu 自动换源， STM32的环境，Anaconda，Vscode，Typora，Latex</p>
+<a id="more"></a>
+
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">1.确定系统版本代号</span></span><br><span class="line">Codename=$(cat /etc/os-release | grep VERSION_CODENAME |awk -F&#x27;=&#x27; &#x27;&#123;print $2&#125;&#x27;)</span><br><span class="line">echo &quot;检测到您的Ubuntu系统版本为：$Codename&quot;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">2.选择镜像源</span></span><br><span class="line">echo &quot;**********************************&quot;</span><br><span class="line">echo &quot;请选择镜像源：&quot;</span><br><span class="line">echo &quot;</span><br><span class="line">    1.阿里      </span><br><span class="line">    2.清华     </span><br><span class="line">    3.网易</span><br><span class="line">    4.中科大</span><br><span class="line">    &quot;</span><br><span class="line">echo &quot;**********************************&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">case $sourceChoice in</span><br><span class="line">	1)</span><br><span class="line">		choose=&#x27;aliyun&#x27;</span><br><span class="line">	;;</span><br><span class="line">	2)</span><br><span class="line">		choose=&#x27;tsinghua&#x27;</span><br><span class="line">	;;</span><br><span class="line">	3)</span><br><span class="line">		choose=&#x27;163&#x27;</span><br><span class="line">	;;</span><br><span class="line">	4)</span><br><span class="line">		choose=&#x27;ustc&#x27;</span><br><span class="line">	;;</span><br><span class="line">esac</span><br><span class="line"></span><br><span class="line">choose=&#x27;tsinghua&#x27;</span><br><span class="line"></span><br><span class="line">case $choose in</span><br><span class="line">	aliyun)</span><br><span class="line">		sourceweb=&#x27;http://mirrors.aliyun.com&#x27;</span><br><span class="line">	;;</span><br><span class="line">	tsinghua)</span><br><span class="line">		sourceweb=&#x27;https://mirrors.tuna.tsinghua.edu.cn&#x27;</span><br><span class="line">	;;</span><br><span class="line">	163)</span><br><span class="line">		sourceweb=&#x27;http://mirrors.163.com&#x27;</span><br><span class="line">	;;</span><br><span class="line">	ustc)</span><br><span class="line">		sourceweb=&#x27;http://mirrors.ustc.edu.cn&#x27;</span><br><span class="line">	;;</span><br><span class="line">esac</span><br><span class="line"></span><br><span class="line">echo $choose</span><br><span class="line">echo &quot;**********************************&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 3.备份换源</span></span><br><span class="line">echo &quot;备份sources.list...&quot;</span><br><span class="line">sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak</span><br><span class="line">echo &quot;设置新的镜像源...&quot;</span><br><span class="line">echo &quot;\</span><br><span class="line">deb $sourceweb/ubuntu/ $Codename main restricted universe multiverse</span><br><span class="line">deb $sourceweb/ubuntu/ $Codename-security main restricted universe multiverse</span><br><span class="line">deb $sourceweb/ubuntu/ $Codename-updates main restricted universe multiverse</span><br><span class="line">deb $sourceweb/ubuntu/ $Codename-proposed main restricted universe multiverse</span><br><span class="line">deb $sourceweb/ubuntu/ $Codename-backports main restricted universe multiverse</span><br><span class="line">deb-src $sourceweb/ubuntu/ $Codename main restricted universe multiverse</span><br><span class="line">deb-src $sourceweb/ubuntu/ $Codename-security main restricted universe multiverse</span><br><span class="line">deb-src $sourceweb/ubuntu/ $Codename-updates main restricted universe multiverse</span><br><span class="line">deb-src $sourceweb/ubuntu/ $Codename-proposed main restricted universe multiverse</span><br><span class="line">deb-src $sourceweb/ubuntu/ $Codename-backports main restricted universe multiverse&quot;&gt;/etc/apt/sources.list</span><br><span class="line">echo &quot;更新源...&quot;</span><br><span class="line"></span><br><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line">sudo apt upgrade</span><br><span class="line"></span><br><span class="line">sudo apt install gcc vim</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> Typora</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo add-apt-repository <span class="string">&#x27;deb https://typora.io/linux ./&#x27;</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-get update</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-get install typora</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> Vscode</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-get update</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-get install ubuntu-make</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo umake ide visual-studio-code</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 在.bashrc里添加 参考https://www.cnblogs.com/jpfss/p/11107080.html</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">export</span> PATH=<span class="variable">$HOME</span>/.<span class="built_in">local</span>/share/umake/ide/visual-studio-code/bin:<span class="variable">$PATH</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> Anaconda3</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-5.3.1-Linux-x86_64.sh</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo sh Anaconda3-5.3.1-Linux-x86_64.sh</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> STM32开发环境</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Cube手动安装一下</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-get install default-jre</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt install cmake gcc-arm-none-eabi</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> Latex</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-get install texlive-full</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>Ubuntu</tag>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>VMWorktationMacOS</title>
     <url>/2021/01/31/VMWorktationMacOS/</url>
     <content><![CDATA[<p>为了做助教，很多的小朋友都喜欢用Mac。特此在windows上安装了Mac虚拟机试试。</p>
@@ -235,20 +313,6 @@
       </tags>
   </entry>
   <entry>
-    <title>UbuntuAutoInstall</title>
-    <url>/2021/02/13/UbuntuAutoInstall/</url>
-    <content><![CDATA[<p>有时候一直在装虚拟机测试Ubuntu的环境，就写了shell脚本自动安装一些软件，不然一直找不到。</p>
-<p>包括Ubuntu 自动换源， STM32的环境，Anaconda，Vscode，Typora，Latex</p>
-<a id="more"></a>
-
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">1.确定系统版本代号</span></span><br><span class="line">Codename=$(cat /etc/os-release | grep VERSION_CODENAME |awk -F&#x27;=&#x27; &#x27;&#123;print $2&#125;&#x27;)</span><br><span class="line">echo &quot;检测到您的Ubuntu系统版本为：$Codename&quot;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">2.选择镜像源</span></span><br><span class="line">echo &quot;**********************************&quot;</span><br><span class="line">echo &quot;请选择镜像源：&quot;</span><br><span class="line">echo &quot;</span><br><span class="line">    1.阿里      </span><br><span class="line">    2.清华     </span><br><span class="line">    3.网易</span><br><span class="line">    4.中科大</span><br><span class="line">    &quot;</span><br><span class="line">echo &quot;**********************************&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">case $sourceChoice in</span><br><span class="line">	1)</span><br><span class="line">		choose=&#x27;aliyun&#x27;</span><br><span class="line">	;;</span><br><span class="line">	2)</span><br><span class="line">		choose=&#x27;tsinghua&#x27;</span><br><span class="line">	;;</span><br><span class="line">	3)</span><br><span class="line">		choose=&#x27;163&#x27;</span><br><span class="line">	;;</span><br><span class="line">	4)</span><br><span class="line">		choose=&#x27;ustc&#x27;</span><br><span class="line">	;;</span><br><span class="line">esac</span><br><span class="line"></span><br><span class="line">choose=&#x27;tsinghua&#x27;</span><br><span class="line"></span><br><span class="line">case $choose in</span><br><span class="line">	aliyun)</span><br><span class="line">		sourceweb=&#x27;http://mirrors.aliyun.com&#x27;</span><br><span class="line">	;;</span><br><span class="line">	tsinghua)</span><br><span class="line">		sourceweb=&#x27;https://mirrors.tuna.tsinghua.edu.cn&#x27;</span><br><span class="line">	;;</span><br><span class="line">	163)</span><br><span class="line">		sourceweb=&#x27;http://mirrors.163.com&#x27;</span><br><span class="line">	;;</span><br><span class="line">	ustc)</span><br><span class="line">		sourceweb=&#x27;http://mirrors.ustc.edu.cn&#x27;</span><br><span class="line">	;;</span><br><span class="line">esac</span><br><span class="line"></span><br><span class="line">echo $choose</span><br><span class="line">echo &quot;**********************************&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 3.备份换源</span></span><br><span class="line">echo &quot;备份sources.list...&quot;</span><br><span class="line">sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak</span><br><span class="line">echo &quot;设置新的镜像源...&quot;</span><br><span class="line">echo &quot;\</span><br><span class="line">deb $sourceweb/ubuntu/ $Codename main restricted universe multiverse</span><br><span class="line">deb $sourceweb/ubuntu/ $Codename-security main restricted universe multiverse</span><br><span class="line">deb $sourceweb/ubuntu/ $Codename-updates main restricted universe multiverse</span><br><span class="line">deb $sourceweb/ubuntu/ $Codename-proposed main restricted universe multiverse</span><br><span class="line">deb $sourceweb/ubuntu/ $Codename-backports main restricted universe multiverse</span><br><span class="line">deb-src $sourceweb/ubuntu/ $Codename main restricted universe multiverse</span><br><span class="line">deb-src $sourceweb/ubuntu/ $Codename-security main restricted universe multiverse</span><br><span class="line">deb-src $sourceweb/ubuntu/ $Codename-updates main restricted universe multiverse</span><br><span class="line">deb-src $sourceweb/ubuntu/ $Codename-proposed main restricted universe multiverse</span><br><span class="line">deb-src $sourceweb/ubuntu/ $Codename-backports main restricted universe multiverse&quot;&gt;/etc/apt/sources.list</span><br><span class="line">echo &quot;更新源...&quot;</span><br><span class="line"></span><br><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line">sudo apt upgrade</span><br><span class="line"></span><br><span class="line">sudo apt install gcc vim</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> Typora</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo add-apt-repository <span class="string">&#x27;deb https://typora.io/linux ./&#x27;</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-get update</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-get install typora</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> Vscode</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-get update</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-get install ubuntu-make</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo umake ide visual-studio-code</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 在.bashrc里添加 参考https://www.cnblogs.com/jpfss/p/11107080.html</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">export</span> PATH=<span class="variable">$HOME</span>/.<span class="built_in">local</span>/share/umake/ide/visual-studio-code/bin:<span class="variable">$PATH</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> Anaconda3</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-5.3.1-Linux-x86_64.sh</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo sh Anaconda3-5.3.1-Linux-x86_64.sh</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> STM32开发环境</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Cube手动安装一下</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-get install default-jre</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt install cmake gcc-arm-none-eabi</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> Latex</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-get install texlive-full</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>Ubuntu</tag>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2021/01/20/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -263,5 +327,43 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>shiftregister</title>
+    <url>/2021/06/03/shiftregister/</url>
+    <content><![CDATA[<p>关于华二数字集成电路课的一些课件—–位移寄存器简介和相关实验</p>
+<a id="more"></a>
+
+<h1 id="位移寄存器："><a href="#位移寄存器：" class="headerlink" title="位移寄存器："></a>位移寄存器：</h1><h2 id="实验原理"><a href="#实验原理" class="headerlink" title="实验原理"></a>实验原理</h2><p>74 LS194逻辑符号及引脚排列</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527185632.jpg" alt="2755780-1G2220ZK31R"></p>
+<p>其中：D0～D1为并行输入端；Q0～Q3为并行输出端；SR–右移串引输入端；SL–左移串引输入端；S1、S0-操作模式控制端； -为直接无条件清零端；CP-为时钟脉冲输入端。</p>
+<p>工作模式的真值表如下：</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527185653.jpg" alt="2755780-1G222092923c7"></p>
+<p>H－高电平 </p>
+<p>L－低电平 </p>
+<p>X－任意电平 </p>
+<p>↑－低到高电平跳变</p>
+<p>　　a-d－A-D 端的稳态输入电平</p>
+<p>　　QA0-QD0－规定的稳态条件建立前QA－AD的电平</p>
+<p>　　QAn-QDn－时钟最近的↑前QA－AD的电平</p>
+<p>注：X表示任意值</p>
+<h2 id="example"><a href="#example" class="headerlink" title="example:"></a>example:</h2><p>把移位寄存器的输出反馈到它的串行输入端，就可以进行循环移位，如图3所示。设初态为$Q3Q2Q1Q0=1000$，则在CP作用下，模式设为右移，输出状态依次为：</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527190023.jpg" alt="2755780-1G222091220E2"></p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/QQ%E6%88%AA%E5%9B%BE20210603211752.png" alt="QQ截图20210603211752"></p>
+<h2 id="实验任务："><a href="#实验任务：" class="headerlink" title="实验任务："></a>实验任务：</h2><p>在你的555定时器下，设置频率为2Hz，已知该芯片只有四位，设计电路将两个芯片组成八位位移寄存器，并组成环形位移。在输出加个小灯，可以让他产生流水灯的效果。</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527190439.png" alt="QQ截图20210527190434"></p>
+<p>解答：</p>
+<p>电路如图2所示，将芯片（1）的Q3）接至芯片（2）的SR，将芯片（2）的Q4接至芯片（1）的SL，即可构成8位的移位寄存器。</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/2755780-1G222091124a7.jpg" alt="2755780-1G222091124a7"></p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/QQ%E6%88%AA%E5%9B%BE20210603213047.png" alt="QQ截图20210603213047"></p>
+<h1 id="final-project"><a href="#final-project" class="headerlink" title="final project"></a>final project</h1><p>根据上面的example，可以通过简单的复制和改变每一个A，B，C，D的输入，设计4*4的led点阵的输入。</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/QQ%E6%88%AA%E5%9B%BE20210603212710.png" alt="QQ截图20210603212710"></p>
+]]></content>
+      <categories>
+        <category>lesson</category>
+      </categories>
+      <tags>
+        <tag>lesson</tag>
+      </tags>
   </entry>
 </search>
