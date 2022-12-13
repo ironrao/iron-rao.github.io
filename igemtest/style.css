@@ -1,0 +1,351 @@
+  /***************************************************** DEFAULT WIKI SETTINGS  *********************************************/
+  /* Clear the default wiki settings */
+        
+  #home_logo, #sideMenu {display:none;}
+  #sideMenu, #top_title, .patrollink  {display:none;}
+  #content { width:100%; padding:0px;  margin-top:-20px; margin-left:0px; line-height: 1.5;}
+
+  /***************************************************** DESKTOP TOP NAVBAR *************************************************/
+  /* Navigation bar*/
+  #navbar {
+    padding: 19px 16px 5px 20px;
+    /* font-family: 'Noto Sans TC', sans-serif; */
+    font-size: 17px; 
+    letter-spacing: 0.25em;
+    font-weight: 300;
+    color: #333333;
+  }
+
+  /* Menu link blocks in navigation bar*/
+  .navbar-nav div.nav-item{
+    color: #333333;
+    position: absolute;
+    bottom: 3.5px;
+    height: 60px;
+  }
+
+  /* Text boxes in menu link blocks*/
+  div.nav-item div{
+    text-align: center;
+  }
+
+  /* Text in text boxes*/
+  div.nav-item>div>a{
+    color: #333333;
+    text-decoration: none;
+  }
+
+  /* Position and size of menu link blocks in navigation bar*/
+  #nav-item8 {
+    right: 13px;
+    width: 137px;
+  }
+  #nav-item7 {
+    right: 145px; 
+    width: 279px;
+  }
+  #nav-item6 {
+    right: 418px; 
+    width: 123px;
+  }
+  #nav-item5 {
+    right: 533px;  
+    width: 128px;
+  }
+  #nav-item4 {
+    right: 654px; 
+    width: 111px;
+  }
+  #nav-item3 {
+    right: 758px;
+    width: 146px;
+  }
+  #nav-item2 {
+    right: 898px;
+    width: 100px;
+  }
+  #nav-item1 {
+    right: 995px;
+    width: 100px;
+  }
+
+
+  /* Dot between menu link blocks*/
+  .dot{
+    height: 4px;
+    width: 4px;
+    background-color: #333333;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    position: absolute; 
+  }
+
+  /* Postion of dots*/
+  #dot1 {
+    right: 150px; 
+  }
+  #dot2 {
+    right: 420px; 
+  }
+  #dot3 {
+    right: 538px;  
+  }
+  #dot4 {
+    right: 656px; 
+  }
+  #dot5 {
+    right: 763px;
+  }
+  #dot6 {
+    right: 900px;
+  }
+  #dot7 {
+    right: 996px;
+  }
+
+  .collapse .navbar-collapse{
+    position: relative;
+  }
+
+  /* Dropdown Menu (Hidden by Default) */  
+  .navbar-nav .dropdown .dropdown-menu{
+    position: absolute;
+    top: 40px;
+    left: 3px;
+    background-color: white;
+    box-shadow: 7px 7px rgba(0,0,0,0.2);
+    z-index: 1;
+    text-align: left;
+    font-size: 17px; 
+  }
+
+
+  /* Size of dropdown menu */ 
+  #dropdown-menu1 {
+    width: 246px
+  }
+  #dropdown-menu2 {
+    width: 215px
+  }
+  #dropdown-menu5 {
+    width: 420px
+  }
+  #dropdown-menu6 {
+    width: 279px
+  }
+
+
+  /* Show dropdown menu on hover and active */
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  .show {
+    display: block;
+  }
+
+  /* Menu links when hover, focus or active */
+  div.nav-item:active, div.nav-item:focus, div.nav-item:hover{
+    font-weight: 700;
+    color: #333333;
+  }
+
+  /* Dropdown links inside the dropdown menu*/
+  div.dropdown-menu a.dropdown-item {
+    color: #333333;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 14px;
+    display: block;
+  }
+
+  /* Bold dropdown links on hover */
+  .dropdown-menu a.dropdown-item:hover {
+    font-weight: bold;
+  }
+
+
+  /* hide top nav bar for small screens */
+  @media screen and (max-width: 1185px) {
+      .navbar-collapse.collapse {
+          display: none!important;
+      }
+  }
+
+
+  /***************************************************** MOBILE HIDDEN NAVBAR *************************************************/
+  /*Hide all content-mobile for large screens */
+  @media screen and (min-width: 1186px) {
+    #content-mobile {
+      display: none;
+    }
+  }
+
+  /* Toggler (hamburger) icon */
+  .navbar-toggler-icon{
+    position: absolute;
+    top: 35px;
+    right: 20px;
+    font-size: 25px;
+  }
+
+
+  /* Overlay (Hidden by Default) */
+  .overlay {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-y:auto;
+  }
+
+  /* Overlay Content*/
+  .overlay-content {
+    position: relative;
+    top: 100px;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    padding: 0 30px 100px 30px;
+  }
+
+  /* Navigation menu inside overlay */
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    letter-spacing: 0.2em;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+
+  /* Navigation menu inside overlay when hover, focus or active */
+  .overlay a:active, .overlay a:focus, .overlay a:hover {
+    color: #f1f1f1;
+  }
+
+  /* Close button inside overlay */
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 60px;
+  }
+
+  @media screen and (max-width: 580px) {
+    .overlay a {
+      font-size: 20px;
+    }
+    .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+    }
+  }
+  /*Decrese font size and close button size for smaller heights*/
+  @media screen and (max-height: 450px) {
+    .overlay a {
+      font-size: 20px;
+    }
+    .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+    }
+  }
+
+    /***************************************************** team member *************************************************/
+
+    /* body {
+      background-image: url(./asserts/conflict.jpg);
+      background-origin: 50% 50%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment:fixed;
+      background-position-x: center;
+  } */
+  h1 {
+      text-align: center;
+      font-family:'Courier New', Courier, monospace;
+      font-size: 40px;
+  }
+  /* .shade {
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+  } */
+  /* .maincont {
+      background-color: white;
+      width: 100%;
+      height: 100%;
+  } */
+  .profile {
+      position: absolute;
+      left: 100px;
+      top: calc(200px);
+      width: 200px;
+      height: 200px;
+      border-radius: 100px;
+      opacity: 100%;
+      transition: all 0.3s;
+      z-index: 0;
+  }
+
+  .down {
+      position: absolute;
+      left: 100px;
+      top: calc(200px);
+      width: 200px;
+      height: 200px;
+      opacity: 0%;
+      color: white;
+      background-color: white;
+      z-index: 1;
+      transition: all 0.3s;
+  }
+
+  .border2:hover + .down { /*seemed fail to work*/
+      opacity: 50%;
+  }
+
+  .border1 {
+      position: absolute;
+      left: 75px;
+      top: calc(175px);
+      width: 250px;
+      height: 250px;
+      opacity: 100%;
+      transform: rotatez(0deg);
+      transition: all 0.1s;
+  }
+  .border2:hover + .border1 {
+      opacity: 0%;
+      transform:rotatez(360deg);
+      
+  }
+  .border2 {
+      position: absolute;
+      left: 75px;
+      top: calc(175px);
+      width: 250px;
+      height: 250px;
+      opacity: 0%;
+      transform: rotatez(0deg);
+      transition: all 0.5s;
+      z-index: 999;
+  }
+  .border2:hover {
+      transform: rotatez(360deg);
+      opacity: 100%;
+  }
+  

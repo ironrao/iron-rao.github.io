@@ -1,316 +1,478 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>20221213</title>
-      <link href="2022/12/13/20221213/"/>
-      <url>2022/12/13/20221213/</url>
-      
-        <content type="html"><![CDATA[<p>啊想去徒步</p><a id="more"></a><p>看到了稻城亚丁的徒步视频</p><p>沉浸式徒步摄影｜单人重装｜稻城亚丁波拥措【4K】治愈系</p><p><a href="https://www.bilibili.com/video/BV1y8411b7Jg/?spm_id_from=333.1007.tianma.1-1-1.click&amp;vd_source=99997c35302482a4e24dbc38d718dd20">https://www.bilibili.com/video/BV1y8411b7Jg/?spm_id_from=333.1007.tianma.1-1-1.click&amp;vd_source=99997c35302482a4e24dbc38d718dd20</a></p><p><img src="20221213.assets/42166d224f4a20a44c13907dab62c425720ed036.jpg" alt="42166d224f4a20a44c13907dab62c425720ed036"></p><p>路线信息：<br>起点稻城亚丁景区冲古寺（海拔4000米）</p><p>冲古寺站——巴玉营地（4500米）<br>约8km，累计爬升600米<br>巴玉营地—波拥措营地（4700米）<br>2.5km累计爬升230米</p><p>也想去这个地方走一走，查了一下。感觉不是很难，但是作为第一次徒步肯定不太行。</p><p>但真的很想去，很想远离人类社会，想去亲近自然。</p><p>感受大自然真的会让我治愈，我想去用脚步丈量那边的土地。</p><p>为此我可能需要很多很多的资料和经验。</p>]]></content>
-      
-      
+<search>
+  <entry>
+    <title>20221213</title>
+    <url>/2022/12/13/20221213/</url>
+    <content><![CDATA[<p>啊想去徒步</p>
+<a id="more"></a>
+
+<p>看到了稻城亚丁的徒步视频</p>
+<p>沉浸式徒步摄影｜单人重装｜稻城亚丁波拥措【4K】治愈系</p>
+<p><a href="https://www.bilibili.com/video/BV1y8411b7Jg/?spm_id_from=333.1007.tianma.1-1-1.click&amp;vd_source=99997c35302482a4e24dbc38d718dd20">https://www.bilibili.com/video/BV1y8411b7Jg/?spm_id_from=333.1007.tianma.1-1-1.click&amp;vd_source=99997c35302482a4e24dbc38d718dd20</a></p>
+<p><img src="/2022/12/13/20221213/42166d224f4a20a44c13907dab62c425720ed036.jpg" alt="42166d224f4a20a44c13907dab62c425720ed036"></p>
+<p>路线信息：<br>起点稻城亚丁景区冲古寺（海拔4000米）</p>
+<p>冲古寺站——巴玉营地（4500米）<br>约8km，累计爬升600米<br>巴玉营地—波拥措营地（4700米）<br>2.5km累计爬升230米</p>
+<p>也想去这个地方走一走，查了一下。感觉不是很难，但是作为第一次徒步肯定不太行。</p>
+<p>但真的很想去，很想远离人类社会，想去亲近自然。</p>
+<p>感受大自然真的会让我治愈，我想去用脚步丈量那边的土地。</p>
+<p>为此我可能需要很多很多的资料和经验。</p>
+]]></content>
       <categories>
-          
-          <category> 日记 </category>
-          
+        <category>日记</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> hello </tag>
-            
-            <tag> hexo </tag>
-            
-            <tag> markdown </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>在Centos6上安装Vscode</title>
-      <link href="2022/12/12/InstallVScodeOnCentos6/"/>
-      <url>2022/12/12/InstallVScodeOnCentos6/</url>
-      
-        <content type="html"><![CDATA[<p>在EDA的虚拟机上安装VScode是一件比较痛苦的事情，但是还是成功了。</p><a id="more"></a><h1 id="在Centos6上安装VScode"><a href="#在Centos6上安装VScode" class="headerlink" title="在Centos6上安装VScode"></a>在Centos6上安装VScode</h1><p>EDA的虚拟机环境现在基本上都是Centos6的环境，受限于很多的EDA软件的环境，只能使用centos6.但是发现没有办法在Centos6上面安装环境，找了一些资料以后最后还是成功了。</p><p>参考</p><p><a href="https://zhuanlan.zhihu.com/p/57538168">https://zhuanlan.zhihu.com/p/57538168</a></p><p><a href="https://qiita.com/y-tksk/items/ad2348bff2c768cf1d1d">https://qiita.com/y-tksk/items/ad2348bff2c768cf1d1d</a></p><h2 id="下载VScode"><a href="#下载VScode" class="headerlink" title="下载VScode"></a>下载VScode</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;update.code.visualstudio.com&#x2F;1.23.1&#x2F;linux-x64&#x2F;stable</span><br><span class="line">mv VScode VScode.tar.gz</span><br><span class="line">tar -zxvf VScode.tar.gz</span><br><span class="line">cd VSCode-linux-x64</span><br><span class="line">.&#x2F;code</span><br></pre></td></tr></table></figure><p>这时候会显示</p><p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/image-20221212230133903.png" alt="image-20221212230133903"></p><h2 id="更新libstdc"><a href="#更新libstdc" class="headerlink" title="更新libstdc++"></a>更新<strong>libstdc++</strong></h2><p>先提升到root权限</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install gmp-devel mpfr-devel libmpc-devel</span><br></pre></td></tr></table></figure><p>然后下载gcc</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://ftp.tsukuba.wide.ad.jp/software/gcc/releases/gcc-4.9.4/gcc-4.9.4.tar.gz</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd gcc-4.9.4</span><br><span class="line">mkdir build</span><br><span class="line">cd build</span><br><span class="line">..&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;gcc-4.9.4&#x2F; --enable-checking&#x3D;release --enable-languages&#x3D;c,c++ --disable-multilib</span><br><span class="line">make -j20</span><br></pre></td></tr></table></figure><p>然后经过很长很长时间的等待编译过程</p><p>在build文件夹下</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cp x86_64-unknown-linux-gnu&#x2F;libstdc++-v3&#x2F;src&#x2F;.libs&#x2F;libstdc++.so.6.0.20 &#x2F;usr&#x2F;lib64</span><br><span class="line">cd &#x2F;usr&#x2F;lib64</span><br><span class="line">mv libstdc++.so.6 libstdc++.so.6.bak</span><br><span class="line">ln -s libstdc++.so.6.0.20 libstdc++.so.6</span><br></pre></td></tr></table></figure><h2 id="更新GLIB"><a href="#更新GLIB" class="headerlink" title="更新GLIB"></a>更新<strong>GLIB</strong></h2><p>依赖库安装</p><p>在root下安装</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">yum install libffi.x86_64 #一般不行</span><br><span class="line">wget https://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.15.tar.gz --no-check-certificate</span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line">export LIBFFI_CFLAGS=-I/usr/local/lib/libffi-3.2.1/include</span><br><span class="line">export LIBFFI_LIBS=&quot;-L/usr/local/lib -lffi&quot;</span><br></pre></td></tr></table></figure><p>下载GLIB</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wget http:&#x2F;&#x2F;ftp.gnome.org&#x2F;pub&#x2F;GNOME&#x2F;sources&#x2F;glib&#x2F;2.32&#x2F;glib-2.32.4.tar.xz --no-check-certificate</span><br><span class="line">tar -xf glib-2.32.4.tar.xz</span><br><span class="line">cd glib-2.32.4</span><br><span class="line">.&#x2F;configure --with-libiconv</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure><p>最后更新动态链接库</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;&#x2F;usr&#x2F;local&#x2F;lib&quot; &gt;&gt; &#x2F;etc&#x2F;ld.so.conf</span><br><span class="line">&#x2F;sbin&#x2F;ldconfig</span><br></pre></td></tr></table></figure><h2 id="添加环境变量"><a href="#添加环境变量" class="headerlink" title="添加环境变量"></a>添加环境变量</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mv VSCode-linux-x64 &#x2F;usr&#x2F;local&#x2F;</span><br><span class="line">ln -s &#x2F;usr&#x2F;local&#x2F;VSCode-linux-x64&#x2F;code &#x2F;usr&#x2F;local&#x2F;bin&#x2F;code</span><br></pre></td></tr></table></figure><p>就完成了！</p>]]></content>
-      
-      
+      <tags>
+        <tag>hello</tag>
+        <tag>hexo</tag>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>555timer</title>
+    <url>/2021/06/03/555timer/</url>
+    <content><![CDATA[<p>关于华二数字集成电路课的一些课件—–555定时器简介和相关实验</p>
+<a id="more"></a>
+
+<h1 id="555"><a href="#555" class="headerlink" title="555"></a>555</h1><h2 id="实验原理"><a href="#实验原理" class="headerlink" title="实验原理"></a>实验原理</h2><p>555时基电路是一种将模拟功能与逻辑功能巧妙结合在同一硅片上的组合集成电路。555定时器构成的多谐振荡器能自行产生矩形脉冲的输出，是脉冲产生（形成）电路，它是一种无稳电路。</p>
+<p>多谐振荡器电路组成</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/QQ%E6%88%AA%E5%9B%BE20210603223614.png" alt="QQ截图20210603223604"></p>
+<p>在电路接通电源的瞬间，由于电容C来不及充电，电容电压$Vc=0V$，所以555定时器的输出状态为1，输出Vo为高电平。同时，集电极输出端对地断开，电源Vcc对电容C充电，电路进入暂稳态I。</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/QQ%E6%88%AA%E5%9B%BE20210603223604.png" alt="QQ截图20210603223614"></p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/QQ%E6%88%AA%E5%9B%BE20210603223619.png" alt="QQ截图20210603223619"></p>
+<p>当电容电压Vc充到2/3Vcc时，输出Vo为低电平，同时集电极输出对地短路，电容电压随之通过集电极输出端放电，电路进入暂稳态II。<br>此后，电路周而复始地产生周期性的输出脉冲。</p>
+<p>电容充电时间T1。电容充电时，时间常数τ1=(R1+R2)C，起始值$Vc(0+)=1/3Vcc$，最终值$Vc(∞)= Vcc$，转换值$Vc(T1)=2/3Vcc$，带入过渡过程计算公式进行计算，计算公式为：</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527181954.png" alt="1591097452381"></p>
+<p>电容放电时间T2。电容放电时，时间常数$τ2=R2C$，起始值$Vc(0+)=2/3Vcc$，终值$Vc(∞)= 0$，转换值$Vc(T2)=1/3Vcc$，代入RC过渡过程计算公式进行计算，计算公式为：<br>$T2=0.7R2C$<br>电路振荡周期T，计算公式为：<br>$T=T1+T2=0.7(R1+2R2)C$<br>电路振荡频率f，计算公式为：</p>
+<p>输出波形占空比q=T1/T，即脉冲宽度与脉冲周期之比，称为占空比。计算公式为：<br>$q= T1/T=0.7(R1+R2)C/(0.7(R1+2R2)C)=( R1+R2)/( R1+2R2)$<br>用555定时器构成多谐振荡器的原理图如图1所示。</p>
+<img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527183057.png" alt="QQ截图20210527182938" style="zoom: 33%;">
+
+<h2 id="实验任务："><a href="#实验任务：" class="headerlink" title="实验任务："></a>实验任务：</h2><p>根据以上的实验电路图和原理，设计相应的电阻数据，来完成</p>
+<p>1.占空比75%，频率2Hz</p>
+<p>2.占空比50%，频率1Hz</p>
+<p>*附加：将电阻改成可变电阻，实时调整波形。</p>
+<p>注：大家应该记得我在第一节课上调的频率么？我通过一个可调电阻器，调整R1和R2的比值，可以实时的改变频率。</p>
+<h1 id="计数器"><a href="#计数器" class="headerlink" title="计数器"></a>计数器</h1><h2 id="实验原理-1"><a href="#实验原理-1" class="headerlink" title="实验原理"></a>实验原理</h2><p>74LS90逻辑电路图由四个主从JK触发器和一些附加门电路组成，可以实现二－五－十进制的计数器。</p>
+<img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527184241.png" alt="QQ截图20210527184232" style="zoom:25%;">
+
+<p>这是在multi中的74LS90仿真。</p>
+<p>对应的工作模式与相关的真值表如下</p>
+<p>H=高电平 L=低电平 x=不定</p>
+<p><img src="http://www.elecfans.com/uploads/allimg/171222/2755783-1G222113441620.png" alt="74ls90工作原理_逻辑功能表_电性参数及应用电路"></p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527184348.png" alt="2755783-1G22211345Y37"></p>
+<p>运用计数器实现分频的关键在于明白计数后产生的上升沿触发信号，触发下一个芯片。R01，R02 为复位端，由计数端控制。R91，R92 始终接地。在送复位信号时要注意信号同时到达两个复位端，复位信号传输中与、非等门电路都会延迟信号到达，所以在这个过程中门电路最好一样。当计数很大时，可以用多个741S90 分别计各个位的数。</p>
+<h2 id="实验任务：-1"><a href="#实验任务：-1" class="headerlink" title="实验任务："></a>实验任务：</h2><p>1.在Multi中用一个10Hz的方波信号发生器，运用二进制计数方式，记录原信号和计数器的信号，展示在示波器上。</p>
+<p>5.在Multi中用你的555定时器产生1Hz的方波信号发生器，运用二进制计数方式，记录原信号和计数器的信号，展示在示波器上。</p>
+<p>如图</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527185236.png" alt="QQ截图20210527185225"></p>
+<h1 id="位移寄存器："><a href="#位移寄存器：" class="headerlink" title="位移寄存器："></a>位移寄存器：</h1><h2 id="实验原理-2"><a href="#实验原理-2" class="headerlink" title="实验原理"></a>实验原理</h2><p>74 LS194逻辑符号及引脚排列</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527185632.jpg" alt="2755780-1G2220ZK31R"></p>
+<p>其中：D0～D1为并行输入端；Q0～Q3为并行输出端；SR–右移串引输入端；SL–左移串引输入端；S1、S0-操作模式控制端； -为直接无条件清零端；CP-为时钟脉冲输入端。</p>
+<p>工作模式的真值表如下：</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527185653.jpg" alt="2755780-1G222092923c7"></p>
+<p>H－高电平 </p>
+<p>L－低电平 </p>
+<p>X－任意电平 </p>
+<p>↑－低到高电平跳变</p>
+<p>　　a-d－A-D 端的稳态输入电平</p>
+<p>　　QA0-QD0－规定的稳态条件建立前QA－AD的电平</p>
+<p>　　QAn-QDn－时钟最近的↑前QA－AD的电平</p>
+<p>注：X表示任意值</p>
+<h2 id="example"><a href="#example" class="headerlink" title="example:"></a>example:</h2><p>把移位寄存器的输出反馈到它的串行输入端，就可以进行循环移位，如图3所示。设初态为$Q3Q2Q1Q0=1000$，则在CP作用下，模式设为右移，输出状态依次为：</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527190023.jpg" alt="2755780-1G222091220E2"></p>
+<h2 id="实验任务：-2"><a href="#实验任务：-2" class="headerlink" title="实验任务："></a>实验任务：</h2><p>在你的555定时器下，设置频率为2Hz，已知该芯片只有四位，设计电路将两个芯片组成八位位移寄存器，并组成环形位移。在输出加个小灯，可以让他产生流水灯的效果。</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527190439.png" alt="QQ截图20210527190434"></p>
+<p>这里是multisim的软件，回家下载自己可以玩一下</p>
+<p>链接：<a href="https://pan.baidu.com/s/1Cc2xjS9uAsRHACj91v-ljg">https://pan.baidu.com/s/1Cc2xjS9uAsRHACj91v-ljg</a><br>提取码：j9p5<br>复制这段内容后打开百度网盘手机App，操作更方便哦–来自百度网盘超级会员V4的分享</p>
+]]></content>
       <categories>
-          
-          <category> 日常小技能 </category>
-          
+        <category>lesson</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> hello </tag>
-            
-            <tag> hexo </tag>
-            
-            <tag> markdown </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>SSHKey生成</title>
-      <link href="2022/12/12/SSHKey%E7%94%9F%E6%88%90/"/>
-      <url>2022/12/12/SSHKey%E7%94%9F%E6%88%90/</url>
-      
-        <content type="html"><![CDATA[<p>SSH Key的生成步骤。</p><a id="more"></a><h1 id="生成SSH-Pub-Key"><a href="#生成SSH-Pub-Key" class="headerlink" title="生成SSH Pub Key"></a>生成SSH Pub Key</h1><p>基本参考<a href="https://www.cnblogs.com/quartz/p/12052109.html">https://www.cnblogs.com/quartz/p/12052109.html</a></p><p>先判断是否存在密钥</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~&#x2F;.ssh&#x2F;id_rsa.pub</span><br></pre></td></tr></table></figure><p>若有</p><p>则打开复制至github的SSH的剪贴板</p><p>检验方式</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
+      <tags>
+        <tag>lesson</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo建站测试-从树莓派到Windows</title>
+    <url>/2021/01/21/FirstTest/</url>
+    <content><![CDATA[<p>Hexo建站测试，一开始选择的是树莓派，但是经过一番折腾还是选择了在Windows上调试然后经过Github的自带的github.io去做。</p>
+<a id="more"></a>
+
+<h2 id="树莓派上环境搭建"><a href="#树莓派上环境搭建" class="headerlink" title="树莓派上环境搭建"></a>树莓派上环境搭建</h2><p>这边来记录一下从零开始的搭建过程<br>主要的还是基于github的github.io<br>对于会的人来说应该很快就好了，说起来确实也就几分钟的时间在敲代码上，但是花了蛮久时间研究问题的。<br>主要的步骤是这样的，先在树莓派上搭建了Node.js+Hexo的框架，然后在去找了个域名，也就是ironrao.xyz。<br>emmm说起来好像我的github的usr name还是iron-rao，不知道能不能改掉。这个”-“好麻烦。之后再看。<br>然后现在基本的框架搭好了，但是插件还没装。之后几天再研究一下。</p>
+<p>这里有个网页，之后还有好多东西要参考一下：<br>源自知乎<br><a href="https://zhuanlan.zhihu.com/p/35668237">https://zhuanlan.zhihu.com/p/35668237</a><br>orz 看了一下这个确实好厉害，这个整个的主题就和这种原来的Next的主题不一样，太厉害了orz。<br>有评论区，有目录，有水印，还有网易云的BGM。</p>
+<p>还有字数统计什么的常用工具，也可以放照片，太心动了，明天就换它看看。</p>
+<hr>
+<p>然后在晚上看了看这个界面，emmm，大红大紫的感觉不好看orz。<br>去github上找了，archer&amp;ayer&amp;catus。试了试这三个。感觉都不是自己想要的。但是我还觉得catus的风格还挺好的，就是不知道为什么在编译的时候报错了，也不知道报错怎么解决。（还截了个屏，之后放上去）。在baidu bug的时候正好遇到了这个<a href="https://www.jianshu.com/p/9f0e90cc32c2">网站</a>。<br>里面啥都有，教我怎么配置Next。还有<a href="https://io-oi.me/tech/hexo-next-optimization/">这个</a>。<br>于是乎换回了Next的theme之后再瞅瞅。</p>
+<p>然后之后找到github上的Hexo Themes的list <a href="https://github.com/hexojs/hexo/wiki/Themes">Hexo Themes</a></p>
+<p>有件很有意思的bug是啊，就是在_config.yml里第一段Site中的laguage写了en&amp;cn, 然后网页在远端的格式就崩了，在本地还是好好的orz。调回en就好了。</p>
+<p>而且在root/scaffolds的post.md文件里可以定义每次的模版，下次就不用一直写了。hexo new post name是新发布一个，就和发布说说一样。hexo new draft name就是新建个草稿，不会发出去的。</p>
+<hr>
+<h2 id="Windows上Hexo搭建"><a href="#Windows上Hexo搭建" class="headerlink" title="Windows上Hexo搭建"></a>Windows上Hexo搭建</h2><p>2021.01.21<br>来更新一下，昨天是在树莓派上搭建环境的，跟着<a href="https://zhuanlan.zhihu.com/p/108550672">这个</a>教程。然后今天想着在windows上也搭个环境，以为挺快的。好家伙，花了我三个小时。</p>
+<p>来记一下坑，<br>前面的安装就不提了，去nodejs上找一下对应版本的安装。<br>然后建个文件夹放blog的东西，之后再</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+<p>然后</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git -save</span><br></pre></td></tr></table></figure>
+<p>就遇到了这个问题orz</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*</span><br><span class="line"></span><br><span class="line">  Verion 9 of Highlight.js has reached EOL.  It will no longer</span><br><span class="line">  be supported or receive security updates in the future.</span><br><span class="line">  Please upgrade to version 10 or encourage your indirect</span><br><span class="line">  dependencies to do so.</span><br><span class="line"></span><br><span class="line">  For more info:</span><br><span class="line"></span><br><span class="line">  https://github.com/highlightjs/highlight.js/issues/2877</span><br><span class="line">  https://github.com/highlightjs/highlight.js/blob/master/VERSION_10_UPGRADE.md</span><br><span class="line"></span><br><span class="line">-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*</span><br><span class="line">+ hexo-deployer-git@2.1.0</span><br></pre></td></tr></table></figure>
+<p>说的是这个Highlight不支持V9版本了，叫我升级。然后我研究了半天它给的链接。发现没啥用，只能手动升级。最后还是打算先放着，试试再说。</p>
+<p>然后</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git init &amp;&amp; git remote add origin https://github.com/xxx/xxx.github.io.git</span><br></pre></td></tr></table></figure>
+<p>改了改_config.yml的文件，然后测了下，通了。<br>这个报错也emmmmm，太迷惑了。</p>
+<p>之后就打算写了两个脚本一键刷新和部署。<br>然后发现windows的cmd不可以直接<code>hexo </code>操作……<br>然后改用bat文件打开git bash，去用git bash 操作一下，</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line"><span class="comment">@REM Publish.bat</span></span><br><span class="line"><span class="built_in">start</span> C:\&quot;Program Files&quot;\Git\git-bash.exe -c &quot;hexo clean &amp;&amp; hexo g &amp;&amp; cp CNAME public &amp;&amp; hexo d&quot;</span><br></pre></td></tr></table></figure>
+<p>还想尝试一下坚果云能不能同步，发现不太行。因为坚果云的文件夹是中文的，它找不到这个文件夹。而且换成英文的话，它是xxx xxx的形式，中间的空格会被识别错误orz。（之前在ROS的时候也遇到过）。<br>所以还是换Github或者Gitee同步一下叭。</p>
+<hr>
+<h2 id="源文件备份"><a href="#源文件备份" class="headerlink" title="源文件备份"></a>源文件备份</h2><p>之后用了<a href="https://github.com/coneycode/hexo-git-backup">hexo-git-backup</a> 的插件git备份了源码，方便在笔记本上也可以调试。</p>
+<p>然后设置了下面的备份设置</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">backup:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">theme:</span> <span class="string">next</span></span><br><span class="line">  <span class="attr">message:</span> <span class="string">Back</span> <span class="string">up</span> </span><br><span class="line">  <span class="attr">repository:</span></span><br><span class="line">    <span class="attr">github:</span> <span class="string">git@github.com:iron-rao/iron-rao.github.io.git,backup</span></span><br><span class="line">    <span class="attr">gitee:</span> <span class="string">git@gitee.com:iron-rao/hexo.git,master</span></span><br></pre></td></tr></table></figure>
+<p>发现了以下的报错</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fatal: &#39;gitee&#39; does not appear to be a git repository</span><br><span class="line">fatal: Could not read from remote repository.</span><br></pre></td></tr></table></figure>
+<p>很迷惑，查了半天好像是<code>git remote</code>的问题，吃了不熟练git的亏。<br>调试了半天发现以下的仓库链接是对的。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git remote -v</span><br><span class="line">backup  git@github.com:iron-rao&#x2F;iron-rao.github.io.git (fetch)</span><br><span class="line">backup  git@github.com:iron-rao&#x2F;iron-rao.github.io.git (push)</span><br><span class="line">gitee   git@gitee.com:iron-rao&#x2F;hexo.git (fetch)</span><br><span class="line">gitee   git@gitee.com:iron-rao&#x2F;hexo.git (push)</span><br><span class="line">github  git@github.com:iron-rao&#x2F;iron-rao.github.io.git (fetch)</span><br><span class="line">github  git@github.com:iron-rao&#x2F;iron-rao.github.io.git (push)</span><br><span class="line">master  git@gitee.com:iron-rao&#x2F;hexo.git (fetch)</span><br><span class="line">master  git@gitee.com:iron-rao&#x2F;hexo.git (push)</span><br><span class="line">origin  git@github.com:ironrao&#x2F;iron-rao.github.io.git (fetch)</span><br><span class="line">origin  git@github.com:ironrao&#x2F;iron-rao.github.io.git (push)</span><br></pre></td></tr></table></figure>
+<p>只要</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git remote add repository_第x行冒号前的 第x行冒号后的</span><br><span class="line">git remote add 第x行的分支名 第x行冒号后的</span><br></pre></td></tr></table></figure>
+<p>对我来说就是</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git remote add github git@github.com:iron-rao&#x2F;iron-rao.github.io.git</span><br><span class="line">git remote add backup git@github.com:iron-rao&#x2F;iron-rao.github.io.git</span><br><span class="line">git remote add gitee git@gitee.com:iron-rao&#x2F;hexo.git</span><br><span class="line">git remote add master git@gitee.com:iron-rao&#x2F;hexo.git</span><br></pre></td></tr></table></figure>
+<p>这样就行。原来还有个origin那个是用来给<code>hexo d</code>推送部署的。之前也踩过坑了。<br>然后就可以愉快的用Typora写markdown了。</p>
+<p>2022.12.13更新</p>
+<p>不知道为什么gitee的back up不能用了，现在改了一些内容</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git remote -v</span><br><span class="line">backup  git@github.com:ironrao&#x2F;IronRaoHouseBackup.git (fetch)</span><br><span class="line">backup  git@github.com:ironrao&#x2F;IronRaoHouseBackup.git (push)</span><br><span class="line">gitee   git@github.com:ironrao&#x2F;IronRaoHouseBackup.git (fetch)</span><br><span class="line">gitee   git@github.com:ironrao&#x2F;IronRaoHouseBackup.git (push)</span><br><span class="line">github  git@github.com:iron-rao&#x2F;iron-rao.github.io.git (fetch)</span><br><span class="line">github  git@github.com:iron-rao&#x2F;iron-rao.github.io.git (push)</span><br><span class="line">master  git@gitee.com:iron-rao&#x2F;hexo.git (fetch)</span><br><span class="line">master  git@gitee.com:iron-rao&#x2F;hexo.git (push)</span><br><span class="line">origin  git@gitee.com:ironrao&#x2F;hexo.git (fetch)</span><br><span class="line">origin  git@gitee.com:ironrao&#x2F;hexo.git (push)</span><br></pre></td></tr></table></figure>
+<p>换了个github的备份地址</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">backup:</span><br><span class="line">  type: git</span><br><span class="line">  theme: next</span><br><span class="line">  message: Back up </span><br><span class="line">  repository:</span><br><span class="line">    # github: git@github.com:iron-rao&#x2F;iron-rao.github.io.git,backup</span><br><span class="line">    # gitee: git@gitee.com:ironrao&#x2F;hexo.git,master</span><br><span class="line">    backup: git@github.com:ironrao&#x2F;IronRaoHouseBackup.git,master</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>web 树莓派</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在Centos6上安装Vscode</title>
+    <url>/2022/12/12/InstallVScodeOnCentos6/</url>
+    <content><![CDATA[<p>在EDA的虚拟机上安装VScode是一件比较痛苦的事情，但是还是成功了。</p>
+<a id="more"></a>
+
+<h1 id="在Centos6上安装VScode"><a href="#在Centos6上安装VScode" class="headerlink" title="在Centos6上安装VScode"></a>在Centos6上安装VScode</h1><p>EDA的虚拟机环境现在基本上都是Centos6的环境，受限于很多的EDA软件的环境，只能使用centos6.但是发现没有办法在Centos6上面安装环境，找了一些资料以后最后还是成功了。</p>
+<p>参考</p>
+<p><a href="https://zhuanlan.zhihu.com/p/57538168">https://zhuanlan.zhihu.com/p/57538168</a></p>
+<p><a href="https://qiita.com/y-tksk/items/ad2348bff2c768cf1d1d">https://qiita.com/y-tksk/items/ad2348bff2c768cf1d1d</a></p>
+<h2 id="下载VScode"><a href="#下载VScode" class="headerlink" title="下载VScode"></a>下载VScode</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;update.code.visualstudio.com&#x2F;1.23.1&#x2F;linux-x64&#x2F;stable</span><br><span class="line">mv VScode VScode.tar.gz</span><br><span class="line">tar -zxvf VScode.tar.gz</span><br><span class="line">cd VSCode-linux-x64</span><br><span class="line">.&#x2F;code</span><br></pre></td></tr></table></figure>
+<p>这时候会显示</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/image-20221212230133903.png" alt="image-20221212230133903"></p>
+<h2 id="更新libstdc"><a href="#更新libstdc" class="headerlink" title="更新libstdc++"></a>更新<strong>libstdc++</strong></h2><p>先提升到root权限</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum install gmp-devel mpfr-devel libmpc-devel</span><br></pre></td></tr></table></figure>
+<p>然后下载gcc</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">wget http://ftp.tsukuba.wide.ad.jp/software/gcc/releases/gcc-4.9.4/gcc-4.9.4.tar.gz</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd gcc-4.9.4</span><br><span class="line">mkdir build</span><br><span class="line">cd build</span><br><span class="line">..&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;gcc-4.9.4&#x2F; --enable-checking&#x3D;release --enable-languages&#x3D;c,c++ --disable-multilib</span><br><span class="line">make -j20</span><br></pre></td></tr></table></figure>
+<p>然后经过很长很长时间的等待编译过程</p>
+<p>在build文件夹下</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cp x86_64-unknown-linux-gnu&#x2F;libstdc++-v3&#x2F;src&#x2F;.libs&#x2F;libstdc++.so.6.0.20 &#x2F;usr&#x2F;lib64</span><br><span class="line">cd &#x2F;usr&#x2F;lib64</span><br><span class="line">mv libstdc++.so.6 libstdc++.so.6.bak</span><br><span class="line">ln -s libstdc++.so.6.0.20 libstdc++.so.6</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="更新GLIB"><a href="#更新GLIB" class="headerlink" title="更新GLIB"></a>更新<strong>GLIB</strong></h2><p>依赖库安装</p>
+<p>在root下安装</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">yum install libffi.x86_64 #一般不行</span><br><span class="line">wget https://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.15.tar.gz --no-check-certificate</span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line">export LIBFFI_CFLAGS=-I/usr/local/lib/libffi-3.2.1/include</span><br><span class="line">export LIBFFI_LIBS=&quot;-L/usr/local/lib -lffi&quot;</span><br></pre></td></tr></table></figure>
+
+
+<p>下载GLIB</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget http:&#x2F;&#x2F;ftp.gnome.org&#x2F;pub&#x2F;GNOME&#x2F;sources&#x2F;glib&#x2F;2.32&#x2F;glib-2.32.4.tar.xz --no-check-certificate</span><br><span class="line">tar -xf glib-2.32.4.tar.xz</span><br><span class="line">cd glib-2.32.4</span><br><span class="line">.&#x2F;configure --with-libiconv</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+<p>最后更新动态链接库</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">echo &quot;&#x2F;usr&#x2F;local&#x2F;lib&quot; &gt;&gt; &#x2F;etc&#x2F;ld.so.conf</span><br><span class="line">&#x2F;sbin&#x2F;ldconfig</span><br></pre></td></tr></table></figure>
+<h2 id="添加环境变量"><a href="#添加环境变量" class="headerlink" title="添加环境变量"></a>添加环境变量</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mv VSCode-linux-x64 &#x2F;usr&#x2F;local&#x2F;</span><br><span class="line">ln -s &#x2F;usr&#x2F;local&#x2F;VSCode-linux-x64&#x2F;code &#x2F;usr&#x2F;local&#x2F;bin&#x2F;code</span><br></pre></td></tr></table></figure>
+<p>就完成了！</p>
+]]></content>
       <categories>
-          
-          <category> 日常 </category>
-          
+        <category>日常小技能</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> hello </tag>
-            
-            <tag> hexo </tag>
-            
-            <tag> markdown </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>shiftregister</title>
-      <link href="2021/06/03/shiftregister/"/>
-      <url>2021/06/03/shiftregister/</url>
-      
-        <content type="html"><![CDATA[<p>关于华二数字集成电路课的一些课件—–位移寄存器简介和相关实验</p><a id="more"></a><h1 id="位移寄存器："><a href="#位移寄存器：" class="headerlink" title="位移寄存器："></a>位移寄存器：</h1><h2 id="实验原理"><a href="#实验原理" class="headerlink" title="实验原理"></a>实验原理</h2><p>74 LS194逻辑符号及引脚排列</p><p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527185632.jpg" alt="2755780-1G2220ZK31R"></p><p>其中：D0～D1为并行输入端；Q0～Q3为并行输出端；SR–右移串引输入端；SL–左移串引输入端；S1、S0-操作模式控制端； -为直接无条件清零端；CP-为时钟脉冲输入端。</p><p>工作模式的真值表如下：</p><p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527185653.jpg" alt="2755780-1G222092923c7"></p><p>H－高电平 </p><p>L－低电平 </p><p>X－任意电平 </p><p>↑－低到高电平跳变</p><p>　　a-d－A-D 端的稳态输入电平</p><p>　　QA0-QD0－规定的稳态条件建立前QA－AD的电平</p><p>　　QAn-QDn－时钟最近的↑前QA－AD的电平</p><p>注：X表示任意值</p><h2 id="example"><a href="#example" class="headerlink" title="example:"></a>example:</h2><p>把移位寄存器的输出反馈到它的串行输入端，就可以进行循环移位，如图3所示。设初态为$Q3Q2Q1Q0=1000$，则在CP作用下，模式设为右移，输出状态依次为：</p><p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527190023.jpg" alt="2755780-1G222091220E2"></p><p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/QQ%E6%88%AA%E5%9B%BE20210603211752.png" alt="QQ截图20210603211752"></p><h2 id="实验任务："><a href="#实验任务：" class="headerlink" title="实验任务："></a>实验任务：</h2><p>在你的555定时器下，设置频率为2Hz，已知该芯片只有四位，设计电路将两个芯片组成八位位移寄存器，并组成环形位移。在输出加个小灯，可以让他产生流水灯的效果。</p><p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527190439.png" alt="QQ截图20210527190434"></p><p>解答：</p><p>电路如图2所示，将芯片（1）的Q3）接至芯片（2）的SR，将芯片（2）的Q4接至芯片（1）的SL，即可构成8位的移位寄存器。</p><p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/2755780-1G222091124a7.jpg" alt="2755780-1G222091124a7"></p><p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/QQ%E6%88%AA%E5%9B%BE20210603213047.png" alt="QQ截图20210603213047"></p><h1 id="final-project"><a href="#final-project" class="headerlink" title="final project"></a>final project</h1><p>根据上面的example，可以通过简单的复制和改变每一个A，B，C，D的输入，设计4*4的led点阵的输入。</p><p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/QQ%E6%88%AA%E5%9B%BE20210603212710.png" alt="QQ截图20210603212710"></p>]]></content>
-      
-      
+      <tags>
+        <tag>hello</tag>
+        <tag>hexo</tag>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Pelican</title>
+    <url>/2021/01/24/Pelican/</url>
+    <content><![CDATA[<p>用Python Pelican 建站的一些尝试。</p>
+<a id="more"></a>
+
+<h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><p>首先找到<a href="https://pelican-cn.readthedocs.io/zh_CN/latest/quickstart.html">官方文档</a></p>
+<p>然后还有个指导性的<a href="https://linux.cn/article-10471-1.html">文件</a></p>
+<p>这边先尝试用conda新建个环境，以免出bug然后炸了环境orz。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create -n Pelican python=3.6</span><br></pre></td></tr></table></figure>
+<p>等环境安装好了之后再激活</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">conda activate Pelican</span><br></pre></td></tr></table></figure>
+<p>之后</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install pelican markdown</span><br></pre></td></tr></table></figure>
+<p>然后在你的项目文件夹里，我的是 <code>D:\Pelican</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">(Pelican) D:\Pelican&gt;pelican-quickstart</span><br><span class="line">Welcome to pelican-quickstart v4.5.4.</span><br><span class="line"></span><br><span class="line">This script will <span class="built_in">help</span> you create a new Pelican-based website.</span><br><span class="line"></span><br><span class="line">Please answer the following questions so this script can generate the files</span><br><span class="line">needed by Pelican.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&gt; Where <span class="keyword">do</span> you want to create your new web site? [.] iGEM Wiki</span><br><span class="line">&gt; What will be the title of this web site? iGEM</span><br><span class="line">&gt; Who will be the author of this web site? IronRao</span><br><span class="line">&gt; What will be the default language of this web site? [Chinese (Simplified)]</span><br><span class="line">&gt; Do you want to specify a URL prefix? e.g., https://example.com   (Y/n) n</span><br><span class="line">&gt; Do you want to <span class="built_in">enable</span> article pagination? (Y/n)</span><br><span class="line">&gt; How many articles per page <span class="keyword">do</span> you want? [10] 10</span><br><span class="line">&gt; What is your time zone? [Europe/Paris]</span><br><span class="line">&gt; Do you want to generate a tasks.py/Makefile to automate generation and publishing? (Y/n) Y</span><br><span class="line">&gt; Do you want to upload your website using FTP? (y/N)</span><br><span class="line">&gt; Do you want to upload your website using SSH? (y/N)</span><br><span class="line">&gt; Do you want to upload your website using Dropbox? (y/N)</span><br><span class="line">&gt; Do you want to upload your website using S3? (y/N)</span><br><span class="line">&gt; Do you want to upload your website using Rackspace Cloud Files? (y/N)</span><br><span class="line">&gt; Do you want to upload your website using GitHub Pages? (y/N)</span><br><span class="line">Done. Your new project is available at D:\Pelican\iGEM Wiki</span><br></pre></td></tr></table></figure>
+<p>进入 <code>D:\Pelican\iGEM Wiki</code> </p>
+<p>看到有</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210124203243.png" alt="QQ截图20210124203218"></p>
+<p><code>cd D:\Pelican\iGEM Wiki\content</code></p>
+<p>新建一个markdown文件叫test.md</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">Title: My super title</span><br><span class="line">Date: 2010-12-03 10:20</span><br><span class="line">Category: Python</span><br><span class="line">Tags: pelican, publishing</span><br><span class="line">Slug: my-super-post</span><br><span class="line">Author: Alexis Metaireau</span><br><span class="line">Summary: Short version for index and feeds</span><br><span class="line"></span><br><span class="line">This is the content of my super blog post.</span><br></pre></td></tr></table></figure>
+<p>然后在<code>D:\Pelican\iGEM Wiki</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(Pelican) D:\Pelican\iGEM Wiki&gt;pelican content</span><br><span class="line">WARNING: Docutils has no localization for &#39;chinese (simplified)&#39;. Using &#39;en&#39; instead.</span><br><span class="line">WARNING: Watched path does not exist: D:\Pelican\iGEM Wiki\content\images</span><br><span class="line">Done: Processed 1 article, 0 drafts, 0 pages, 0 hidden pages and 0 draft pages in 0.36 seconds.</span><br></pre></td></tr></table></figure>
+<p>这就说明已经有输出了，在<code>output</code>里。</p>
+<p>对于我是python3对应的语法，启动http sever是</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(Pelican) D:\Pelican\iGEM Wiki\output&gt;python -m http.server</span><br><span class="line">Serving HTTP on 0.0.0.0 port 8000 (http:&#x2F;&#x2F;0.0.0.0:8000&#x2F;) ...</span><br></pre></td></tr></table></figure>
+<p>可以看到有东西了，在<code>http://localhost:8000/</code></p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210124203843.png" alt="QQ截图20210124203834"></p>
+]]></content>
       <categories>
-          
-          <category> lesson </category>
-          
+        <category>web</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> lesson </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>555timer</title>
-      <link href="2021/06/03/555timer/"/>
-      <url>2021/06/03/555timer/</url>
-      
-        <content type="html"><![CDATA[<p>关于华二数字集成电路课的一些课件—–555定时器简介和相关实验</p><a id="more"></a><h1 id="555"><a href="#555" class="headerlink" title="555"></a>555</h1><h2 id="实验原理"><a href="#实验原理" class="headerlink" title="实验原理"></a>实验原理</h2><p>555时基电路是一种将模拟功能与逻辑功能巧妙结合在同一硅片上的组合集成电路。555定时器构成的多谐振荡器能自行产生矩形脉冲的输出，是脉冲产生（形成）电路，它是一种无稳电路。</p><p>多谐振荡器电路组成</p><p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/QQ%E6%88%AA%E5%9B%BE20210603223614.png" alt="QQ截图20210603223604"></p><p>在电路接通电源的瞬间，由于电容C来不及充电，电容电压$Vc=0V$，所以555定时器的输出状态为1，输出Vo为高电平。同时，集电极输出端对地断开，电源Vcc对电容C充电，电路进入暂稳态I。</p><p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/QQ%E6%88%AA%E5%9B%BE20210603223604.png" alt="QQ截图20210603223614"></p><p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/QQ%E6%88%AA%E5%9B%BE20210603223619.png" alt="QQ截图20210603223619"></p><p>当电容电压Vc充到2/3Vcc时，输出Vo为低电平，同时集电极输出对地短路，电容电压随之通过集电极输出端放电，电路进入暂稳态II。<br>此后，电路周而复始地产生周期性的输出脉冲。</p><p>电容充电时间T1。电容充电时，时间常数τ1=(R1+R2)C，起始值$Vc(0+)=1/3Vcc$，最终值$Vc(∞)= Vcc$，转换值$Vc(T1)=2/3Vcc$，带入过渡过程计算公式进行计算，计算公式为：</p><p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527181954.png" alt="1591097452381"></p><p>电容放电时间T2。电容放电时，时间常数$τ2=R2C$，起始值$Vc(0+)=2/3Vcc$，终值$Vc(∞)= 0$，转换值$Vc(T2)=1/3Vcc$，代入RC过渡过程计算公式进行计算，计算公式为：<br>$T2=0.7R2C$<br>电路振荡周期T，计算公式为：<br>$T=T1+T2=0.7(R1+2R2)C$<br>电路振荡频率f，计算公式为：</p><p>输出波形占空比q=T1/T，即脉冲宽度与脉冲周期之比，称为占空比。计算公式为：<br>$q= T1/T=0.7(R1+R2)C/(0.7(R1+2R2)C)=( R1+R2)/( R1+2R2)$<br>用555定时器构成多谐振荡器的原理图如图1所示。</p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527183057.png" alt="QQ截图20210527182938" style="zoom: 33%;" /><h2 id="实验任务："><a href="#实验任务：" class="headerlink" title="实验任务："></a>实验任务：</h2><p>根据以上的实验电路图和原理，设计相应的电阻数据，来完成</p><p>1.占空比75%，频率2Hz</p><p>2.占空比50%，频率1Hz</p><p>*附加：将电阻改成可变电阻，实时调整波形。</p><p>注：大家应该记得我在第一节课上调的频率么？我通过一个可调电阻器，调整R1和R2的比值，可以实时的改变频率。</p><h1 id="计数器"><a href="#计数器" class="headerlink" title="计数器"></a>计数器</h1><h2 id="实验原理-1"><a href="#实验原理-1" class="headerlink" title="实验原理"></a>实验原理</h2><p>74LS90逻辑电路图由四个主从JK触发器和一些附加门电路组成，可以实现二－五－十进制的计数器。</p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527184241.png" alt="QQ截图20210527184232" style="zoom:25%;" /><p>这是在multi中的74LS90仿真。</p><p>对应的工作模式与相关的真值表如下</p><p>H=高电平 L=低电平 x=不定</p><p><img src="http://www.elecfans.com/uploads/allimg/171222/2755783-1G222113441620.png" alt="74ls90工作原理_逻辑功能表_电性参数及应用电路"></p><p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527184348.png" alt="2755783-1G22211345Y37"></p><p>运用计数器实现分频的关键在于明白计数后产生的上升沿触发信号，触发下一个芯片。R01，R02 为复位端，由计数端控制。R91，R92 始终接地。在送复位信号时要注意信号同时到达两个复位端，复位信号传输中与、非等门电路都会延迟信号到达，所以在这个过程中门电路最好一样。当计数很大时，可以用多个741S90 分别计各个位的数。</p><h2 id="实验任务：-1"><a href="#实验任务：-1" class="headerlink" title="实验任务："></a>实验任务：</h2><p>1.在Multi中用一个10Hz的方波信号发生器，运用二进制计数方式，记录原信号和计数器的信号，展示在示波器上。</p><p>5.在Multi中用你的555定时器产生1Hz的方波信号发生器，运用二进制计数方式，记录原信号和计数器的信号，展示在示波器上。</p><p>如图</p><p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527185236.png" alt="QQ截图20210527185225"></p><h1 id="位移寄存器："><a href="#位移寄存器：" class="headerlink" title="位移寄存器："></a>位移寄存器：</h1><h2 id="实验原理-2"><a href="#实验原理-2" class="headerlink" title="实验原理"></a>实验原理</h2><p>74 LS194逻辑符号及引脚排列</p><p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527185632.jpg" alt="2755780-1G2220ZK31R"></p><p>其中：D0～D1为并行输入端；Q0～Q3为并行输出端；SR–右移串引输入端；SL–左移串引输入端；S1、S0-操作模式控制端； -为直接无条件清零端；CP-为时钟脉冲输入端。</p><p>工作模式的真值表如下：</p><p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527185653.jpg" alt="2755780-1G222092923c7"></p><p>H－高电平 </p><p>L－低电平 </p><p>X－任意电平 </p><p>↑－低到高电平跳变</p><p>　　a-d－A-D 端的稳态输入电平</p><p>　　QA0-QD0－规定的稳态条件建立前QA－AD的电平</p><p>　　QAn-QDn－时钟最近的↑前QA－AD的电平</p><p>注：X表示任意值</p><h2 id="example"><a href="#example" class="headerlink" title="example:"></a>example:</h2><p>把移位寄存器的输出反馈到它的串行输入端，就可以进行循环移位，如图3所示。设初态为$Q3Q2Q1Q0=1000$，则在CP作用下，模式设为右移，输出状态依次为：</p><p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527190023.jpg" alt="2755780-1G222091220E2"></p><h2 id="实验任务：-2"><a href="#实验任务：-2" class="headerlink" title="实验任务："></a>实验任务：</h2><p>在你的555定时器下，设置频率为2Hz，已知该芯片只有四位，设计电路将两个芯片组成八位位移寄存器，并组成环形位移。在输出加个小灯，可以让他产生流水灯的效果。</p><p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527190439.png" alt="QQ截图20210527190434"></p><p>这里是multisim的软件，回家下载自己可以玩一下</p><p>链接：<a href="https://pan.baidu.com/s/1Cc2xjS9uAsRHACj91v-ljg">https://pan.baidu.com/s/1Cc2xjS9uAsRHACj91v-ljg</a><br>提取码：j9p5<br>复制这段内容后打开百度网盘手机App，操作更方便哦–来自百度网盘超级会员V4的分享</p>]]></content>
-      
-      
+      <tags>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>RasberryPi4BTest</title>
+    <url>/2021/01/22/RasberryPi4BTest/</url>
+    <content><![CDATA[<p>最近想着怎么用树莓派和STM32做通信，尝试能不能烧写或者读取STM32的数据。就先试试树莓派的GPIO。</p>
+<a id="more"></a>
+
+
+
+<h1 id="树莓派的简单测试"><a href="#树莓派的简单测试" class="headerlink" title="树莓派的简单测试"></a>树莓派的简单测试</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近想着怎么用树莓派和STM32做通信，尝试能不能烧写或者读取STM32的数据。就先试试树莓派的GPIO。</p>
+<h2 id="点亮个LED"><a href="#点亮个LED" class="headerlink" title="点亮个LED"></a>点亮个LED</h2><p>网上找了下树莓派的官方文档，<a href="https://www.raspberrypi.org/documentation/usage/gpio/">关于GPIO</a></p>
+<p>然后手头没有LED orz，就找了个Arduino的输入，反正有电了就会亮。</p>
+<p>Pi GND  -&gt;Arduino GND<br>Pi Pin21-&gt;Arduino 5V</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122201858.JPG" alt="IMG_7122"></p>
+<p>官方给的介绍里写了关于树莓派的GPIO的引脚设置，用<code>pinout</code>就可以看。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pi@raspberrypi:~ $ pinout</span><br><span class="line">,--------------------------------.</span><br><span class="line">| oooooooooooooooooooo J8   +======</span><br><span class="line">| 1ooooooooooooooooooo  PoE |   Net</span><br><span class="line">|  Wi                    oo +======</span><br><span class="line">|  Fi  Pi Model 4B  V1.1 oo      |</span><br><span class="line">|        ,----.               +====</span><br><span class="line">| |D|    |SoC |               |USB3</span><br><span class="line">| |S|    |    |               +====</span><br><span class="line">| |I|    `----<span class="string">&#x27;                  |</span></span><br><span class="line"><span class="string">|                   |C|       +====</span></span><br><span class="line"><span class="string">|                   |S|       |USB2</span></span><br><span class="line"><span class="string">| pwr   |HD|   |HD| |I||A|    +====</span></span><br><span class="line"><span class="string">`-| |---|MI|---|MI|----|V|-------&#x27;</span></span><br><span class="line"></span><br><span class="line">Revision           : a03111</span><br><span class="line">SoC                : BCM2711</span><br><span class="line">RAM                : 1024Mb</span><br><span class="line">Storage            : MicroSD</span><br><span class="line">USB ports          : 4 (excluding power)</span><br><span class="line">Ethernet ports     : 1</span><br><span class="line">Wi-fi              : True</span><br><span class="line">Bluetooth          : True</span><br><span class="line">Camera ports (CSI) : 1</span><br><span class="line">Display ports (DSI): 1</span><br><span class="line"></span><br><span class="line">J8:</span><br><span class="line">   3V3  (1) (2)  5V</span><br><span class="line"> GPIO2  (3) (4)  5V</span><br><span class="line"> GPIO3  (5) (6)  GND</span><br><span class="line"> GPIO4  (7) (8)  GPIO14</span><br><span class="line">   GND  (9) (10) GPIO15</span><br><span class="line">GPIO17 (11) (12) GPIO18</span><br><span class="line">GPIO27 (13) (14) GND</span><br><span class="line">GPIO22 (15) (16) GPIO23</span><br><span class="line">   3V3 (17) (18) GPIO24</span><br><span class="line">GPIO10 (19) (20) GND</span><br><span class="line"> GPIO9 (21) (22) GPIO25</span><br><span class="line">GPIO11 (23) (24) GPIO8</span><br><span class="line">   GND (25) (26) GPIO7</span><br><span class="line"> GPIO0 (27) (28) GPIO1</span><br><span class="line"> GPIO5 (29) (30) GND</span><br><span class="line"> GPIO6 (31) (32) GPIO12</span><br><span class="line">GPIO13 (33) (34) GND</span><br><span class="line">GPIO19 (35) (36) GPIO16</span><br><span class="line">GPIO26 (37) (38) GPIO20</span><br><span class="line">   GND (39) (40) GPIO21</span><br><span class="line"></span><br><span class="line">For further information, please refer to https://pinout.xyz/</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>之后用python创建脚本</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> RPi.GPIO <span class="keyword">as</span> GPIO            <span class="comment">#导入树莓派提供的python模块</span></span><br><span class="line">GPIO.setmode(GPIO.BCM)        <span class="comment">#设置GPIO模式，BCM模式在所有数码派通用</span></span><br><span class="line">GPIO.setup(<span class="number">21</span>, GPIO.OUT)       <span class="comment">#设置GPIO21为电流输出</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> 然后run一下，<code>python3 Raspi-LED.py</code> 就可以了。  </p>
+]]></content>
       <categories>
-          
-          <category> lesson </category>
-          
+        <category>RasberryPi</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> lesson </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>RasberryPiRemotePrinter</title>
-      <link href="2021/03/04/RasberryPiRemotePrinter/"/>
-      <url>2021/03/04/RasberryPiRemotePrinter/</url>
-      
-        <content type="html"><![CDATA[<p>通过配置树莓派在局域网内实现无线打印。</p><a id="more"></a><h1 id="树莓派实现局域网远程打印"><a href="#树莓派实现局域网远程打印" class="headerlink" title="树莓派实现局域网远程打印"></a>树莓派实现局域网远程打印</h1><h2 id="树莓派配置篇"><a href="#树莓派配置篇" class="headerlink" title="树莓派配置篇"></a>树莓派配置篇</h2><p>1.升级树莓派当前树莓派软件依赖包执行命令如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure><p>2.所有软件依赖包升级完成后，安装CUPS打印机管理软件，执行如下命令：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install cups</span><br></pre></td></tr></table></figure><p>3.安装CUPS打印机管理软件后，需要将树莓派用户加入到CUPS的 lpadmin group中，执行命令如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo usermod -a -G lpadmin pi</span><br></pre></td></tr></table></figure><p>4.输入命令使得CUPS可以被整个局域网中的所有联网设备访问，输入命令后重启CUPS服务，输入命令如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo cupsctl --remote-any</span><br><span class="line"></span><br><span class="line">sudo &#x2F;etc&#x2F;init.d&#x2F;cups restart</span><br></pre></td></tr></table></figure><p>5.将打印机USB数据线插入到树莓派，通过VNC或通过显示器访问树莓派GUI界面，进入界面后双击打开浏览器输入127.0.0.1:631访问CUPS的web控制界面（CUPS默认端口号为631），登陆成功后的界面如下图所示：</p><p>我这里是直接在同一局域网下用树莓派的IP地址访问的。</p><p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210304212518.png" alt="QQ截图20210304212432"></p><p>6.进入到配置界面后开始添加打印机设备并添加打印机在linux下的驱动，首先点击页面中Adding Printers and Classes来添加设备。</p><p>7.点进去之后选择Add Printer来添加一个打印机设备</p><p>8.进入到Add Printer选择当前打印机型号</p><p>9.点击Continue进入到下一个配置界面，可以修改打印机名称、描述及所在所位置，一定要选择<strong>Share This Printer</strong>实现打印机的共享</p><p>10.继续点击Continue进行下一步添加打印机驱动配置，在make中选择打印机制造商，一般是识别到设备后打印机设备会在第一行显示。如果没有对应的型号，那么参考这篇<a href="https://zhuanlan.zhihu.com/p/105849101">知乎教程</a>。<br>11.之后点击Add Printer完成对打印机的配置并进入General界面，该界面可以对打印纸张尺寸等参数进行配置，一般保持默认即可，因此点击Set Default Option完成整个CUPS配置。<br>12.配置CUPS后开始配置树莓派打印机服务器程序，我们通过安装配置SAMBA 服务器来实现打印机服务器。首先安装SAMBA 软件，执行命令如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install samba</span><br></pre></td></tr></table></figure><p>13.安装完成后输入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;samba&#x2F;smb.conf</span><br></pre></td></tr></table></figure><p>进入config文件来配置SAMBA 服务器，在文件末尾加入如下内容：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"># CUPS printing.</span><br><span class="line"></span><br><span class="line">[printers]</span><br><span class="line"></span><br><span class="line">comment = All Printers</span><br><span class="line"></span><br><span class="line">browseable = no</span><br><span class="line"></span><br><span class="line">path = /var/spool/samba</span><br><span class="line"></span><br><span class="line">printable = yes</span><br><span class="line"></span><br><span class="line">guest ok = yes</span><br><span class="line"></span><br><span class="line">read only = yes</span><br><span class="line"></span><br><span class="line">create mask = 0700</span><br><span class="line"></span><br><span class="line"># Windows clients look for this share name as a source of downloadable</span><br><span class="line"></span><br><span class="line"># printer drivers</span><br><span class="line"></span><br><span class="line">[print$]</span><br><span class="line"></span><br><span class="line">comment = Printer Drivers</span><br><span class="line"></span><br><span class="line">path = /var/lib/samba/printers</span><br><span class="line"></span><br><span class="line">browseable = yes</span><br><span class="line"></span><br><span class="line">read only = no</span><br><span class="line"></span><br><span class="line">guest ok = no</span><br></pre></td></tr></table></figure><p>加入后输入Ctrl+X 再输入Y 并且回车 Enter确认<br>14. 配置完成SAMBA 服务后执行重启命令：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo &#x2F;etc&#x2F;init.d&#x2F;samba restart</span><br></pre></td></tr></table></figure><p>在这步命令的时候可能找不到samba这个文件，这个时候就需要</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;etc&#x2F;init.d&#x2F;</span><br></pre></td></tr></table></figure><p>然后找一下和samba很像的一个文件，</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo &#x2F;etc&#x2F;init.d&#x2F;那个文件名 restart</span><br></pre></td></tr></table></figure><p>之后就配置完了。</p><h2 id="Windows配置篇"><a href="#Windows配置篇" class="headerlink" title="Windows配置篇"></a>Windows配置篇</h2><p>然后我们在Windows里找到，</p><p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210304213216.png" alt="QQ截图20210304213151"></p><p>选择添加打印机</p><p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210304213247.png" alt="QQ截图20210304213230"></p><p>可以看到个叫 blabla @ raspberrypi 的设备，那个就是你刚刚配置的打印机。</p><p>添加它就可以了，之后就可以在打印的时候选择相应的打印机来打印了。</p>]]></content>
-      
-      
+      <tags>
+        <tag>RasberryPi</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图床配置(picGo+Typora+AliyunOSS)</title>
+    <url>/2021/01/22/PicGo-Typora-AliyunOSS/</url>
+    <content><![CDATA[<p>主要折腾这个是因为在github上部署图片会导致文件内容过多然后更新部署的太慢了。<br>所以采用了图片和文档分离的做法。</p>
+<p>先用了picGo + gitee 然后发现有问题，而且一点也不方便。后来就用了OSS。</p>
+<a id="more"></a>
+
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>主要折腾这个是因为在github上部署图片会导致文件内容过多然后更新部署的太慢了。<br>所以采用了图片和文档分离的做法。</p>
+<h2 id="picGo-Gitee"><a href="#picGo-Gitee" class="headerlink" title="picGo + Gitee"></a>picGo + Gitee</h2><p>这个主要是参考的知乎上<a href="https://zhuanlan.zhihu.com/p/344257987">Typora 配置PicGo使用Gitee图床创作设置</a>， 然后确实在最后的时候是可以通过Typroa的上传测试，但是在图片上云之后不知道为什么就显示不出来。<br>而且把链接输进浏览器里也是可以使用的。<br>emmm<br>然后看CSDN上<a href="https://www.cnblogs.com/AhuntSun-blog/p/12675620.html">使用Gitee搭建个人图床</a>说可以用Gitee的page来访问，试了一下，确实是可以的。<br>但是！！<br>==每次部署之后，都相当于永远定格在了部署那一刻的仓库状态；如果仓库发生变化，比如添加文件，或删除文件，部署出来的内容都不会改变。相当于部署的时候，服务器将当前状态的仓库复制了一份，只要不更新部署，部署的内容就不会改变。所以每次更新仓库内容后，要同步更新部署==</p>
+<p>引CSDN的一张图</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122204906.png" alt="4"></p>
+<p>合着这不是还要再来一个网站框架？？？</p>
+<p>好叭本着坚持不懈的精神我在网上找了“自动部署Gitee Page”的方法。找到了是找到了，但是要么是用python自动登录爬取（来自<a href="https://blog.csdn.net/HYDCS/article/details/107464930">CSDN</a>），要么又是个Hexo。</p>
+<p>嗯，转战下个</p>
+<h2 id="picGo-OSS"><a href="#picGo-OSS" class="headerlink" title="picGo + OSS"></a>picGo + OSS</h2><p>这个直接参考了这个大哥的<a href="https://zhuanlan.zhihu.com/p/104152479">阿里云OSS PicGo 配置图床教程 超详细</a>。</p>
+<p>很顺利，然后来到了最后一步。</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122205649.png" alt="QQ截图20210122205548"></p>
+<p>我：？？？</p>
+<p>回去查了半天不知道发生了什么。</p>
+<p>后来在</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122205734.png" alt="QQ截图20210122205730"></p>
+<p><em>PicGo设置-&gt;打开配置文件</em> 找到了问题。</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122205933.png" alt="A31CD1FE0DC41671588BC88552915D94"></p>
+<p>多了个空格……这谁看的出来啊。只有在配置文件里才明显一点。</p>
+<p>行吧可能是我眼睛不好。</p>
+<p>嗯，然后就可以成功了。</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122205958.png" alt="QQ截图20210122205609"></p>
+<hr>
+<h2 id="New-bug"><a href="#New-bug" class="headerlink" title="New bug:"></a>New bug:</h2><h3 id="Typora配置PicGo提示failed-to-fetch"><a href="#Typora配置PicGo提示failed-to-fetch" class="headerlink" title="Typora配置PicGo提示failed to fetch"></a>Typora配置PicGo提示failed to fetch</h3><p>之后的使用中，有遇到一个问题。</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210124175337.png" alt="QQ截图20210124174827"></p>
+<p>但是实际上PicGo单独上传的时候是可以用的。</p>
+<p>测试的时候它报错了，查了半天的bug，后来发现错误是由 <strong>PicGo设置-&gt;设置Server</strong> 造成的。</p>
+<p>因为将PicGo server 的端口h不是Typora 监听的端口。Typroa的监听端口是36677.</p>
+<p>之前是这样的设置</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210124175338.png" alt="QQ截图20210124175118"></p>
+<p>后来改成</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210124175158.png" alt="QQ截图20210124175153"></p>
+<p>就可以了。</p>
+]]></content>
       <categories>
-          
-          <category> RasberryPi </category>
-          
+        <category>web</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> RasberryPi </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>UbuntuAutoInstall</title>
-      <link href="2021/02/13/UbuntuAutoInstall/"/>
-      <url>2021/02/13/UbuntuAutoInstall/</url>
-      
-        <content type="html"><![CDATA[<p>有时候一直在装虚拟机测试Ubuntu的环境，就写了shell脚本自动安装一些软件，不然一直找不到。</p><p>包括Ubuntu 自动换源， STM32的环境，Anaconda，Vscode，Typora，Latex</p><a id="more"></a><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">1.确定系统版本代号</span></span><br><span class="line">Codename=$(cat /etc/os-release | grep VERSION_CODENAME |awk -F&#x27;=&#x27; &#x27;&#123;print $2&#125;&#x27;)</span><br><span class="line">echo &quot;检测到您的Ubuntu系统版本为：$Codename&quot;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">2.选择镜像源</span></span><br><span class="line">echo &quot;**********************************&quot;</span><br><span class="line">echo &quot;请选择镜像源：&quot;</span><br><span class="line">echo &quot;</span><br><span class="line">    1.阿里      </span><br><span class="line">    2.清华     </span><br><span class="line">    3.网易</span><br><span class="line">    4.中科大</span><br><span class="line">    &quot;</span><br><span class="line">echo &quot;**********************************&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">case $sourceChoice in</span><br><span class="line">1)</span><br><span class="line">choose=&#x27;aliyun&#x27;</span><br><span class="line">;;</span><br><span class="line">2)</span><br><span class="line">choose=&#x27;tsinghua&#x27;</span><br><span class="line">;;</span><br><span class="line">3)</span><br><span class="line">choose=&#x27;163&#x27;</span><br><span class="line">;;</span><br><span class="line">4)</span><br><span class="line">choose=&#x27;ustc&#x27;</span><br><span class="line">;;</span><br><span class="line">esac</span><br><span class="line"></span><br><span class="line">choose=&#x27;tsinghua&#x27;</span><br><span class="line"></span><br><span class="line">case $choose in</span><br><span class="line">aliyun)</span><br><span class="line">sourceweb=&#x27;http://mirrors.aliyun.com&#x27;</span><br><span class="line">;;</span><br><span class="line">tsinghua)</span><br><span class="line">sourceweb=&#x27;https://mirrors.tuna.tsinghua.edu.cn&#x27;</span><br><span class="line">;;</span><br><span class="line">163)</span><br><span class="line">sourceweb=&#x27;http://mirrors.163.com&#x27;</span><br><span class="line">;;</span><br><span class="line">ustc)</span><br><span class="line">sourceweb=&#x27;http://mirrors.ustc.edu.cn&#x27;</span><br><span class="line">;;</span><br><span class="line">esac</span><br><span class="line"></span><br><span class="line">echo $choose</span><br><span class="line">echo &quot;**********************************&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 3.备份换源</span></span><br><span class="line">echo &quot;备份sources.list...&quot;</span><br><span class="line">sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak</span><br><span class="line">echo &quot;设置新的镜像源...&quot;</span><br><span class="line">echo &quot;\</span><br><span class="line">deb $sourceweb/ubuntu/ $Codename main restricted universe multiverse</span><br><span class="line">deb $sourceweb/ubuntu/ $Codename-security main restricted universe multiverse</span><br><span class="line">deb $sourceweb/ubuntu/ $Codename-updates main restricted universe multiverse</span><br><span class="line">deb $sourceweb/ubuntu/ $Codename-proposed main restricted universe multiverse</span><br><span class="line">deb $sourceweb/ubuntu/ $Codename-backports main restricted universe multiverse</span><br><span class="line">deb-src $sourceweb/ubuntu/ $Codename main restricted universe multiverse</span><br><span class="line">deb-src $sourceweb/ubuntu/ $Codename-security main restricted universe multiverse</span><br><span class="line">deb-src $sourceweb/ubuntu/ $Codename-updates main restricted universe multiverse</span><br><span class="line">deb-src $sourceweb/ubuntu/ $Codename-proposed main restricted universe multiverse</span><br><span class="line">deb-src $sourceweb/ubuntu/ $Codename-backports main restricted universe multiverse&quot;&gt;/etc/apt/sources.list</span><br><span class="line">echo &quot;更新源...&quot;</span><br><span class="line"></span><br><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line">sudo apt upgrade</span><br><span class="line"></span><br><span class="line">sudo apt install gcc vim</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> Typora</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo add-apt-repository <span class="string">&#x27;deb https://typora.io/linux ./&#x27;</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-get update</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-get install typora</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> Vscode</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-get update</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-get install ubuntu-make</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo umake ide visual-studio-code</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 在.bashrc里添加 参考https://www.cnblogs.com/jpfss/p/11107080.html</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">export</span> PATH=<span class="variable">$HOME</span>/.<span class="built_in">local</span>/share/umake/ide/visual-studio-code/bin:<span class="variable">$PATH</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> Anaconda3</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-5.3.1-Linux-x86_64.sh</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo sh Anaconda3-5.3.1-Linux-x86_64.sh</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> STM32开发环境</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Cube手动安装一下</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-get install default-jre</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt install cmake gcc-arm-none-eabi</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> Latex</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-get install texlive-full</span></span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> Ubuntu </tag>
-            
-            <tag> Linux </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>VMWorktationMacOS</title>
-      <link href="2021/01/31/VMWorktationMacOS/"/>
-      <url>2021/01/31/VMWorktationMacOS/</url>
-      
-        <content type="html"><![CDATA[<p>为了做助教，很多的小朋友都喜欢用Mac。特此在windows上安装了Mac虚拟机试试。</p><a id="more"></a><h1 id="Windows-VM-Workstation-MacOS-虚拟机安装"><a href="#Windows-VM-Workstation-MacOS-虚拟机安装" class="headerlink" title="Windows VM Workstation MacOS 虚拟机安装"></a>Windows VM Workstation MacOS 虚拟机安装</h1><p>这里用的VM Workstation是15.0.0. 网上选择一个下载。</p><p>然后装完之后去找个注册码</p><p>我就用了第一个就能用了。</p><p>VG5HH-D6E04-0889Y-QXZET-QGUC8<br>然后去github上找一下MacOS虚拟机的补丁文件，<a href="https://github.com/theJaxon/unlocker">Unlock文件</a></p><p>但是在打补丁前要在任务管理器里把一堆VM的服务关掉</p><p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210131193252.png" alt="20210131193238"></p><p>之后就在下载好的Unlock文件夹里用管理员身份打开win.install，然后它会自动安装好关闭的。</p><p>然后</p><p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210131215359.png" alt="20210131215351"></p><p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210131215426.png" alt="20210131215422"></p><p>安装的过程中需要清除一下虚拟机的磁盘，左边的【VMware Virtual…】磁盘，然后点击【抹除】，名称【macos】最好英文，最后再点击【抹除】，等待进度条走完。</p><p>可以参考<a href="https://zhuanlan.zhihu.com/p/92827822">这个文章</a></p><p>之后就是MacOS的安装。</p><h2 id="安装一些常用软件"><a href="#安装一些常用软件" class="headerlink" title="安装一些常用软件"></a>安装一些常用软件</h2><h3 id="MacOS安装brew来替代apt"><a href="#MacOS安装brew来替代apt" class="headerlink" title="MacOS安装brew来替代apt"></a>MacOS安装brew来替代apt</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/bin/zsh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure><h3 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h3><p>直接在【终端】中输入git安装就好了</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> MacOS </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Pelican</title>
-      <link href="2021/01/24/Pelican/"/>
-      <url>2021/01/24/Pelican/</url>
-      
-        <content type="html"><![CDATA[<p>用Python Pelican 建站的一些尝试。</p><a id="more"></a><h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><p>首先找到<a href="https://pelican-cn.readthedocs.io/zh_CN/latest/quickstart.html">官方文档</a></p><p>然后还有个指导性的<a href="https://linux.cn/article-10471-1.html">文件</a></p><p>这边先尝试用conda新建个环境，以免出bug然后炸了环境orz。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n Pelican python=3.6</span><br></pre></td></tr></table></figure><p>等环境安装好了之后再激活</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda activate Pelican</span><br></pre></td></tr></table></figure><p>之后</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pelican markdown</span><br></pre></td></tr></table></figure><p>然后在你的项目文件夹里，我的是 <code>D:\Pelican</code></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">(Pelican) D:\Pelican&gt;pelican-quickstart</span><br><span class="line">Welcome to pelican-quickstart v4.5.4.</span><br><span class="line"></span><br><span class="line">This script will <span class="built_in">help</span> you create a new Pelican-based website.</span><br><span class="line"></span><br><span class="line">Please answer the following questions so this script can generate the files</span><br><span class="line">needed by Pelican.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&gt; Where <span class="keyword">do</span> you want to create your new web site? [.] iGEM Wiki</span><br><span class="line">&gt; What will be the title of this web site? iGEM</span><br><span class="line">&gt; Who will be the author of this web site? IronRao</span><br><span class="line">&gt; What will be the default language of this web site? [Chinese (Simplified)]</span><br><span class="line">&gt; Do you want to specify a URL prefix? e.g., https://example.com   (Y/n) n</span><br><span class="line">&gt; Do you want to <span class="built_in">enable</span> article pagination? (Y/n)</span><br><span class="line">&gt; How many articles per page <span class="keyword">do</span> you want? [10] 10</span><br><span class="line">&gt; What is your time zone? [Europe/Paris]</span><br><span class="line">&gt; Do you want to generate a tasks.py/Makefile to automate generation and publishing? (Y/n) Y</span><br><span class="line">&gt; Do you want to upload your website using FTP? (y/N)</span><br><span class="line">&gt; Do you want to upload your website using SSH? (y/N)</span><br><span class="line">&gt; Do you want to upload your website using Dropbox? (y/N)</span><br><span class="line">&gt; Do you want to upload your website using S3? (y/N)</span><br><span class="line">&gt; Do you want to upload your website using Rackspace Cloud Files? (y/N)</span><br><span class="line">&gt; Do you want to upload your website using GitHub Pages? (y/N)</span><br><span class="line">Done. Your new project is available at D:\Pelican\iGEM Wiki</span><br></pre></td></tr></table></figure><p>进入 <code>D:\Pelican\iGEM Wiki</code> </p><p>看到有</p><p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210124203243.png" alt="QQ截图20210124203218"></p><p><code>cd D:\Pelican\iGEM Wiki\content</code></p><p>新建一个markdown文件叫test.md</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Title: My super title</span><br><span class="line">Date: 2010-12-03 10:20</span><br><span class="line">Category: Python</span><br><span class="line">Tags: pelican, publishing</span><br><span class="line">Slug: my-super-post</span><br><span class="line">Author: Alexis Metaireau</span><br><span class="line">Summary: Short version for index and feeds</span><br><span class="line"></span><br><span class="line">This is the content of my super blog post.</span><br></pre></td></tr></table></figure><p>然后在<code>D:\Pelican\iGEM Wiki</code></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(Pelican) D:\Pelican\iGEM Wiki&gt;pelican content</span><br><span class="line">WARNING: Docutils has no localization for &#39;chinese (simplified)&#39;. Using &#39;en&#39; instead.</span><br><span class="line">WARNING: Watched path does not exist: D:\Pelican\iGEM Wiki\content\images</span><br><span class="line">Done: Processed 1 article, 0 drafts, 0 pages, 0 hidden pages and 0 draft pages in 0.36 seconds.</span><br></pre></td></tr></table></figure><p>这就说明已经有输出了，在<code>output</code>里。</p><p>对于我是python3对应的语法，启动http sever是</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(Pelican) D:\Pelican\iGEM Wiki\output&gt;python -m http.server</span><br><span class="line">Serving HTTP on 0.0.0.0 port 8000 (http:&#x2F;&#x2F;0.0.0.0:8000&#x2F;) ...</span><br></pre></td></tr></table></figure><p>可以看到有东西了，在<code>http://localhost:8000/</code></p><p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210124203843.png" alt="QQ截图20210124203834"></p>]]></content>
-      
-      
+      <tags>
+        <tag>web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>RasberryPiRemotePrinter</title>
+    <url>/2021/03/04/RasberryPiRemotePrinter/</url>
+    <content><![CDATA[<p>通过配置树莓派在局域网内实现无线打印。</p>
+<a id="more"></a>
+
+<h1 id="树莓派实现局域网远程打印"><a href="#树莓派实现局域网远程打印" class="headerlink" title="树莓派实现局域网远程打印"></a>树莓派实现局域网远程打印</h1><h2 id="树莓派配置篇"><a href="#树莓派配置篇" class="headerlink" title="树莓派配置篇"></a>树莓派配置篇</h2><p>1.升级树莓派当前树莓派软件依赖包执行命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
+<p>2.所有软件依赖包升级完成后，安装CUPS打印机管理软件，执行如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-get install cups</span><br></pre></td></tr></table></figure>
+<p>3.安装CUPS打印机管理软件后，需要将树莓派用户加入到CUPS的 lpadmin group中，执行命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo usermod -a -G lpadmin pi</span><br></pre></td></tr></table></figure>
+<p>4.输入命令使得CUPS可以被整个局域网中的所有联网设备访问，输入命令后重启CUPS服务，输入命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo cupsctl --remote-any</span><br><span class="line"></span><br><span class="line">sudo &#x2F;etc&#x2F;init.d&#x2F;cups restart</span><br></pre></td></tr></table></figure>
+<p>5.将打印机USB数据线插入到树莓派，通过VNC或通过显示器访问树莓派GUI界面，进入界面后双击打开浏览器输入127.0.0.1:631访问CUPS的web控制界面（CUPS默认端口号为631），登陆成功后的界面如下图所示：</p>
+<p>我这里是直接在同一局域网下用树莓派的IP地址访问的。</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210304212518.png" alt="QQ截图20210304212432"></p>
+<p>6.进入到配置界面后开始添加打印机设备并添加打印机在linux下的驱动，首先点击页面中Adding Printers and Classes来添加设备。</p>
+<p>7.点进去之后选择Add Printer来添加一个打印机设备</p>
+<p>8.进入到Add Printer选择当前打印机型号</p>
+<p>9.点击Continue进入到下一个配置界面，可以修改打印机名称、描述及所在所位置，一定要选择<strong>Share This Printer</strong>实现打印机的共享</p>
+<p>10.继续点击Continue进行下一步添加打印机驱动配置，在make中选择打印机制造商，一般是识别到设备后打印机设备会在第一行显示。如果没有对应的型号，那么参考这篇<a href="https://zhuanlan.zhihu.com/p/105849101">知乎教程</a>。<br>11.之后点击Add Printer完成对打印机的配置并进入General界面，该界面可以对打印纸张尺寸等参数进行配置，一般保持默认即可，因此点击Set Default Option完成整个CUPS配置。<br>12.配置CUPS后开始配置树莓派打印机服务器程序，我们通过安装配置SAMBA 服务器来实现打印机服务器。首先安装SAMBA 软件，执行命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-get install samba</span><br></pre></td></tr></table></figure>
+<p>13.安装完成后输入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;samba&#x2F;smb.conf</span><br></pre></td></tr></table></figure>
+<p>进入config文件来配置SAMBA 服务器，在文件末尾加入如下内容：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line"># CUPS printing.</span><br><span class="line"></span><br><span class="line">[printers]</span><br><span class="line"></span><br><span class="line">comment = All Printers</span><br><span class="line"></span><br><span class="line">browseable = no</span><br><span class="line"></span><br><span class="line">path = /var/spool/samba</span><br><span class="line"></span><br><span class="line">printable = yes</span><br><span class="line"></span><br><span class="line">guest ok = yes</span><br><span class="line"></span><br><span class="line">read only = yes</span><br><span class="line"></span><br><span class="line">create mask = 0700</span><br><span class="line"></span><br><span class="line"># Windows clients look for this share name as a source of downloadable</span><br><span class="line"></span><br><span class="line"># printer drivers</span><br><span class="line"></span><br><span class="line">[print$]</span><br><span class="line"></span><br><span class="line">comment = Printer Drivers</span><br><span class="line"></span><br><span class="line">path = /var/lib/samba/printers</span><br><span class="line"></span><br><span class="line">browseable = yes</span><br><span class="line"></span><br><span class="line">read only = no</span><br><span class="line"></span><br><span class="line">guest ok = no</span><br></pre></td></tr></table></figure>
+<p>加入后输入Ctrl+X 再输入Y 并且回车 Enter确认<br>14. 配置完成SAMBA 服务后执行重启命令：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo &#x2F;etc&#x2F;init.d&#x2F;samba restart</span><br></pre></td></tr></table></figure>
+<p>在这步命令的时候可能找不到samba这个文件，这个时候就需要</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd &#x2F;etc&#x2F;init.d&#x2F;</span><br></pre></td></tr></table></figure>
+
+
+<p>然后找一下和samba很像的一个文件，</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo &#x2F;etc&#x2F;init.d&#x2F;那个文件名 restart</span><br></pre></td></tr></table></figure>
+<p>之后就配置完了。</p>
+<h2 id="Windows配置篇"><a href="#Windows配置篇" class="headerlink" title="Windows配置篇"></a>Windows配置篇</h2><p>然后我们在Windows里找到，</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210304213216.png" alt="QQ截图20210304213151"></p>
+<p>选择添加打印机</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210304213247.png" alt="QQ截图20210304213230"></p>
+<p>可以看到个叫 blabla @ raspberrypi 的设备，那个就是你刚刚配置的打印机。</p>
+<p>添加它就可以了，之后就可以在打印的时候选择相应的打印机来打印了。</p>
+]]></content>
       <categories>
-          
-          <category> web </category>
-          
+        <category>RasberryPi</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> markdown </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>图床配置(picGo+Typora+AliyunOSS)</title>
-      <link href="2021/01/22/PicGo-Typora-AliyunOSS/"/>
-      <url>2021/01/22/PicGo-Typora-AliyunOSS/</url>
-      
-        <content type="html"><![CDATA[<p>主要折腾这个是因为在github上部署图片会导致文件内容过多然后更新部署的太慢了。<br>所以采用了图片和文档分离的做法。</p><p>先用了picGo + gitee 然后发现有问题，而且一点也不方便。后来就用了OSS。</p><a id="more"></a><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>主要折腾这个是因为在github上部署图片会导致文件内容过多然后更新部署的太慢了。<br>所以采用了图片和文档分离的做法。</p><h2 id="picGo-Gitee"><a href="#picGo-Gitee" class="headerlink" title="picGo + Gitee"></a>picGo + Gitee</h2><p>这个主要是参考的知乎上<a href="https://zhuanlan.zhihu.com/p/344257987">Typora 配置PicGo使用Gitee图床创作设置</a>， 然后确实在最后的时候是可以通过Typroa的上传测试，但是在图片上云之后不知道为什么就显示不出来。<br>而且把链接输进浏览器里也是可以使用的。<br>emmm<br>然后看CSDN上<a href="https://www.cnblogs.com/AhuntSun-blog/p/12675620.html">使用Gitee搭建个人图床</a>说可以用Gitee的page来访问，试了一下，确实是可以的。<br>但是！！<br>==每次部署之后，都相当于永远定格在了部署那一刻的仓库状态；如果仓库发生变化，比如添加文件，或删除文件，部署出来的内容都不会改变。相当于部署的时候，服务器将当前状态的仓库复制了一份，只要不更新部署，部署的内容就不会改变。所以每次更新仓库内容后，要同步更新部署==</p><p>引CSDN的一张图</p><p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122204906.png" alt="4"></p><p>合着这不是还要再来一个网站框架？？？</p><p>好叭本着坚持不懈的精神我在网上找了“自动部署Gitee Page”的方法。找到了是找到了，但是要么是用python自动登录爬取（来自<a href="https://blog.csdn.net/HYDCS/article/details/107464930">CSDN</a>），要么又是个Hexo。</p><p>嗯，转战下个</p><h2 id="picGo-OSS"><a href="#picGo-OSS" class="headerlink" title="picGo + OSS"></a>picGo + OSS</h2><p>这个直接参考了这个大哥的<a href="https://zhuanlan.zhihu.com/p/104152479">阿里云OSS PicGo 配置图床教程 超详细</a>。</p><p>很顺利，然后来到了最后一步。</p><p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122205649.png" alt="QQ截图20210122205548"></p><p>我：？？？</p><p>回去查了半天不知道发生了什么。</p><p>后来在</p><p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122205734.png" alt="QQ截图20210122205730"></p><p><em>PicGo设置-&gt;打开配置文件</em> 找到了问题。</p><p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122205933.png" alt="A31CD1FE0DC41671588BC88552915D94"></p><p>多了个空格……这谁看的出来啊。只有在配置文件里才明显一点。</p><p>行吧可能是我眼睛不好。</p><p>嗯，然后就可以成功了。</p><p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122205958.png" alt="QQ截图20210122205609"></p><hr><h2 id="New-bug"><a href="#New-bug" class="headerlink" title="New bug:"></a>New bug:</h2><h3 id="Typora配置PicGo提示failed-to-fetch"><a href="#Typora配置PicGo提示failed-to-fetch" class="headerlink" title="Typora配置PicGo提示failed to fetch"></a>Typora配置PicGo提示failed to fetch</h3><p>之后的使用中，有遇到一个问题。</p><p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210124175337.png" alt="QQ截图20210124174827"></p><p>但是实际上PicGo单独上传的时候是可以用的。</p><p>测试的时候它报错了，查了半天的bug，后来发现错误是由 <strong>PicGo设置-&gt;设置Server</strong> 造成的。</p><p>因为将PicGo server 的端口h不是Typora 监听的端口。Typroa的监听端口是36677.</p><p>之前是这样的设置</p><p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210124175338.png" alt="QQ截图20210124175118"></p><p>后来改成</p><p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210124175158.png" alt="QQ截图20210124175153"></p><p>就可以了。</p>]]></content>
-      
-      
+      <tags>
+        <tag>RasberryPi</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>UbuntuAutoInstall</title>
+    <url>/2021/02/13/UbuntuAutoInstall/</url>
+    <content><![CDATA[<p>有时候一直在装虚拟机测试Ubuntu的环境，就写了shell脚本自动安装一些软件，不然一直找不到。</p>
+<p>包括Ubuntu 自动换源， STM32的环境，Anaconda，Vscode，Typora，Latex</p>
+<a id="more"></a>
+
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">1.确定系统版本代号</span></span><br><span class="line">Codename=$(cat /etc/os-release | grep VERSION_CODENAME |awk -F&#x27;=&#x27; &#x27;&#123;print $2&#125;&#x27;)</span><br><span class="line">echo &quot;检测到您的Ubuntu系统版本为：$Codename&quot;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">2.选择镜像源</span></span><br><span class="line">echo &quot;**********************************&quot;</span><br><span class="line">echo &quot;请选择镜像源：&quot;</span><br><span class="line">echo &quot;</span><br><span class="line">    1.阿里      </span><br><span class="line">    2.清华     </span><br><span class="line">    3.网易</span><br><span class="line">    4.中科大</span><br><span class="line">    &quot;</span><br><span class="line">echo &quot;**********************************&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">case $sourceChoice in</span><br><span class="line">	1)</span><br><span class="line">		choose=&#x27;aliyun&#x27;</span><br><span class="line">	;;</span><br><span class="line">	2)</span><br><span class="line">		choose=&#x27;tsinghua&#x27;</span><br><span class="line">	;;</span><br><span class="line">	3)</span><br><span class="line">		choose=&#x27;163&#x27;</span><br><span class="line">	;;</span><br><span class="line">	4)</span><br><span class="line">		choose=&#x27;ustc&#x27;</span><br><span class="line">	;;</span><br><span class="line">esac</span><br><span class="line"></span><br><span class="line">choose=&#x27;tsinghua&#x27;</span><br><span class="line"></span><br><span class="line">case $choose in</span><br><span class="line">	aliyun)</span><br><span class="line">		sourceweb=&#x27;http://mirrors.aliyun.com&#x27;</span><br><span class="line">	;;</span><br><span class="line">	tsinghua)</span><br><span class="line">		sourceweb=&#x27;https://mirrors.tuna.tsinghua.edu.cn&#x27;</span><br><span class="line">	;;</span><br><span class="line">	163)</span><br><span class="line">		sourceweb=&#x27;http://mirrors.163.com&#x27;</span><br><span class="line">	;;</span><br><span class="line">	ustc)</span><br><span class="line">		sourceweb=&#x27;http://mirrors.ustc.edu.cn&#x27;</span><br><span class="line">	;;</span><br><span class="line">esac</span><br><span class="line"></span><br><span class="line">echo $choose</span><br><span class="line">echo &quot;**********************************&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 3.备份换源</span></span><br><span class="line">echo &quot;备份sources.list...&quot;</span><br><span class="line">sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak</span><br><span class="line">echo &quot;设置新的镜像源...&quot;</span><br><span class="line">echo &quot;\</span><br><span class="line">deb $sourceweb/ubuntu/ $Codename main restricted universe multiverse</span><br><span class="line">deb $sourceweb/ubuntu/ $Codename-security main restricted universe multiverse</span><br><span class="line">deb $sourceweb/ubuntu/ $Codename-updates main restricted universe multiverse</span><br><span class="line">deb $sourceweb/ubuntu/ $Codename-proposed main restricted universe multiverse</span><br><span class="line">deb $sourceweb/ubuntu/ $Codename-backports main restricted universe multiverse</span><br><span class="line">deb-src $sourceweb/ubuntu/ $Codename main restricted universe multiverse</span><br><span class="line">deb-src $sourceweb/ubuntu/ $Codename-security main restricted universe multiverse</span><br><span class="line">deb-src $sourceweb/ubuntu/ $Codename-updates main restricted universe multiverse</span><br><span class="line">deb-src $sourceweb/ubuntu/ $Codename-proposed main restricted universe multiverse</span><br><span class="line">deb-src $sourceweb/ubuntu/ $Codename-backports main restricted universe multiverse&quot;&gt;/etc/apt/sources.list</span><br><span class="line">echo &quot;更新源...&quot;</span><br><span class="line"></span><br><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line">sudo apt upgrade</span><br><span class="line"></span><br><span class="line">sudo apt install gcc vim</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> Typora</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo add-apt-repository <span class="string">&#x27;deb https://typora.io/linux ./&#x27;</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-get update</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-get install typora</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> Vscode</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-get update</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-get install ubuntu-make</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo umake ide visual-studio-code</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 在.bashrc里添加 参考https://www.cnblogs.com/jpfss/p/11107080.html</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">export</span> PATH=<span class="variable">$HOME</span>/.<span class="built_in">local</span>/share/umake/ide/visual-studio-code/bin:<span class="variable">$PATH</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> Anaconda3</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-5.3.1-Linux-x86_64.sh</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo sh Anaconda3-5.3.1-Linux-x86_64.sh</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> STM32开发环境</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Cube手动安装一下</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-get install default-jre</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt install cmake gcc-arm-none-eabi</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> Latex</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-get install texlive-full</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>Ubuntu</tag>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/01/20/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<a id="more"></a>
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>SSHKey生成</title>
+    <url>/2022/12/12/SSHKey%E7%94%9F%E6%88%90/</url>
+    <content><![CDATA[<p>SSH Key的生成步骤。</p>
+<a id="more"></a>
+
+<h1 id="生成SSH-Pub-Key"><a href="#生成SSH-Pub-Key" class="headerlink" title="生成SSH Pub Key"></a>生成SSH Pub Key</h1><p>基本参考<a href="https://www.cnblogs.com/quartz/p/12052109.html">https://www.cnblogs.com/quartz/p/12052109.html</a></p>
+<p>先判断是否存在密钥</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat ~&#x2F;.ssh&#x2F;id_rsa.pub</span><br></pre></td></tr></table></figure>
+<p>若有</p>
+<p>则打开复制至github的SSH的剪贴板</p>
+<p>检验方式</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+]]></content>
       <categories>
-          
-          <category> web </category>
-          
+        <category>日常</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> web </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>RasberryPi4BTest</title>
-      <link href="2021/01/22/RasberryPi4BTest/"/>
-      <url>2021/01/22/RasberryPi4BTest/</url>
-      
-        <content type="html"><![CDATA[<p>最近想着怎么用树莓派和STM32做通信，尝试能不能烧写或者读取STM32的数据。就先试试树莓派的GPIO。</p><a id="more"></a><h1 id="树莓派的简单测试"><a href="#树莓派的简单测试" class="headerlink" title="树莓派的简单测试"></a>树莓派的简单测试</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近想着怎么用树莓派和STM32做通信，尝试能不能烧写或者读取STM32的数据。就先试试树莓派的GPIO。</p><h2 id="点亮个LED"><a href="#点亮个LED" class="headerlink" title="点亮个LED"></a>点亮个LED</h2><p>网上找了下树莓派的官方文档，<a href="https://www.raspberrypi.org/documentation/usage/gpio/">关于GPIO</a></p><p>然后手头没有LED orz，就找了个Arduino的输入，反正有电了就会亮。</p><p>Pi GND  -&gt;Arduino GND<br>Pi Pin21-&gt;Arduino 5V</p><p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122201858.JPG" alt="IMG_7122"></p><p>官方给的介绍里写了关于树莓派的GPIO的引脚设置，用<code>pinout</code>就可以看。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">pi@raspberrypi:~ $ pinout</span><br><span class="line">,--------------------------------.</span><br><span class="line">| oooooooooooooooooooo J8   +======</span><br><span class="line">| 1ooooooooooooooooooo  PoE |   Net</span><br><span class="line">|  Wi                    oo +======</span><br><span class="line">|  Fi  Pi Model 4B  V1.1 oo      |</span><br><span class="line">|        ,----.               +====</span><br><span class="line">| |D|    |SoC |               |USB3</span><br><span class="line">| |S|    |    |               +====</span><br><span class="line">| |I|    `----<span class="string">&#x27;                  |</span></span><br><span class="line"><span class="string">|                   |C|       +====</span></span><br><span class="line"><span class="string">|                   |S|       |USB2</span></span><br><span class="line"><span class="string">| pwr   |HD|   |HD| |I||A|    +====</span></span><br><span class="line"><span class="string">`-| |---|MI|---|MI|----|V|-------&#x27;</span></span><br><span class="line"></span><br><span class="line">Revision           : a03111</span><br><span class="line">SoC                : BCM2711</span><br><span class="line">RAM                : 1024Mb</span><br><span class="line">Storage            : MicroSD</span><br><span class="line">USB ports          : 4 (excluding power)</span><br><span class="line">Ethernet ports     : 1</span><br><span class="line">Wi-fi              : True</span><br><span class="line">Bluetooth          : True</span><br><span class="line">Camera ports (CSI) : 1</span><br><span class="line">Display ports (DSI): 1</span><br><span class="line"></span><br><span class="line">J8:</span><br><span class="line">   3V3  (1) (2)  5V</span><br><span class="line"> GPIO2  (3) (4)  5V</span><br><span class="line"> GPIO3  (5) (6)  GND</span><br><span class="line"> GPIO4  (7) (8)  GPIO14</span><br><span class="line">   GND  (9) (10) GPIO15</span><br><span class="line">GPIO17 (11) (12) GPIO18</span><br><span class="line">GPIO27 (13) (14) GND</span><br><span class="line">GPIO22 (15) (16) GPIO23</span><br><span class="line">   3V3 (17) (18) GPIO24</span><br><span class="line">GPIO10 (19) (20) GND</span><br><span class="line"> GPIO9 (21) (22) GPIO25</span><br><span class="line">GPIO11 (23) (24) GPIO8</span><br><span class="line">   GND (25) (26) GPIO7</span><br><span class="line"> GPIO0 (27) (28) GPIO1</span><br><span class="line"> GPIO5 (29) (30) GND</span><br><span class="line"> GPIO6 (31) (32) GPIO12</span><br><span class="line">GPIO13 (33) (34) GND</span><br><span class="line">GPIO19 (35) (36) GPIO16</span><br><span class="line">GPIO26 (37) (38) GPIO20</span><br><span class="line">   GND (39) (40) GPIO21</span><br><span class="line"></span><br><span class="line">For further information, please refer to https://pinout.xyz/</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>之后用python创建脚本</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> RPi.GPIO <span class="keyword">as</span> GPIO            <span class="comment">#导入树莓派提供的python模块</span></span><br><span class="line">GPIO.setmode(GPIO.BCM)        <span class="comment">#设置GPIO模式，BCM模式在所有数码派通用</span></span><br><span class="line">GPIO.setup(<span class="number">21</span>, GPIO.OUT)       <span class="comment">#设置GPIO21为电流输出</span></span><br><span class="line"></span><br></pre></td></tr></table></figure><p> 然后run一下，<code>python3 Raspi-LED.py</code> 就可以了。  </p>]]></content>
-      
-      
+      <tags>
+        <tag>hello</tag>
+        <tag>hexo</tag>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VMWorktationMacOS</title>
+    <url>/2021/01/31/VMWorktationMacOS/</url>
+    <content><![CDATA[<p>为了做助教，很多的小朋友都喜欢用Mac。特此在windows上安装了Mac虚拟机试试。</p>
+<a id="more"></a>
+
+
+
+<h1 id="Windows-VM-Workstation-MacOS-虚拟机安装"><a href="#Windows-VM-Workstation-MacOS-虚拟机安装" class="headerlink" title="Windows VM Workstation MacOS 虚拟机安装"></a>Windows VM Workstation MacOS 虚拟机安装</h1><p>这里用的VM Workstation是15.0.0. 网上选择一个下载。</p>
+<p>然后装完之后去找个注册码</p>
+<p>我就用了第一个就能用了。</p>
+<p>VG5HH-D6E04-0889Y-QXZET-QGUC8<br>然后去github上找一下MacOS虚拟机的补丁文件，<a href="https://github.com/theJaxon/unlocker">Unlock文件</a></p>
+<p>但是在打补丁前要在任务管理器里把一堆VM的服务关掉</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210131193252.png" alt="20210131193238"></p>
+<p>之后就在下载好的Unlock文件夹里用管理员身份打开win.install，然后它会自动安装好关闭的。</p>
+<p>然后</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210131215359.png" alt="20210131215351"></p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210131215426.png" alt="20210131215422"></p>
+<p>安装的过程中需要清除一下虚拟机的磁盘，左边的【VMware Virtual…】磁盘，然后点击【抹除】，名称【macos】最好英文，最后再点击【抹除】，等待进度条走完。</p>
+<p>可以参考<a href="https://zhuanlan.zhihu.com/p/92827822">这个文章</a></p>
+<p>之后就是MacOS的安装。</p>
+<h2 id="安装一些常用软件"><a href="#安装一些常用软件" class="headerlink" title="安装一些常用软件"></a>安装一些常用软件</h2><h3 id="MacOS安装brew来替代apt"><a href="#MacOS安装brew来替代apt" class="headerlink" title="MacOS安装brew来替代apt"></a>MacOS安装brew来替代apt</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/bin/zsh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h3><p>直接在【终端】中输入git安装就好了</p>
+]]></content>
+      <tags>
+        <tag>MacOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>shiftregister</title>
+    <url>/2021/06/03/shiftregister/</url>
+    <content><![CDATA[<p>关于华二数字集成电路课的一些课件—–位移寄存器简介和相关实验</p>
+<a id="more"></a>
+
+<h1 id="位移寄存器："><a href="#位移寄存器：" class="headerlink" title="位移寄存器："></a>位移寄存器：</h1><h2 id="实验原理"><a href="#实验原理" class="headerlink" title="实验原理"></a>实验原理</h2><p>74 LS194逻辑符号及引脚排列</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527185632.jpg" alt="2755780-1G2220ZK31R"></p>
+<p>其中：D0～D1为并行输入端；Q0～Q3为并行输出端；SR–右移串引输入端；SL–左移串引输入端；S1、S0-操作模式控制端； -为直接无条件清零端；CP-为时钟脉冲输入端。</p>
+<p>工作模式的真值表如下：</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527185653.jpg" alt="2755780-1G222092923c7"></p>
+<p>H－高电平 </p>
+<p>L－低电平 </p>
+<p>X－任意电平 </p>
+<p>↑－低到高电平跳变</p>
+<p>　　a-d－A-D 端的稳态输入电平</p>
+<p>　　QA0-QD0－规定的稳态条件建立前QA－AD的电平</p>
+<p>　　QAn-QDn－时钟最近的↑前QA－AD的电平</p>
+<p>注：X表示任意值</p>
+<h2 id="example"><a href="#example" class="headerlink" title="example:"></a>example:</h2><p>把移位寄存器的输出反馈到它的串行输入端，就可以进行循环移位，如图3所示。设初态为$Q3Q2Q1Q0=1000$，则在CP作用下，模式设为右移，输出状态依次为：</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527190023.jpg" alt="2755780-1G222091220E2"></p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/QQ%E6%88%AA%E5%9B%BE20210603211752.png" alt="QQ截图20210603211752"></p>
+<h2 id="实验任务："><a href="#实验任务：" class="headerlink" title="实验任务："></a>实验任务：</h2><p>在你的555定时器下，设置频率为2Hz，已知该芯片只有四位，设计电路将两个芯片组成八位位移寄存器，并组成环形位移。在输出加个小灯，可以让他产生流水灯的效果。</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210527190439.png" alt="QQ截图20210527190434"></p>
+<p>解答：</p>
+<p>电路如图2所示，将芯片（1）的Q3）接至芯片（2）的SR，将芯片（2）的Q4接至芯片（1）的SL，即可构成8位的移位寄存器。</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/2755780-1G222091124a7.jpg" alt="2755780-1G222091124a7"></p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/QQ%E6%88%AA%E5%9B%BE20210603213047.png" alt="QQ截图20210603213047"></p>
+<h1 id="final-project"><a href="#final-project" class="headerlink" title="final project"></a>final project</h1><p>根据上面的example，可以通过简单的复制和改变每一个A，B，C，D的输入，设计4*4的led点阵的输入。</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/QQ%E6%88%AA%E5%9B%BE20210603212710.png" alt="QQ截图20210603212710"></p>
+]]></content>
       <categories>
-          
-          <category> RasberryPi </category>
-          
+        <category>lesson</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> RasberryPi </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hexo建站测试-从树莓派到Windows</title>
-      <link href="2021/01/21/FirstTest/"/>
-      <url>2021/01/21/FirstTest/</url>
-      
-        <content type="html"><![CDATA[<p>Hexo建站测试，一开始选择的是树莓派，但是经过一番折腾还是选择了在Windows上调试然后经过Github的自带的github.io去做。</p><a id="more"></a><h2 id="树莓派上环境搭建"><a href="#树莓派上环境搭建" class="headerlink" title="树莓派上环境搭建"></a>树莓派上环境搭建</h2><p>这边来记录一下从零开始的搭建过程<br>主要的还是基于github的github.io<br>对于会的人来说应该很快就好了，说起来确实也就几分钟的时间在敲代码上，但是花了蛮久时间研究问题的。<br>主要的步骤是这样的，先在树莓派上搭建了Node.js+Hexo的框架，然后在去找了个域名，也就是ironrao.xyz。<br>emmm说起来好像我的github的usr name还是iron-rao，不知道能不能改掉。这个”-“好麻烦。之后再看。<br>然后现在基本的框架搭好了，但是插件还没装。之后几天再研究一下。</p><p>这里有个网页，之后还有好多东西要参考一下：<br>源自知乎<br><a href="https://zhuanlan.zhihu.com/p/35668237">https://zhuanlan.zhihu.com/p/35668237</a><br>orz 看了一下这个确实好厉害，这个整个的主题就和这种原来的Next的主题不一样，太厉害了orz。<br>有评论区，有目录，有水印，还有网易云的BGM。</p><p>还有字数统计什么的常用工具，也可以放照片，太心动了，明天就换它看看。</p><hr><p>然后在晚上看了看这个界面，emmm，大红大紫的感觉不好看orz。<br>去github上找了，archer&amp;ayer&amp;catus。试了试这三个。感觉都不是自己想要的。但是我还觉得catus的风格还挺好的，就是不知道为什么在编译的时候报错了，也不知道报错怎么解决。（还截了个屏，之后放上去）。在baidu bug的时候正好遇到了这个<a href="https://www.jianshu.com/p/9f0e90cc32c2">网站</a>。<br>里面啥都有，教我怎么配置Next。还有<a href="https://io-oi.me/tech/hexo-next-optimization/">这个</a>。<br>于是乎换回了Next的theme之后再瞅瞅。</p><p>然后之后找到github上的Hexo Themes的list <a href="https://github.com/hexojs/hexo/wiki/Themes">Hexo Themes</a></p><p>有件很有意思的bug是啊，就是在_config.yml里第一段Site中的laguage写了en&amp;cn, 然后网页在远端的格式就崩了，在本地还是好好的orz。调回en就好了。</p><p>而且在root/scaffolds的post.md文件里可以定义每次的模版，下次就不用一直写了。hexo new post name是新发布一个，就和发布说说一样。hexo new draft name就是新建个草稿，不会发出去的。</p><hr><h2 id="Windows上Hexo搭建"><a href="#Windows上Hexo搭建" class="headerlink" title="Windows上Hexo搭建"></a>Windows上Hexo搭建</h2><p>2021.01.21<br>来更新一下，昨天是在树莓派上搭建环境的，跟着<a href="https://zhuanlan.zhihu.com/p/108550672">这个</a>教程。然后今天想着在windows上也搭个环境，以为挺快的。好家伙，花了我三个小时。</p><p>来记一下坑，<br>前面的安装就不提了，去nodejs上找一下对应版本的安装。<br>然后建个文件夹放blog的东西，之后再</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure><p>然后</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git -save</span><br></pre></td></tr></table></figure><p>就遇到了这个问题orz</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*</span><br><span class="line"></span><br><span class="line">  Verion 9 of Highlight.js has reached EOL.  It will no longer</span><br><span class="line">  be supported or receive security updates in the future.</span><br><span class="line">  Please upgrade to version 10 or encourage your indirect</span><br><span class="line">  dependencies to do so.</span><br><span class="line"></span><br><span class="line">  For more info:</span><br><span class="line"></span><br><span class="line">  https://github.com/highlightjs/highlight.js/issues/2877</span><br><span class="line">  https://github.com/highlightjs/highlight.js/blob/master/VERSION_10_UPGRADE.md</span><br><span class="line"></span><br><span class="line">-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*</span><br><span class="line">+ hexo-deployer-git@2.1.0</span><br></pre></td></tr></table></figure><p>说的是这个Highlight不支持V9版本了，叫我升级。然后我研究了半天它给的链接。发现没啥用，只能手动升级。最后还是打算先放着，试试再说。</p><p>然后</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init &amp;&amp; git remote add origin https://github.com/xxx/xxx.github.io.git</span><br></pre></td></tr></table></figure><p>改了改_config.yml的文件，然后测了下，通了。<br>这个报错也emmmmm，太迷惑了。</p><p>之后就打算写了两个脚本一键刷新和部署。<br>然后发现windows的cmd不可以直接<code>hexo </code>操作……<br>然后改用bat文件打开git bash，去用git bash 操作一下，</p><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">@REM Publish.bat</span></span><br><span class="line"><span class="built_in">start</span> C:\&quot;Program Files&quot;\Git\git-bash.exe -c &quot;hexo clean &amp;&amp; hexo g &amp;&amp; cp CNAME public &amp;&amp; hexo d&quot;</span><br></pre></td></tr></table></figure><p>还想尝试一下坚果云能不能同步，发现不太行。因为坚果云的文件夹是中文的，它找不到这个文件夹。而且换成英文的话，它是xxx xxx的形式，中间的空格会被识别错误orz。（之前在ROS的时候也遇到过）。<br>所以还是换Github或者Gitee同步一下叭。</p><hr><h2 id="源文件备份"><a href="#源文件备份" class="headerlink" title="源文件备份"></a>源文件备份</h2><p>之后用了<a href="https://github.com/coneycode/hexo-git-backup">hexo-git-backup</a> 的插件git备份了源码，方便在笔记本上也可以调试。</p><p>然后设置了下面的备份设置</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">backup:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">theme:</span> <span class="string">next</span></span><br><span class="line">  <span class="attr">message:</span> <span class="string">Back</span> <span class="string">up</span> </span><br><span class="line">  <span class="attr">repository:</span></span><br><span class="line">    <span class="attr">github:</span> <span class="string">git@github.com:iron-rao/iron-rao.github.io.git,backup</span></span><br><span class="line">    <span class="attr">gitee:</span> <span class="string">git@gitee.com:iron-rao/hexo.git,master</span></span><br></pre></td></tr></table></figure><p>发现了以下的报错</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fatal: &#39;gitee&#39; does not appear to be a git repository</span><br><span class="line">fatal: Could not read from remote repository.</span><br></pre></td></tr></table></figure><p>很迷惑，查了半天好像是<code>git remote</code>的问题，吃了不熟练git的亏。<br>调试了半天发现以下的仓库链接是对的。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ git remote -v</span><br><span class="line">backup  git@github.com:iron-rao&#x2F;iron-rao.github.io.git (fetch)</span><br><span class="line">backup  git@github.com:iron-rao&#x2F;iron-rao.github.io.git (push)</span><br><span class="line">gitee   git@gitee.com:iron-rao&#x2F;hexo.git (fetch)</span><br><span class="line">gitee   git@gitee.com:iron-rao&#x2F;hexo.git (push)</span><br><span class="line">github  git@github.com:iron-rao&#x2F;iron-rao.github.io.git (fetch)</span><br><span class="line">github  git@github.com:iron-rao&#x2F;iron-rao.github.io.git (push)</span><br><span class="line">master  git@gitee.com:iron-rao&#x2F;hexo.git (fetch)</span><br><span class="line">master  git@gitee.com:iron-rao&#x2F;hexo.git (push)</span><br><span class="line">origin  git@github.com:ironrao&#x2F;iron-rao.github.io.git (fetch)</span><br><span class="line">origin  git@github.com:ironrao&#x2F;iron-rao.github.io.git (push)</span><br></pre></td></tr></table></figure><p>只要</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote add repository_第x行冒号前的 第x行冒号后的</span><br><span class="line">git remote add 第x行的分支名 第x行冒号后的</span><br></pre></td></tr></table></figure><p>对我来说就是</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git remote add github git@github.com:iron-rao&#x2F;iron-rao.github.io.git</span><br><span class="line">git remote add backup git@github.com:iron-rao&#x2F;iron-rao.github.io.git</span><br><span class="line">git remote add gitee git@gitee.com:iron-rao&#x2F;hexo.git</span><br><span class="line">git remote add master git@gitee.com:iron-rao&#x2F;hexo.git</span><br></pre></td></tr></table></figure><p>这样就行。原来还有个origin那个是用来给<code>hexo d</code>推送部署的。之前也踩过坑了。<br>然后就可以愉快的用Typora写markdown了。</p><p>2022.12.13更新</p><p>不知道为什么gitee的back up不能用了，现在改了一些内容</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ git remote -v</span><br><span class="line">backup  git@github.com:ironrao&#x2F;IronRaoHouseBackup.git (fetch)</span><br><span class="line">backup  git@github.com:ironrao&#x2F;IronRaoHouseBackup.git (push)</span><br><span class="line">gitee   git@github.com:ironrao&#x2F;IronRaoHouseBackup.git (fetch)</span><br><span class="line">gitee   git@github.com:ironrao&#x2F;IronRaoHouseBackup.git (push)</span><br><span class="line">github  git@github.com:iron-rao&#x2F;iron-rao.github.io.git (fetch)</span><br><span class="line">github  git@github.com:iron-rao&#x2F;iron-rao.github.io.git (push)</span><br><span class="line">master  git@gitee.com:iron-rao&#x2F;hexo.git (fetch)</span><br><span class="line">master  git@gitee.com:iron-rao&#x2F;hexo.git (push)</span><br><span class="line">origin  git@gitee.com:ironrao&#x2F;hexo.git (fetch)</span><br><span class="line">origin  git@gitee.com:ironrao&#x2F;hexo.git (push)</span><br></pre></td></tr></table></figure><p>换了个github的备份地址</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">backup:</span><br><span class="line">  type: git</span><br><span class="line">  theme: next</span><br><span class="line">  message: Back up </span><br><span class="line">  repository:</span><br><span class="line">    # github: git@github.com:iron-rao&#x2F;iron-rao.github.io.git,backup</span><br><span class="line">    # gitee: git@gitee.com:ironrao&#x2F;hexo.git,master</span><br><span class="line">    backup: git@github.com:ironrao&#x2F;IronRaoHouseBackup.git,master</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> web 树莓派 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hello World</title>
-      <link href="2021/01/20/hello-world/"/>
-      <url>2021/01/20/hello-world/</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><a id="more"></a><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-  
-  
+      <tags>
+        <tag>lesson</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>pictest</title>
+    <url>/2022/12/14/pictest/</url>
+    <content><![CDATA[<p>这是摘要</p>
+<a id="more"></a>]]></content>
+      <tags>
+        <tag>hello</tag>
+        <tag>hexo</tag>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
 </search>
