@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/nanotechnology.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/nanotechnology.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/nanotechnology.svg">
+  <link rel="mask-icon" href="/images/nanotechnology.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"ironrao.xyz","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Hexo建站测试，一开始选择的是树莓派，但是经过一番折腾还是选择了在Windows上调试然后经过Github的自带的github.io去做。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo建站测试-从树莓派到Windows">
+<meta property="og:url" content="http://ironrao.xyz/2021/01/21/FirstTest/index.html">
+<meta property="og:site_name" content="IronRao&#39;s House">
+<meta property="og:description" content="Hexo建站测试，一开始选择的是树莓派，但是经过一番折腾还是选择了在Windows上调试然后经过Github的自带的github.io去做。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-01-21T09:34:02.000Z">
+<meta property="article:modified_time" content="2022-12-13T11:47:01.221Z">
+<meta property="article:author" content="IronRao">
+<meta property="article:tag" content="web 树莓派">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://ironrao.xyz/2021/01/21/FirstTest/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Hexo建站测试-从树莓派到Windows | IronRao's House</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IronRao's House</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">10</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">6</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">13</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://ironrao.xyz/2021/01/21/FirstTest/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/nanotechnology.svg">
+      <meta itemprop="name" content="IronRao">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IronRao's House">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hexo建站测试-从树莓派到Windows
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-01-21 17:34:02" itemprop="dateCreated datePublished" datetime="2021-01-21T17:34:02+08:00">2021-01-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-12-13 19:47:01" itemprop="dateModified" datetime="2022-12-13T19:47:01+08:00">2022-12-13</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Hexo建站测试，一开始选择的是树莓派，但是经过一番折腾还是选择了在Windows上调试然后经过Github的自带的github.io去做。</p>
+<a id="more"></a>
+
+<h2 id="树莓派上环境搭建"><a href="#树莓派上环境搭建" class="headerlink" title="树莓派上环境搭建"></a>树莓派上环境搭建</h2><p>这边来记录一下从零开始的搭建过程<br>主要的还是基于github的github.io<br>对于会的人来说应该很快就好了，说起来确实也就几分钟的时间在敲代码上，但是花了蛮久时间研究问题的。<br>主要的步骤是这样的，先在树莓派上搭建了Node.js+Hexo的框架，然后在去找了个域名，也就是ironrao.xyz。<br>emmm说起来好像我的github的usr name还是iron-rao，不知道能不能改掉。这个”-“好麻烦。之后再看。<br>然后现在基本的框架搭好了，但是插件还没装。之后几天再研究一下。</p>
+<p>这里有个网页，之后还有好多东西要参考一下：<br>源自知乎<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/35668237">https://zhuanlan.zhihu.com/p/35668237</a><br>orz 看了一下这个确实好厉害，这个整个的主题就和这种原来的Next的主题不一样，太厉害了orz。<br>有评论区，有目录，有水印，还有网易云的BGM。</p>
+<p>还有字数统计什么的常用工具，也可以放照片，太心动了，明天就换它看看。</p>
+<hr>
+<p>然后在晚上看了看这个界面，emmm，大红大紫的感觉不好看orz。<br>去github上找了，archer&amp;ayer&amp;catus。试了试这三个。感觉都不是自己想要的。但是我还觉得catus的风格还挺好的，就是不知道为什么在编译的时候报错了，也不知道报错怎么解决。（还截了个屏，之后放上去）。在baidu bug的时候正好遇到了这个<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/9f0e90cc32c2">网站</a>。<br>里面啥都有，教我怎么配置Next。还有<a target="_blank" rel="noopener" href="https://io-oi.me/tech/hexo-next-optimization/">这个</a>。<br>于是乎换回了Next的theme之后再瞅瞅。</p>
+<p>然后之后找到github上的Hexo Themes的list <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/wiki/Themes">Hexo Themes</a></p>
+<p>有件很有意思的bug是啊，就是在_config.yml里第一段Site中的laguage写了en&amp;cn, 然后网页在远端的格式就崩了，在本地还是好好的orz。调回en就好了。</p>
+<p>而且在root/scaffolds的post.md文件里可以定义每次的模版，下次就不用一直写了。hexo new post name是新发布一个，就和发布说说一样。hexo new draft name就是新建个草稿，不会发出去的。</p>
+<hr>
+<h2 id="Windows上Hexo搭建"><a href="#Windows上Hexo搭建" class="headerlink" title="Windows上Hexo搭建"></a>Windows上Hexo搭建</h2><p>2021.01.21<br>来更新一下，昨天是在树莓派上搭建环境的，跟着<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/108550672">这个</a>教程。然后今天想着在windows上也搭个环境，以为挺快的。好家伙，花了我三个小时。</p>
+<p>来记一下坑，<br>前面的安装就不提了，去nodejs上找一下对应版本的安装。<br>然后建个文件夹放blog的东西，之后再</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+<p>然后</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git -save</span><br></pre></td></tr></table></figure>
+<p>就遇到了这个问题orz</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*</span><br><span class="line"></span><br><span class="line">  Verion 9 of Highlight.js has reached EOL.  It will no longer</span><br><span class="line">  be supported or receive security updates in the future.</span><br><span class="line">  Please upgrade to version 10 or encourage your indirect</span><br><span class="line">  dependencies to do so.</span><br><span class="line"></span><br><span class="line">  For more info:</span><br><span class="line"></span><br><span class="line">  https://github.com/highlightjs/highlight.js/issues/2877</span><br><span class="line">  https://github.com/highlightjs/highlight.js/blob/master/VERSION_10_UPGRADE.md</span><br><span class="line"></span><br><span class="line">-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*</span><br><span class="line">+ hexo-deployer-git@2.1.0</span><br></pre></td></tr></table></figure>
+<p>说的是这个Highlight不支持V9版本了，叫我升级。然后我研究了半天它给的链接。发现没啥用，只能手动升级。最后还是打算先放着，试试再说。</p>
+<p>然后</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init &amp;&amp; git remote add origin https://github.com/xxx/xxx.github.io.git</span><br></pre></td></tr></table></figure>
+<p>改了改_config.yml的文件，然后测了下，通了。<br>这个报错也emmmmm，太迷惑了。</p>
+<p>之后就打算写了两个脚本一键刷新和部署。<br>然后发现windows的cmd不可以直接<code>hexo </code>操作……<br>然后改用bat文件打开git bash，去用git bash 操作一下，</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">@REM Publish.bat</span></span><br><span class="line"><span class="built_in">start</span> C:\&quot;Program Files&quot;\Git\git-bash.exe -c &quot;hexo clean &amp;&amp; hexo g &amp;&amp; cp CNAME public &amp;&amp; hexo d&quot;</span><br></pre></td></tr></table></figure>
+<p>还想尝试一下坚果云能不能同步，发现不太行。因为坚果云的文件夹是中文的，它找不到这个文件夹。而且换成英文的话，它是xxx xxx的形式，中间的空格会被识别错误orz。（之前在ROS的时候也遇到过）。<br>所以还是换Github或者Gitee同步一下叭。</p>
+<hr>
+<h2 id="源文件备份"><a href="#源文件备份" class="headerlink" title="源文件备份"></a>源文件备份</h2><p>之后用了<a target="_blank" rel="noopener" href="https://github.com/coneycode/hexo-git-backup">hexo-git-backup</a> 的插件git备份了源码，方便在笔记本上也可以调试。</p>
+<p>然后设置了下面的备份设置</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">backup:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">theme:</span> <span class="string">next</span></span><br><span class="line">  <span class="attr">message:</span> <span class="string">Back</span> <span class="string">up</span> </span><br><span class="line">  <span class="attr">repository:</span></span><br><span class="line">    <span class="attr">github:</span> <span class="string">git@github.com:iron-rao/iron-rao.github.io.git,backup</span></span><br><span class="line">    <span class="attr">gitee:</span> <span class="string">git@gitee.com:iron-rao/hexo.git,master</span></span><br></pre></td></tr></table></figure>
+<p>发现了以下的报错</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fatal: &#39;gitee&#39; does not appear to be a git repository</span><br><span class="line">fatal: Could not read from remote repository.</span><br></pre></td></tr></table></figure>
+<p>很迷惑，查了半天好像是<code>git remote</code>的问题，吃了不熟练git的亏。<br>调试了半天发现以下的仓库链接是对的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ git remote -v</span><br><span class="line">backup  git@github.com:iron-rao&#x2F;iron-rao.github.io.git (fetch)</span><br><span class="line">backup  git@github.com:iron-rao&#x2F;iron-rao.github.io.git (push)</span><br><span class="line">gitee   git@gitee.com:iron-rao&#x2F;hexo.git (fetch)</span><br><span class="line">gitee   git@gitee.com:iron-rao&#x2F;hexo.git (push)</span><br><span class="line">github  git@github.com:iron-rao&#x2F;iron-rao.github.io.git (fetch)</span><br><span class="line">github  git@github.com:iron-rao&#x2F;iron-rao.github.io.git (push)</span><br><span class="line">master  git@gitee.com:iron-rao&#x2F;hexo.git (fetch)</span><br><span class="line">master  git@gitee.com:iron-rao&#x2F;hexo.git (push)</span><br><span class="line">origin  git@github.com:ironrao&#x2F;iron-rao.github.io.git (fetch)</span><br><span class="line">origin  git@github.com:ironrao&#x2F;iron-rao.github.io.git (push)</span><br></pre></td></tr></table></figure>
+<p>只要</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote add repository_第x行冒号前的 第x行冒号后的</span><br><span class="line">git remote add 第x行的分支名 第x行冒号后的</span><br></pre></td></tr></table></figure>
+<p>对我来说就是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git remote add github git@github.com:iron-rao&#x2F;iron-rao.github.io.git</span><br><span class="line">git remote add backup git@github.com:iron-rao&#x2F;iron-rao.github.io.git</span><br><span class="line">git remote add gitee git@gitee.com:iron-rao&#x2F;hexo.git</span><br><span class="line">git remote add master git@gitee.com:iron-rao&#x2F;hexo.git</span><br></pre></td></tr></table></figure>
+<p>这样就行。原来还有个origin那个是用来给<code>hexo d</code>推送部署的。之前也踩过坑了。<br>然后就可以愉快的用Typora写markdown了。</p>
+<p>2022.12.13更新</p>
+<p>不知道为什么gitee的back up不能用了，现在改了一些内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ git remote -v</span><br><span class="line">backup  git@github.com:ironrao&#x2F;IronRaoHouseBackup.git (fetch)</span><br><span class="line">backup  git@github.com:ironrao&#x2F;IronRaoHouseBackup.git (push)</span><br><span class="line">gitee   git@github.com:ironrao&#x2F;IronRaoHouseBackup.git (fetch)</span><br><span class="line">gitee   git@github.com:ironrao&#x2F;IronRaoHouseBackup.git (push)</span><br><span class="line">github  git@github.com:iron-rao&#x2F;iron-rao.github.io.git (fetch)</span><br><span class="line">github  git@github.com:iron-rao&#x2F;iron-rao.github.io.git (push)</span><br><span class="line">master  git@gitee.com:iron-rao&#x2F;hexo.git (fetch)</span><br><span class="line">master  git@gitee.com:iron-rao&#x2F;hexo.git (push)</span><br><span class="line">origin  git@gitee.com:ironrao&#x2F;hexo.git (fetch)</span><br><span class="line">origin  git@gitee.com:ironrao&#x2F;hexo.git (push)</span><br></pre></td></tr></table></figure>
+<p>换了个github的备份地址</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">backup:</span><br><span class="line">  type: git</span><br><span class="line">  theme: next</span><br><span class="line">  message: Back up </span><br><span class="line">  repository:</span><br><span class="line">    # github: git@github.com:iron-rao&#x2F;iron-rao.github.io.git,backup</span><br><span class="line">    # gitee: git@gitee.com:ironrao&#x2F;hexo.git,master</span><br><span class="line">    backup: git@github.com:ironrao&#x2F;IronRaoHouseBackup.git,master</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/web-%E6%A0%91%E8%8E%93%E6%B4%BE/" rel="tag"># web 树莓派</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/01/20/hello-world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/01/22/RasberryPi4BTest/" rel="next" title="RasberryPi4BTest">
+      RasberryPi4BTest <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%91%E8%8E%93%E6%B4%BE%E4%B8%8A%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="nav-number">1.</span> <span class="nav-text">树莓派上环境搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows%E4%B8%8AHexo%E6%90%AD%E5%BB%BA"><span class="nav-number">2.</span> <span class="nav-text">Windows上Hexo搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BA%90%E6%96%87%E4%BB%B6%E5%A4%87%E4%BB%BD"><span class="nav-number">3.</span> <span class="nav-text">源文件备份</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="IronRao"
+      src="/images/nanotechnology.svg">
+  <p class="site-author-name" itemprop="name">IronRao</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="sidebar-button motion-element"><i class="fa fa-comment"></i>
+    Chat
+  </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/ironrao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ironrao" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:zhuyy@shanghaitech.edu.cn" title="E-Mail → mailto:zhuyy@shanghaitech.edu.cn" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">IronRao</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">19k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">17 mins.</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

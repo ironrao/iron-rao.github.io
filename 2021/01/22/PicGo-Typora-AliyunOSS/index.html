@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/nanotechnology.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/nanotechnology.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/nanotechnology.svg">
+  <link rel="mask-icon" href="/images/nanotechnology.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"ironrao.xyz","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="主要折腾这个是因为在github上部署图片会导致文件内容过多然后更新部署的太慢了。所以采用了图片和文档分离的做法。 先用了picGo + gitee 然后发现有问题，而且一点也不方便。后来就用了OSS。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图床配置(picGo+Typora+AliyunOSS)">
+<meta property="og:url" content="http://ironrao.xyz/2021/01/22/PicGo-Typora-AliyunOSS/index.html">
+<meta property="og:site_name" content="IronRao&#39;s House">
+<meta property="og:description" content="主要折腾这个是因为在github上部署图片会导致文件内容过多然后更新部署的太慢了。所以采用了图片和文档分离的做法。 先用了picGo + gitee 然后发现有问题，而且一点也不方便。后来就用了OSS。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122204906.png">
+<meta property="og:image" content="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122205649.png">
+<meta property="og:image" content="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122205734.png">
+<meta property="og:image" content="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122205933.png">
+<meta property="og:image" content="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122205958.png">
+<meta property="og:image" content="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210124175337.png">
+<meta property="og:image" content="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210124175338.png">
+<meta property="og:image" content="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210124175158.png">
+<meta property="article:published_time" content="2021-01-22T12:25:54.000Z">
+<meta property="article:modified_time" content="2022-12-13T11:47:01.226Z">
+<meta property="article:author" content="IronRao">
+<meta property="article:tag" content="web">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122204906.png">
+
+<link rel="canonical" href="http://ironrao.xyz/2021/01/22/PicGo-Typora-AliyunOSS/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>图床配置(picGo+Typora+AliyunOSS) | IronRao's House</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IronRao's House</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">10</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">6</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">13</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://ironrao.xyz/2021/01/22/PicGo-Typora-AliyunOSS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/nanotechnology.svg">
+      <meta itemprop="name" content="IronRao">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IronRao's House">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          图床配置(picGo+Typora+AliyunOSS)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-01-22 20:25:54" itemprop="dateCreated datePublished" datetime="2021-01-22T20:25:54+08:00">2021-01-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-12-13 19:47:01" itemprop="dateModified" datetime="2022-12-13T19:47:01+08:00">2022-12-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web/" itemprop="url" rel="index"><span itemprop="name">web</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>主要折腾这个是因为在github上部署图片会导致文件内容过多然后更新部署的太慢了。<br>所以采用了图片和文档分离的做法。</p>
+<p>先用了picGo + gitee 然后发现有问题，而且一点也不方便。后来就用了OSS。</p>
+<a id="more"></a>
+
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>主要折腾这个是因为在github上部署图片会导致文件内容过多然后更新部署的太慢了。<br>所以采用了图片和文档分离的做法。</p>
+<h2 id="picGo-Gitee"><a href="#picGo-Gitee" class="headerlink" title="picGo + Gitee"></a>picGo + Gitee</h2><p>这个主要是参考的知乎上<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/344257987">Typora 配置PicGo使用Gitee图床创作设置</a>， 然后确实在最后的时候是可以通过Typroa的上传测试，但是在图片上云之后不知道为什么就显示不出来。<br>而且把链接输进浏览器里也是可以使用的。<br>emmm<br>然后看CSDN上<a target="_blank" rel="noopener" href="https://www.cnblogs.com/AhuntSun-blog/p/12675620.html">使用Gitee搭建个人图床</a>说可以用Gitee的page来访问，试了一下，确实是可以的。<br>但是！！<br>==每次部署之后，都相当于永远定格在了部署那一刻的仓库状态；如果仓库发生变化，比如添加文件，或删除文件，部署出来的内容都不会改变。相当于部署的时候，服务器将当前状态的仓库复制了一份，只要不更新部署，部署的内容就不会改变。所以每次更新仓库内容后，要同步更新部署==</p>
+<p>引CSDN的一张图</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122204906.png" alt="4"></p>
+<p>合着这不是还要再来一个网站框架？？？</p>
+<p>好叭本着坚持不懈的精神我在网上找了“自动部署Gitee Page”的方法。找到了是找到了，但是要么是用python自动登录爬取（来自<a target="_blank" rel="noopener" href="https://blog.csdn.net/HYDCS/article/details/107464930">CSDN</a>），要么又是个Hexo。</p>
+<p>嗯，转战下个</p>
+<h2 id="picGo-OSS"><a href="#picGo-OSS" class="headerlink" title="picGo + OSS"></a>picGo + OSS</h2><p>这个直接参考了这个大哥的<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/104152479">阿里云OSS PicGo 配置图床教程 超详细</a>。</p>
+<p>很顺利，然后来到了最后一步。</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122205649.png" alt="QQ截图20210122205548"></p>
+<p>我：？？？</p>
+<p>回去查了半天不知道发生了什么。</p>
+<p>后来在</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122205734.png" alt="QQ截图20210122205730"></p>
+<p><em>PicGo设置-&gt;打开配置文件</em> 找到了问题。</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122205933.png" alt="A31CD1FE0DC41671588BC88552915D94"></p>
+<p>多了个空格……这谁看的出来啊。只有在配置文件里才明显一点。</p>
+<p>行吧可能是我眼睛不好。</p>
+<p>嗯，然后就可以成功了。</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122205958.png" alt="QQ截图20210122205609"></p>
+<hr>
+<h2 id="New-bug"><a href="#New-bug" class="headerlink" title="New bug:"></a>New bug:</h2><h3 id="Typora配置PicGo提示failed-to-fetch"><a href="#Typora配置PicGo提示failed-to-fetch" class="headerlink" title="Typora配置PicGo提示failed to fetch"></a>Typora配置PicGo提示failed to fetch</h3><p>之后的使用中，有遇到一个问题。</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210124175337.png" alt="QQ截图20210124174827"></p>
+<p>但是实际上PicGo单独上传的时候是可以用的。</p>
+<p>测试的时候它报错了，查了半天的bug，后来发现错误是由 <strong>PicGo设置-&gt;设置Server</strong> 造成的。</p>
+<p>因为将PicGo server 的端口h不是Typora 监听的端口。Typroa的监听端口是36677.</p>
+<p>之前是这样的设置</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210124175338.png" alt="QQ截图20210124175118"></p>
+<p>后来改成</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210124175158.png" alt="QQ截图20210124175153"></p>
+<p>就可以了。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/web/" rel="tag"># web</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/01/22/RasberryPi4BTest/" rel="prev" title="RasberryPi4BTest">
+      <i class="fa fa-chevron-left"></i> RasberryPi4BTest
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/01/24/Pelican/" rel="next" title="Pelican">
+      Pelican <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#picGo-Gitee"><span class="nav-number">2.</span> <span class="nav-text">picGo + Gitee</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#picGo-OSS"><span class="nav-number">3.</span> <span class="nav-text">picGo + OSS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#New-bug"><span class="nav-number">4.</span> <span class="nav-text">New bug:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Typora%E9%85%8D%E7%BD%AEPicGo%E6%8F%90%E7%A4%BAfailed-to-fetch"><span class="nav-number">4.1.</span> <span class="nav-text">Typora配置PicGo提示failed to fetch</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="IronRao"
+      src="/images/nanotechnology.svg">
+  <p class="site-author-name" itemprop="name">IronRao</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="sidebar-button motion-element"><i class="fa fa-comment"></i>
+    Chat
+  </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/ironrao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ironrao" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:zhuyy@shanghaitech.edu.cn" title="E-Mail → mailto:zhuyy@shanghaitech.edu.cn" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">IronRao</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">19k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">17 mins.</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>

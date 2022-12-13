@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/nanotechnology.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/nanotechnology.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/nanotechnology.svg">
+  <link rel="mask-icon" href="/images/nanotechnology.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"ironrao.xyz","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="通过配置树莓派在局域网内实现无线打印。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RasberryPiRemotePrinter">
+<meta property="og:url" content="http://ironrao.xyz/2021/03/04/RasberryPiRemotePrinter/index.html">
+<meta property="og:site_name" content="IronRao&#39;s House">
+<meta property="og:description" content="通过配置树莓派在局域网内实现无线打印。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210304212518.png">
+<meta property="og:image" content="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210304213216.png">
+<meta property="og:image" content="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210304213247.png">
+<meta property="article:published_time" content="2021-03-04T13:19:53.000Z">
+<meta property="article:modified_time" content="2022-12-13T11:47:01.227Z">
+<meta property="article:author" content="IronRao">
+<meta property="article:tag" content="RasberryPi">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210304212518.png">
+
+<link rel="canonical" href="http://ironrao.xyz/2021/03/04/RasberryPiRemotePrinter/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>RasberryPiRemotePrinter | IronRao's House</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IronRao's House</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">10</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">6</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">13</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://ironrao.xyz/2021/03/04/RasberryPiRemotePrinter/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/nanotechnology.svg">
+      <meta itemprop="name" content="IronRao">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IronRao's House">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          RasberryPiRemotePrinter
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-03-04 21:19:53" itemprop="dateCreated datePublished" datetime="2021-03-04T21:19:53+08:00">2021-03-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-12-13 19:47:01" itemprop="dateModified" datetime="2022-12-13T19:47:01+08:00">2022-12-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/RasberryPi/" itemprop="url" rel="index"><span itemprop="name">RasberryPi</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>通过配置树莓派在局域网内实现无线打印。</p>
+<a id="more"></a>
+
+<h1 id="树莓派实现局域网远程打印"><a href="#树莓派实现局域网远程打印" class="headerlink" title="树莓派实现局域网远程打印"></a>树莓派实现局域网远程打印</h1><h2 id="树莓派配置篇"><a href="#树莓派配置篇" class="headerlink" title="树莓派配置篇"></a>树莓派配置篇</h2><p>1.升级树莓派当前树莓派软件依赖包执行命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
+<p>2.所有软件依赖包升级完成后，安装CUPS打印机管理软件，执行如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install cups</span><br></pre></td></tr></table></figure>
+<p>3.安装CUPS打印机管理软件后，需要将树莓派用户加入到CUPS的 lpadmin group中，执行命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo usermod -a -G lpadmin pi</span><br></pre></td></tr></table></figure>
+<p>4.输入命令使得CUPS可以被整个局域网中的所有联网设备访问，输入命令后重启CUPS服务，输入命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo cupsctl --remote-any</span><br><span class="line"></span><br><span class="line">sudo &#x2F;etc&#x2F;init.d&#x2F;cups restart</span><br></pre></td></tr></table></figure>
+<p>5.将打印机USB数据线插入到树莓派，通过VNC或通过显示器访问树莓派GUI界面，进入界面后双击打开浏览器输入127.0.0.1:631访问CUPS的web控制界面（CUPS默认端口号为631），登陆成功后的界面如下图所示：</p>
+<p>我这里是直接在同一局域网下用树莓派的IP地址访问的。</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210304212518.png" alt="QQ截图20210304212432"></p>
+<p>6.进入到配置界面后开始添加打印机设备并添加打印机在linux下的驱动，首先点击页面中Adding Printers and Classes来添加设备。</p>
+<p>7.点进去之后选择Add Printer来添加一个打印机设备</p>
+<p>8.进入到Add Printer选择当前打印机型号</p>
+<p>9.点击Continue进入到下一个配置界面，可以修改打印机名称、描述及所在所位置，一定要选择<strong>Share This Printer</strong>实现打印机的共享</p>
+<p>10.继续点击Continue进行下一步添加打印机驱动配置，在make中选择打印机制造商，一般是识别到设备后打印机设备会在第一行显示。如果没有对应的型号，那么参考这篇<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/105849101">知乎教程</a>。<br>11.之后点击Add Printer完成对打印机的配置并进入General界面，该界面可以对打印纸张尺寸等参数进行配置，一般保持默认即可，因此点击Set Default Option完成整个CUPS配置。<br>12.配置CUPS后开始配置树莓派打印机服务器程序，我们通过安装配置SAMBA 服务器来实现打印机服务器。首先安装SAMBA 软件，执行命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install samba</span><br></pre></td></tr></table></figure>
+<p>13.安装完成后输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;samba&#x2F;smb.conf</span><br></pre></td></tr></table></figure>
+<p>进入config文件来配置SAMBA 服务器，在文件末尾加入如下内容：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"># CUPS printing.</span><br><span class="line"></span><br><span class="line">[printers]</span><br><span class="line"></span><br><span class="line">comment = All Printers</span><br><span class="line"></span><br><span class="line">browseable = no</span><br><span class="line"></span><br><span class="line">path = /var/spool/samba</span><br><span class="line"></span><br><span class="line">printable = yes</span><br><span class="line"></span><br><span class="line">guest ok = yes</span><br><span class="line"></span><br><span class="line">read only = yes</span><br><span class="line"></span><br><span class="line">create mask = 0700</span><br><span class="line"></span><br><span class="line"># Windows clients look for this share name as a source of downloadable</span><br><span class="line"></span><br><span class="line"># printer drivers</span><br><span class="line"></span><br><span class="line">[print$]</span><br><span class="line"></span><br><span class="line">comment = Printer Drivers</span><br><span class="line"></span><br><span class="line">path = /var/lib/samba/printers</span><br><span class="line"></span><br><span class="line">browseable = yes</span><br><span class="line"></span><br><span class="line">read only = no</span><br><span class="line"></span><br><span class="line">guest ok = no</span><br></pre></td></tr></table></figure>
+<p>加入后输入Ctrl+X 再输入Y 并且回车 Enter确认<br>14. 配置完成SAMBA 服务后执行重启命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo &#x2F;etc&#x2F;init.d&#x2F;samba restart</span><br></pre></td></tr></table></figure>
+<p>在这步命令的时候可能找不到samba这个文件，这个时候就需要</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;etc&#x2F;init.d&#x2F;</span><br></pre></td></tr></table></figure>
+
+
+<p>然后找一下和samba很像的一个文件，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo &#x2F;etc&#x2F;init.d&#x2F;那个文件名 restart</span><br></pre></td></tr></table></figure>
+<p>之后就配置完了。</p>
+<h2 id="Windows配置篇"><a href="#Windows配置篇" class="headerlink" title="Windows配置篇"></a>Windows配置篇</h2><p>然后我们在Windows里找到，</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210304213216.png" alt="QQ截图20210304213151"></p>
+<p>选择添加打印机</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210304213247.png" alt="QQ截图20210304213230"></p>
+<p>可以看到个叫 blabla @ raspberrypi 的设备，那个就是你刚刚配置的打印机。</p>
+<p>添加它就可以了，之后就可以在打印的时候选择相应的打印机来打印了。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/RasberryPi/" rel="tag"># RasberryPi</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/02/13/UbuntuAutoInstall/" rel="prev" title="UbuntuAutoInstall">
+      <i class="fa fa-chevron-left"></i> UbuntuAutoInstall
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/06/03/555timer/" rel="next" title="555timer">
+      555timer <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%9E%E7%8E%B0%E5%B1%80%E5%9F%9F%E7%BD%91%E8%BF%9C%E7%A8%8B%E6%89%93%E5%8D%B0"><span class="nav-number">1.</span> <span class="nav-text">树莓派实现局域网远程打印</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%91%E8%8E%93%E6%B4%BE%E9%85%8D%E7%BD%AE%E7%AF%87"><span class="nav-number">1.1.</span> <span class="nav-text">树莓派配置篇</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows%E9%85%8D%E7%BD%AE%E7%AF%87"><span class="nav-number">1.2.</span> <span class="nav-text">Windows配置篇</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="IronRao"
+      src="/images/nanotechnology.svg">
+  <p class="site-author-name" itemprop="name">IronRao</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="sidebar-button motion-element"><i class="fa fa-comment"></i>
+    Chat
+  </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/ironrao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ironrao" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:zhuyy@shanghaitech.edu.cn" title="E-Mail → mailto:zhuyy@shanghaitech.edu.cn" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">IronRao</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">19k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">17 mins.</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
