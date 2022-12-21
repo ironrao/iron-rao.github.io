@@ -27,58 +27,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo建站测试-从树莓派到Windows</title>
-    <url>/2021/01/21/FirstTest/</url>
-    <content><![CDATA[<p>Hexo建站测试，一开始选择的是树莓派，但是经过一番折腾还是选择了在Windows上调试然后经过Github的自带的github.io去做。</p>
-<a id="more"></a>
-
-<h2 id="树莓派上环境搭建"><a href="#树莓派上环境搭建" class="headerlink" title="树莓派上环境搭建"></a>树莓派上环境搭建</h2><p>这边来记录一下从零开始的搭建过程<br>主要的还是基于github的github.io<br>对于会的人来说应该很快就好了，说起来确实也就几分钟的时间在敲代码上，但是花了蛮久时间研究问题的。<br>主要的步骤是这样的，先在树莓派上搭建了Node.js+Hexo的框架，然后在去找了个域名，也就是ironrao.xyz。<br>emmm说起来好像我的github的usr name还是iron-rao，不知道能不能改掉。这个”-“好麻烦。之后再看。<br>然后现在基本的框架搭好了，但是插件还没装。之后几天再研究一下。</p>
-<p>这里有个网页，之后还有好多东西要参考一下：<br>源自知乎<br><a href="https://zhuanlan.zhihu.com/p/35668237">https://zhuanlan.zhihu.com/p/35668237</a><br>orz 看了一下这个确实好厉害，这个整个的主题就和这种原来的Next的主题不一样，太厉害了orz。<br>有评论区，有目录，有水印，还有网易云的BGM。</p>
-<p>还有字数统计什么的常用工具，也可以放照片，太心动了，明天就换它看看。</p>
-<hr>
-<p>然后在晚上看了看这个界面，emmm，大红大紫的感觉不好看orz。<br>去github上找了，archer&amp;ayer&amp;catus。试了试这三个。感觉都不是自己想要的。但是我还觉得catus的风格还挺好的，就是不知道为什么在编译的时候报错了，也不知道报错怎么解决。（还截了个屏，之后放上去）。在baidu bug的时候正好遇到了这个<a href="https://www.jianshu.com/p/9f0e90cc32c2">网站</a>。<br>里面啥都有，教我怎么配置Next。还有<a href="https://io-oi.me/tech/hexo-next-optimization/">这个</a>。<br>于是乎换回了Next的theme之后再瞅瞅。</p>
-<p>然后之后找到github上的Hexo Themes的list <a href="https://github.com/hexojs/hexo/wiki/Themes">Hexo Themes</a></p>
-<p>有件很有意思的bug是啊，就是在_config.yml里第一段Site中的laguage写了en&amp;cn, 然后网页在远端的格式就崩了，在本地还是好好的orz。调回en就好了。</p>
-<p>而且在root/scaffolds的post.md文件里可以定义每次的模版，下次就不用一直写了。hexo new post name是新发布一个，就和发布说说一样。hexo new draft name就是新建个草稿，不会发出去的。</p>
-<hr>
-<h2 id="Windows上Hexo搭建"><a href="#Windows上Hexo搭建" class="headerlink" title="Windows上Hexo搭建"></a>Windows上Hexo搭建</h2><p>2021.01.21<br>来更新一下，昨天是在树莓派上搭建环境的，跟着<a href="https://zhuanlan.zhihu.com/p/108550672">这个</a>教程。然后今天想着在windows上也搭个环境，以为挺快的。好家伙，花了我三个小时。</p>
-<p>来记一下坑，<br>前面的安装就不提了，去nodejs上找一下对应版本的安装。<br>然后建个文件夹放blog的东西，之后再</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
-<p>然后</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git -save</span><br></pre></td></tr></table></figure>
-<p>就遇到了这个问题orz</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*</span><br><span class="line"></span><br><span class="line">  Verion 9 of Highlight.js has reached EOL.  It will no longer</span><br><span class="line">  be supported or receive security updates in the future.</span><br><span class="line">  Please upgrade to version 10 or encourage your indirect</span><br><span class="line">  dependencies to do so.</span><br><span class="line"></span><br><span class="line">  For more info:</span><br><span class="line"></span><br><span class="line">  https://github.com/highlightjs/highlight.js/issues/2877</span><br><span class="line">  https://github.com/highlightjs/highlight.js/blob/master/VERSION_10_UPGRADE.md</span><br><span class="line"></span><br><span class="line">-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*</span><br><span class="line">+ hexo-deployer-git@2.1.0</span><br></pre></td></tr></table></figure>
-<p>说的是这个Highlight不支持V9版本了，叫我升级。然后我研究了半天它给的链接。发现没啥用，只能手动升级。最后还是打算先放着，试试再说。</p>
-<p>然后</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git init &amp;&amp; git remote add origin https://github.com/xxx/xxx.github.io.git</span><br></pre></td></tr></table></figure>
-<p>改了改_config.yml的文件，然后测了下，通了。<br>这个报错也emmmmm，太迷惑了。</p>
-<p>之后就打算写了两个脚本一键刷新和部署。<br>然后发现windows的cmd不可以直接<code>hexo </code>操作……<br>然后改用bat文件打开git bash，去用git bash 操作一下，</p>
-<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line"><span class="comment">@REM Publish.bat</span></span><br><span class="line"><span class="built_in">start</span> C:\&quot;Program Files&quot;\Git\git-bash.exe -c &quot;hexo clean &amp;&amp; hexo g &amp;&amp; cp CNAME public &amp;&amp; hexo d&quot;</span><br></pre></td></tr></table></figure>
-<p>还想尝试一下坚果云能不能同步，发现不太行。因为坚果云的文件夹是中文的，它找不到这个文件夹。而且换成英文的话，它是xxx xxx的形式，中间的空格会被识别错误orz。（之前在ROS的时候也遇到过）。<br>所以还是换Github或者Gitee同步一下叭。</p>
-<hr>
-<h2 id="源文件备份"><a href="#源文件备份" class="headerlink" title="源文件备份"></a>源文件备份</h2><p>之后用了<a href="https://github.com/coneycode/hexo-git-backup">hexo-git-backup</a> 的插件git备份了源码，方便在笔记本上也可以调试。</p>
-<p>然后设置了下面的备份设置</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">backup:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">theme:</span> <span class="string">next</span></span><br><span class="line">  <span class="attr">message:</span> <span class="string">Back</span> <span class="string">up</span> </span><br><span class="line">  <span class="attr">repository:</span></span><br><span class="line">    <span class="attr">github:</span> <span class="string">git@github.com:iron-rao/iron-rao.github.io.git,backup</span></span><br><span class="line">    <span class="attr">gitee:</span> <span class="string">git@gitee.com:iron-rao/hexo.git,master</span></span><br></pre></td></tr></table></figure>
-<p>发现了以下的报错</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fatal: &#39;gitee&#39; does not appear to be a git repository</span><br><span class="line">fatal: Could not read from remote repository.</span><br></pre></td></tr></table></figure>
-<p>很迷惑，查了半天好像是<code>git remote</code>的问题，吃了不熟练git的亏。<br>调试了半天发现以下的仓库链接是对的。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git remote -v</span><br><span class="line">backup  git@github.com:iron-rao&#x2F;iron-rao.github.io.git (fetch)</span><br><span class="line">backup  git@github.com:iron-rao&#x2F;iron-rao.github.io.git (push)</span><br><span class="line">gitee   git@gitee.com:iron-rao&#x2F;hexo.git (fetch)</span><br><span class="line">gitee   git@gitee.com:iron-rao&#x2F;hexo.git (push)</span><br><span class="line">github  git@github.com:iron-rao&#x2F;iron-rao.github.io.git (fetch)</span><br><span class="line">github  git@github.com:iron-rao&#x2F;iron-rao.github.io.git (push)</span><br><span class="line">master  git@gitee.com:iron-rao&#x2F;hexo.git (fetch)</span><br><span class="line">master  git@gitee.com:iron-rao&#x2F;hexo.git (push)</span><br><span class="line">origin  git@github.com:ironrao&#x2F;iron-rao.github.io.git (fetch)</span><br><span class="line">origin  git@github.com:ironrao&#x2F;iron-rao.github.io.git (push)</span><br></pre></td></tr></table></figure>
-<p>只要</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git remote add repository_第x行冒号前的 第x行冒号后的</span><br><span class="line">git remote add 第x行的分支名 第x行冒号后的</span><br></pre></td></tr></table></figure>
-<p>对我来说就是</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git remote add github git@github.com:iron-rao&#x2F;iron-rao.github.io.git</span><br><span class="line">git remote add backup git@github.com:iron-rao&#x2F;iron-rao.github.io.git</span><br><span class="line">git remote add gitee git@gitee.com:iron-rao&#x2F;hexo.git</span><br><span class="line">git remote add master git@gitee.com:iron-rao&#x2F;hexo.git</span><br></pre></td></tr></table></figure>
-<p>这样就行。原来还有个origin那个是用来给<code>hexo d</code>推送部署的。之前也踩过坑了。<br>然后就可以愉快的用Typora写markdown了。</p>
-<p>2022.12.13更新</p>
-<p>不知道为什么gitee的back up不能用了，现在改了一些内容</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git remote -v</span><br><span class="line">backup  git@github.com:ironrao&#x2F;IronRaoHouseBackup.git (fetch)</span><br><span class="line">backup  git@github.com:ironrao&#x2F;IronRaoHouseBackup.git (push)</span><br><span class="line">gitee   git@github.com:ironrao&#x2F;IronRaoHouseBackup.git (fetch)</span><br><span class="line">gitee   git@github.com:ironrao&#x2F;IronRaoHouseBackup.git (push)</span><br><span class="line">github  git@github.com:iron-rao&#x2F;iron-rao.github.io.git (fetch)</span><br><span class="line">github  git@github.com:iron-rao&#x2F;iron-rao.github.io.git (push)</span><br><span class="line">master  git@gitee.com:iron-rao&#x2F;hexo.git (fetch)</span><br><span class="line">master  git@gitee.com:iron-rao&#x2F;hexo.git (push)</span><br><span class="line">origin  git@gitee.com:ironrao&#x2F;hexo.git (fetch)</span><br><span class="line">origin  git@gitee.com:ironrao&#x2F;hexo.git (push)</span><br></pre></td></tr></table></figure>
-<p>换了个github的备份地址</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">backup:</span><br><span class="line">  type: git</span><br><span class="line">  theme: next</span><br><span class="line">  message: Back up </span><br><span class="line">  repository:</span><br><span class="line">    # github: git@github.com:iron-rao&#x2F;iron-rao.github.io.git,backup</span><br><span class="line">    # gitee: git@gitee.com:ironrao&#x2F;hexo.git,master</span><br><span class="line">    backup: git@github.com:ironrao&#x2F;IronRaoHouseBackup.git,master</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>web 树莓派</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>555timer</title>
     <url>/2021/06/03/555timer/</url>
     <content><![CDATA[<p>关于华二数字集成电路课的一些课件—–555定时器简介和相关实验</p>
@@ -140,6 +88,86 @@
       </categories>
       <tags>
         <tag>lesson</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Dali_plan</title>
+    <url>/2022/12/21/Dali-plan/</url>
+    <content><![CDATA[<p>去大理的一些计划和攻略，不知道能有多少可以做到。</p>
+<a id="more"></a>
+
+<p>12.22 15：45的飞机浦东，21：30到丽江三义机场 </p>
+<p>下了飞机住当地的机场酒店</p>
+<p>从机场到火车站大概要1个半小时</p>
+<p>23号上午9：55的火车从丽江13：16到大理</p>
+<p>下车包了半天的车，先去城区逛逛，去洱海公园看看</p>
+<p>然后三点四点的样子去者摩山看日落</p>
+<p>然后车送到才村，放行李，214才村 找自行车，然后骑上车，去大理古城玩（如图是自行车站的分布）</p>
+<p><img src="/2022/12/21/Dali-plan/QQ%E5%9B%BE%E7%89%8720221221162332.jpg" alt="QQ图片20221221162332"></p>
+<p>住在才村，然后第二天早上骑车去马久邑看日出，20min的自行车程</p>
+<p>然后回去打包行李，沿洱海顺时针走！</p>
+<p>目标是晚上到双廊，</p>
+<p><img src="/2022/12/21/Dali-plan/wKgEaVyHKHWAbfhtABWW13wMcvk59.jpeg" alt="img"></p>
+<p>这是无人机的飞行区域</p>
+<p><img src="/2022/12/21/Dali-plan/5U3@B2@_G%5DSD%25QSEU4@K6L.png" alt="img"></p>
+<p>12.25 17：25 大理转昆明转上海浦东</p>
+]]></content>
+      <tags>
+        <tag>hello</tag>
+        <tag>hexo</tag>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo建站测试-从树莓派到Windows</title>
+    <url>/2021/01/21/FirstTest/</url>
+    <content><![CDATA[<p>Hexo建站测试，一开始选择的是树莓派，但是经过一番折腾还是选择了在Windows上调试然后经过Github的自带的github.io去做。</p>
+<a id="more"></a>
+
+<h2 id="树莓派上环境搭建"><a href="#树莓派上环境搭建" class="headerlink" title="树莓派上环境搭建"></a>树莓派上环境搭建</h2><p>这边来记录一下从零开始的搭建过程<br>主要的还是基于github的github.io<br>对于会的人来说应该很快就好了，说起来确实也就几分钟的时间在敲代码上，但是花了蛮久时间研究问题的。<br>主要的步骤是这样的，先在树莓派上搭建了Node.js+Hexo的框架，然后在去找了个域名，也就是ironrao.xyz。<br>emmm说起来好像我的github的usr name还是iron-rao，不知道能不能改掉。这个”-“好麻烦。之后再看。<br>然后现在基本的框架搭好了，但是插件还没装。之后几天再研究一下。</p>
+<p>这里有个网页，之后还有好多东西要参考一下：<br>源自知乎<br><a href="https://zhuanlan.zhihu.com/p/35668237">https://zhuanlan.zhihu.com/p/35668237</a><br>orz 看了一下这个确实好厉害，这个整个的主题就和这种原来的Next的主题不一样，太厉害了orz。<br>有评论区，有目录，有水印，还有网易云的BGM。</p>
+<p>还有字数统计什么的常用工具，也可以放照片，太心动了，明天就换它看看。</p>
+<hr>
+<p>然后在晚上看了看这个界面，emmm，大红大紫的感觉不好看orz。<br>去github上找了，archer&amp;ayer&amp;catus。试了试这三个。感觉都不是自己想要的。但是我还觉得catus的风格还挺好的，就是不知道为什么在编译的时候报错了，也不知道报错怎么解决。（还截了个屏，之后放上去）。在baidu bug的时候正好遇到了这个<a href="https://www.jianshu.com/p/9f0e90cc32c2">网站</a>。<br>里面啥都有，教我怎么配置Next。还有<a href="https://io-oi.me/tech/hexo-next-optimization/">这个</a>。<br>于是乎换回了Next的theme之后再瞅瞅。</p>
+<p>然后之后找到github上的Hexo Themes的list <a href="https://github.com/hexojs/hexo/wiki/Themes">Hexo Themes</a></p>
+<p>有件很有意思的bug是啊，就是在_config.yml里第一段Site中的laguage写了en&amp;cn, 然后网页在远端的格式就崩了，在本地还是好好的orz。调回en就好了。</p>
+<p>而且在root/scaffolds的post.md文件里可以定义每次的模版，下次就不用一直写了。hexo new post name是新发布一个，就和发布说说一样。hexo new draft name就是新建个草稿，不会发出去的。</p>
+<hr>
+<h2 id="Windows上Hexo搭建"><a href="#Windows上Hexo搭建" class="headerlink" title="Windows上Hexo搭建"></a>Windows上Hexo搭建</h2><p>2021.01.21<br>来更新一下，昨天是在树莓派上搭建环境的，跟着<a href="https://zhuanlan.zhihu.com/p/108550672">这个</a>教程。然后今天想着在windows上也搭个环境，以为挺快的。好家伙，花了我三个小时。</p>
+<p>来记一下坑，<br>前面的安装就不提了，去nodejs上找一下对应版本的安装。<br>然后建个文件夹放blog的东西，之后再</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+<p>然后</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git -save</span><br></pre></td></tr></table></figure>
+<p>就遇到了这个问题orz</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*</span><br><span class="line"></span><br><span class="line">  Verion 9 of Highlight.js has reached EOL.  It will no longer</span><br><span class="line">  be supported or receive security updates in the future.</span><br><span class="line">  Please upgrade to version 10 or encourage your indirect</span><br><span class="line">  dependencies to do so.</span><br><span class="line"></span><br><span class="line">  For more info:</span><br><span class="line"></span><br><span class="line">  https://github.com/highlightjs/highlight.js/issues/2877</span><br><span class="line">  https://github.com/highlightjs/highlight.js/blob/master/VERSION_10_UPGRADE.md</span><br><span class="line"></span><br><span class="line">-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*</span><br><span class="line">+ hexo-deployer-git@2.1.0</span><br></pre></td></tr></table></figure>
+<p>说的是这个Highlight不支持V9版本了，叫我升级。然后我研究了半天它给的链接。发现没啥用，只能手动升级。最后还是打算先放着，试试再说。</p>
+<p>然后</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git init &amp;&amp; git remote add origin https://github.com/xxx/xxx.github.io.git</span><br></pre></td></tr></table></figure>
+<p>改了改_config.yml的文件，然后测了下，通了。<br>这个报错也emmmmm，太迷惑了。</p>
+<p>之后就打算写了两个脚本一键刷新和部署。<br>然后发现windows的cmd不可以直接<code>hexo </code>操作……<br>然后改用bat文件打开git bash，去用git bash 操作一下，</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line"><span class="comment">@REM Publish.bat</span></span><br><span class="line"><span class="built_in">start</span> C:\&quot;Program Files&quot;\Git\git-bash.exe -c &quot;hexo clean &amp;&amp; hexo g &amp;&amp; cp CNAME public &amp;&amp; hexo d&quot;</span><br></pre></td></tr></table></figure>
+<p>还想尝试一下坚果云能不能同步，发现不太行。因为坚果云的文件夹是中文的，它找不到这个文件夹。而且换成英文的话，它是xxx xxx的形式，中间的空格会被识别错误orz。（之前在ROS的时候也遇到过）。<br>所以还是换Github或者Gitee同步一下叭。</p>
+<hr>
+<h2 id="源文件备份"><a href="#源文件备份" class="headerlink" title="源文件备份"></a>源文件备份</h2><p>之后用了<a href="https://github.com/coneycode/hexo-git-backup">hexo-git-backup</a> 的插件git备份了源码，方便在笔记本上也可以调试。</p>
+<p>然后设置了下面的备份设置</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">backup:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">theme:</span> <span class="string">next</span></span><br><span class="line">  <span class="attr">message:</span> <span class="string">Back</span> <span class="string">up</span> </span><br><span class="line">  <span class="attr">repository:</span></span><br><span class="line">    <span class="attr">github:</span> <span class="string">git@github.com:iron-rao/iron-rao.github.io.git,backup</span></span><br><span class="line">    <span class="attr">gitee:</span> <span class="string">git@gitee.com:iron-rao/hexo.git,master</span></span><br></pre></td></tr></table></figure>
+<p>发现了以下的报错</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fatal: &#39;gitee&#39; does not appear to be a git repository</span><br><span class="line">fatal: Could not read from remote repository.</span><br></pre></td></tr></table></figure>
+<p>很迷惑，查了半天好像是<code>git remote</code>的问题，吃了不熟练git的亏。<br>调试了半天发现以下的仓库链接是对的。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git remote -v</span><br><span class="line">backup  git@github.com:iron-rao&#x2F;iron-rao.github.io.git (fetch)</span><br><span class="line">backup  git@github.com:iron-rao&#x2F;iron-rao.github.io.git (push)</span><br><span class="line">gitee   git@gitee.com:iron-rao&#x2F;hexo.git (fetch)</span><br><span class="line">gitee   git@gitee.com:iron-rao&#x2F;hexo.git (push)</span><br><span class="line">github  git@github.com:iron-rao&#x2F;iron-rao.github.io.git (fetch)</span><br><span class="line">github  git@github.com:iron-rao&#x2F;iron-rao.github.io.git (push)</span><br><span class="line">master  git@gitee.com:iron-rao&#x2F;hexo.git (fetch)</span><br><span class="line">master  git@gitee.com:iron-rao&#x2F;hexo.git (push)</span><br><span class="line">origin  git@github.com:ironrao&#x2F;iron-rao.github.io.git (fetch)</span><br><span class="line">origin  git@github.com:ironrao&#x2F;iron-rao.github.io.git (push)</span><br></pre></td></tr></table></figure>
+<p>只要</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git remote add repository_第x行冒号前的 第x行冒号后的</span><br><span class="line">git remote add 第x行的分支名 第x行冒号后的</span><br></pre></td></tr></table></figure>
+<p>对我来说就是</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git remote add github git@github.com:iron-rao&#x2F;iron-rao.github.io.git</span><br><span class="line">git remote add backup git@github.com:iron-rao&#x2F;iron-rao.github.io.git</span><br><span class="line">git remote add gitee git@gitee.com:iron-rao&#x2F;hexo.git</span><br><span class="line">git remote add master git@gitee.com:iron-rao&#x2F;hexo.git</span><br></pre></td></tr></table></figure>
+<p>这样就行。原来还有个origin那个是用来给<code>hexo d</code>推送部署的。之前也踩过坑了。<br>然后就可以愉快的用Typora写markdown了。</p>
+<p>2022.12.13更新</p>
+<p>不知道为什么gitee的back up不能用了，现在改了一些内容</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git remote -v</span><br><span class="line">backup  git@github.com:ironrao&#x2F;IronRaoHouseBackup.git (fetch)</span><br><span class="line">backup  git@github.com:ironrao&#x2F;IronRaoHouseBackup.git (push)</span><br><span class="line">gitee   git@github.com:ironrao&#x2F;IronRaoHouseBackup.git (fetch)</span><br><span class="line">gitee   git@github.com:ironrao&#x2F;IronRaoHouseBackup.git (push)</span><br><span class="line">github  git@github.com:iron-rao&#x2F;iron-rao.github.io.git (fetch)</span><br><span class="line">github  git@github.com:iron-rao&#x2F;iron-rao.github.io.git (push)</span><br><span class="line">master  git@gitee.com:iron-rao&#x2F;hexo.git (fetch)</span><br><span class="line">master  git@gitee.com:iron-rao&#x2F;hexo.git (push)</span><br><span class="line">origin  git@gitee.com:ironrao&#x2F;hexo.git (fetch)</span><br><span class="line">origin  git@gitee.com:ironrao&#x2F;hexo.git (push)</span><br></pre></td></tr></table></figure>
+<p>换了个github的备份地址</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">backup:</span><br><span class="line">  type: git</span><br><span class="line">  theme: next</span><br><span class="line">  message: Back up </span><br><span class="line">  repository:</span><br><span class="line">    # github: git@github.com:iron-rao&#x2F;iron-rao.github.io.git,backup</span><br><span class="line">    # gitee: git@gitee.com:ironrao&#x2F;hexo.git,master</span><br><span class="line">    backup: git@github.com:ironrao&#x2F;IronRaoHouseBackup.git,master</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>web 树莓派</tag>
       </tags>
   </entry>
   <entry>
@@ -275,6 +303,32 @@
       </tags>
   </entry>
   <entry>
+    <title>RasberryPi4BTest</title>
+    <url>/2021/01/22/RasberryPi4BTest/</url>
+    <content><![CDATA[<p>最近想着怎么用树莓派和STM32做通信，尝试能不能烧写或者读取STM32的数据。就先试试树莓派的GPIO。</p>
+<a id="more"></a>
+
+
+
+<h1 id="树莓派的简单测试"><a href="#树莓派的简单测试" class="headerlink" title="树莓派的简单测试"></a>树莓派的简单测试</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近想着怎么用树莓派和STM32做通信，尝试能不能烧写或者读取STM32的数据。就先试试树莓派的GPIO。</p>
+<h2 id="点亮个LED"><a href="#点亮个LED" class="headerlink" title="点亮个LED"></a>点亮个LED</h2><p>网上找了下树莓派的官方文档，<a href="https://www.raspberrypi.org/documentation/usage/gpio/">关于GPIO</a></p>
+<p>然后手头没有LED orz，就找了个Arduino的输入，反正有电了就会亮。</p>
+<p>Pi GND  -&gt;Arduino GND<br>Pi Pin21-&gt;Arduino 5V</p>
+<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122201858.JPG" alt="IMG_7122"></p>
+<p>官方给的介绍里写了关于树莓派的GPIO的引脚设置，用<code>pinout</code>就可以看。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pi@raspberrypi:~ $ pinout</span><br><span class="line">,--------------------------------.</span><br><span class="line">| oooooooooooooooooooo J8   +======</span><br><span class="line">| 1ooooooooooooooooooo  PoE |   Net</span><br><span class="line">|  Wi                    oo +======</span><br><span class="line">|  Fi  Pi Model 4B  V1.1 oo      |</span><br><span class="line">|        ,----.               +====</span><br><span class="line">| |D|    |SoC |               |USB3</span><br><span class="line">| |S|    |    |               +====</span><br><span class="line">| |I|    `----<span class="string">&#x27;                  |</span></span><br><span class="line"><span class="string">|                   |C|       +====</span></span><br><span class="line"><span class="string">|                   |S|       |USB2</span></span><br><span class="line"><span class="string">| pwr   |HD|   |HD| |I||A|    +====</span></span><br><span class="line"><span class="string">`-| |---|MI|---|MI|----|V|-------&#x27;</span></span><br><span class="line"></span><br><span class="line">Revision           : a03111</span><br><span class="line">SoC                : BCM2711</span><br><span class="line">RAM                : 1024Mb</span><br><span class="line">Storage            : MicroSD</span><br><span class="line">USB ports          : 4 (excluding power)</span><br><span class="line">Ethernet ports     : 1</span><br><span class="line">Wi-fi              : True</span><br><span class="line">Bluetooth          : True</span><br><span class="line">Camera ports (CSI) : 1</span><br><span class="line">Display ports (DSI): 1</span><br><span class="line"></span><br><span class="line">J8:</span><br><span class="line">   3V3  (1) (2)  5V</span><br><span class="line"> GPIO2  (3) (4)  5V</span><br><span class="line"> GPIO3  (5) (6)  GND</span><br><span class="line"> GPIO4  (7) (8)  GPIO14</span><br><span class="line">   GND  (9) (10) GPIO15</span><br><span class="line">GPIO17 (11) (12) GPIO18</span><br><span class="line">GPIO27 (13) (14) GND</span><br><span class="line">GPIO22 (15) (16) GPIO23</span><br><span class="line">   3V3 (17) (18) GPIO24</span><br><span class="line">GPIO10 (19) (20) GND</span><br><span class="line"> GPIO9 (21) (22) GPIO25</span><br><span class="line">GPIO11 (23) (24) GPIO8</span><br><span class="line">   GND (25) (26) GPIO7</span><br><span class="line"> GPIO0 (27) (28) GPIO1</span><br><span class="line"> GPIO5 (29) (30) GND</span><br><span class="line"> GPIO6 (31) (32) GPIO12</span><br><span class="line">GPIO13 (33) (34) GND</span><br><span class="line">GPIO19 (35) (36) GPIO16</span><br><span class="line">GPIO26 (37) (38) GPIO20</span><br><span class="line">   GND (39) (40) GPIO21</span><br><span class="line"></span><br><span class="line">For further information, please refer to https://pinout.xyz/</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>之后用python创建脚本</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> RPi.GPIO <span class="keyword">as</span> GPIO            <span class="comment">#导入树莓派提供的python模块</span></span><br><span class="line">GPIO.setmode(GPIO.BCM)        <span class="comment">#设置GPIO模式，BCM模式在所有数码派通用</span></span><br><span class="line">GPIO.setup(<span class="number">21</span>, GPIO.OUT)       <span class="comment">#设置GPIO21为电流输出</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> 然后run一下，<code>python3 Raspi-LED.py</code> 就可以了。  </p>
+]]></content>
+      <categories>
+        <category>RasberryPi</category>
+      </categories>
+      <tags>
+        <tag>RasberryPi</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>RasberryPiRemotePrinter</title>
     <url>/2021/03/04/RasberryPiRemotePrinter/</url>
     <content><![CDATA[<p>通过配置树莓派在局域网内实现无线打印。</p>
@@ -325,29 +379,26 @@
       </tags>
   </entry>
   <entry>
-    <title>RasberryPi4BTest</title>
-    <url>/2021/01/22/RasberryPi4BTest/</url>
-    <content><![CDATA[<p>最近想着怎么用树莓派和STM32做通信，尝试能不能烧写或者读取STM32的数据。就先试试树莓派的GPIO。</p>
+    <title>SSHKey生成</title>
+    <url>/2022/12/12/SSHKey%E7%94%9F%E6%88%90/</url>
+    <content><![CDATA[<p>SSH Key的生成步骤。</p>
 <a id="more"></a>
 
-
-
-<h1 id="树莓派的简单测试"><a href="#树莓派的简单测试" class="headerlink" title="树莓派的简单测试"></a>树莓派的简单测试</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近想着怎么用树莓派和STM32做通信，尝试能不能烧写或者读取STM32的数据。就先试试树莓派的GPIO。</p>
-<h2 id="点亮个LED"><a href="#点亮个LED" class="headerlink" title="点亮个LED"></a>点亮个LED</h2><p>网上找了下树莓派的官方文档，<a href="https://www.raspberrypi.org/documentation/usage/gpio/">关于GPIO</a></p>
-<p>然后手头没有LED orz，就找了个Arduino的输入，反正有电了就会亮。</p>
-<p>Pi GND  -&gt;Arduino GND<br>Pi Pin21-&gt;Arduino 5V</p>
-<p><img src="https://ironrao.oss-cn-shanghai.aliyuncs.com/img/20210122201858.JPG" alt="IMG_7122"></p>
-<p>官方给的介绍里写了关于树莓派的GPIO的引脚设置，用<code>pinout</code>就可以看。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pi@raspberrypi:~ $ pinout</span><br><span class="line">,--------------------------------.</span><br><span class="line">| oooooooooooooooooooo J8   +======</span><br><span class="line">| 1ooooooooooooooooooo  PoE |   Net</span><br><span class="line">|  Wi                    oo +======</span><br><span class="line">|  Fi  Pi Model 4B  V1.1 oo      |</span><br><span class="line">|        ,----.               +====</span><br><span class="line">| |D|    |SoC |               |USB3</span><br><span class="line">| |S|    |    |               +====</span><br><span class="line">| |I|    `----<span class="string">&#x27;                  |</span></span><br><span class="line"><span class="string">|                   |C|       +====</span></span><br><span class="line"><span class="string">|                   |S|       |USB2</span></span><br><span class="line"><span class="string">| pwr   |HD|   |HD| |I||A|    +====</span></span><br><span class="line"><span class="string">`-| |---|MI|---|MI|----|V|-------&#x27;</span></span><br><span class="line"></span><br><span class="line">Revision           : a03111</span><br><span class="line">SoC                : BCM2711</span><br><span class="line">RAM                : 1024Mb</span><br><span class="line">Storage            : MicroSD</span><br><span class="line">USB ports          : 4 (excluding power)</span><br><span class="line">Ethernet ports     : 1</span><br><span class="line">Wi-fi              : True</span><br><span class="line">Bluetooth          : True</span><br><span class="line">Camera ports (CSI) : 1</span><br><span class="line">Display ports (DSI): 1</span><br><span class="line"></span><br><span class="line">J8:</span><br><span class="line">   3V3  (1) (2)  5V</span><br><span class="line"> GPIO2  (3) (4)  5V</span><br><span class="line"> GPIO3  (5) (6)  GND</span><br><span class="line"> GPIO4  (7) (8)  GPIO14</span><br><span class="line">   GND  (9) (10) GPIO15</span><br><span class="line">GPIO17 (11) (12) GPIO18</span><br><span class="line">GPIO27 (13) (14) GND</span><br><span class="line">GPIO22 (15) (16) GPIO23</span><br><span class="line">   3V3 (17) (18) GPIO24</span><br><span class="line">GPIO10 (19) (20) GND</span><br><span class="line"> GPIO9 (21) (22) GPIO25</span><br><span class="line">GPIO11 (23) (24) GPIO8</span><br><span class="line">   GND (25) (26) GPIO7</span><br><span class="line"> GPIO0 (27) (28) GPIO1</span><br><span class="line"> GPIO5 (29) (30) GND</span><br><span class="line"> GPIO6 (31) (32) GPIO12</span><br><span class="line">GPIO13 (33) (34) GND</span><br><span class="line">GPIO19 (35) (36) GPIO16</span><br><span class="line">GPIO26 (37) (38) GPIO20</span><br><span class="line">   GND (39) (40) GPIO21</span><br><span class="line"></span><br><span class="line">For further information, please refer to https://pinout.xyz/</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>之后用python创建脚本</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> RPi.GPIO <span class="keyword">as</span> GPIO            <span class="comment">#导入树莓派提供的python模块</span></span><br><span class="line">GPIO.setmode(GPIO.BCM)        <span class="comment">#设置GPIO模式，BCM模式在所有数码派通用</span></span><br><span class="line">GPIO.setup(<span class="number">21</span>, GPIO.OUT)       <span class="comment">#设置GPIO21为电流输出</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p> 然后run一下，<code>python3 Raspi-LED.py</code> 就可以了。  </p>
+<h1 id="生成SSH-Pub-Key"><a href="#生成SSH-Pub-Key" class="headerlink" title="生成SSH Pub Key"></a>生成SSH Pub Key</h1><p>基本参考<a href="https://www.cnblogs.com/quartz/p/12052109.html">https://www.cnblogs.com/quartz/p/12052109.html</a></p>
+<p>先判断是否存在密钥</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat ~&#x2F;.ssh&#x2F;id_rsa.pub</span><br></pre></td></tr></table></figure>
+<p>若有</p>
+<p>则打开复制至github的SSH的剪贴板</p>
+<p>检验方式</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>RasberryPi</category>
+        <category>日常</category>
       </categories>
       <tags>
-        <tag>RasberryPi</tag>
+        <tag>hello</tag>
+        <tag>hexo</tag>
+        <tag>markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -390,29 +441,6 @@
 ]]></content>
       <tags>
         <tag>MacOS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SSHKey生成</title>
-    <url>/2022/12/12/SSHKey%E7%94%9F%E6%88%90/</url>
-    <content><![CDATA[<p>SSH Key的生成步骤。</p>
-<a id="more"></a>
-
-<h1 id="生成SSH-Pub-Key"><a href="#生成SSH-Pub-Key" class="headerlink" title="生成SSH Pub Key"></a>生成SSH Pub Key</h1><p>基本参考<a href="https://www.cnblogs.com/quartz/p/12052109.html">https://www.cnblogs.com/quartz/p/12052109.html</a></p>
-<p>先判断是否存在密钥</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat ~&#x2F;.ssh&#x2F;id_rsa.pub</span><br></pre></td></tr></table></figure>
-<p>若有</p>
-<p>则打开复制至github的SSH的剪贴板</p>
-<p>检验方式</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>hello</tag>
-        <tag>hexo</tag>
-        <tag>markdown</tag>
       </tags>
   </entry>
   <entry>
